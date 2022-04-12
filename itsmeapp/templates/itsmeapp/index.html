@@ -6,16 +6,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>ITSME web app</title>
+    <title>ITSME SURVEY ASSESSMENT</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/all.css' %}">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
     <style>
 
 
@@ -23,11 +21,237 @@
 </head>
 <body>
 
-<div class="container">
-    ITSME app is underway!
-
+<div class="header">
+    My Engineer State of Mind: A Self-Assessing Tool <br>
 
 </div>
+
+<!section one: background info>
+<div class = "section one">
+    General background information <br>
+
+<!gender>
+<form id="gender">
+  <p id=gender-prompt>Gender:</p>
+  <input type="radio" id="male" name="gender" value="male">
+  <label for="male">Male</label><br>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Female</label><br>
+  <input type="radio" id="other-gender" name="gender" value="other">
+  <label for="other-gender">Other</label>
+  <input type="text" id = "other-gender-textbox"><br>
+</form>
+
+<!ethnicity>
+<form id="ethnicity">
+  <br><p id=ethnicity-prompt>Ethnicity/Citizenship (check two max):</p>
+  <input type="checkbox" id="African" name="ethnicity" value="African/Black American">
+  <label for="African">African/Black American</label><br>
+  <input type="checkbox" id="Indian" name="ethnicity" value="Indian">
+  <label for="Indian">American Indian/Alaskin Native</label><br>
+  <input type="checkbox" id="Asian" name="ethnicity" value="Asian">
+  <label for="Asian">Asian & Pacific American</label><br>
+  <input type="checkbox" id="Latina" name="ethnicity" value="Latina">
+  <label for="Latina">Latina/Hispanic American</label><br>
+  <input type="checkbox" id="White" name="ethnicity" value="White">
+  <label for="White">White American</label><br>
+  <input type="checkbox" id="Foreign" name="ethnicity" value="Foreign">
+  <label for="Foreign">Foreign National on student visa</label><br>
+  <input type="checkbox" id="green-card" name="ethnicity" value="green-card">
+  <label for="green-card">Foreign National/U.S. Resident (green card)</label><br>
+  <input type="checkbox" id="other-ethnicity" name="ethnicity" value="other">
+  <label for="other-ethnicity">Other, please specify</label>
+  <input type="text" id = other-ethnicity-textbox><br>
+</form>
+
+<!grade>
+<form id="grade">
+  <br><p id=grade-prompt>As of today, I am a:</p>
+  <input type="radio" id="first" name="grade" value="first">
+  <label for="first">first-year student</label><br>
+  <input type="radio" id="second" name="grade" value="second">
+  <label for="second">second-year student</label><br>
+  <input type="radio" id="third" name="grade" value="third">
+  <label for="third">third-year student</label>
+  <input type="radio" id="fourth" name="grade" value="fourth">
+  <label for="fourth">fourth-year student</label><br>
+  <input type="radio" id="fifth" name="grade" value="fifth">
+  <label for="fifth">fifth-year student or above</label>
+</form>
+
+<!major>
+<form id="major">
+  <br><p id=major-prompt>I am a ____ major:</p>
+  <input type="radio" id="chemical" name="major" value="chemical-engineering">
+  <label for="chemical">chemical engineering</label><br>
+  <input type="radio" id="mechanical" name="major" value="mechanical-engineering">
+  <label for="mechanical">mechanical engineering</label><br>
+  <input type="radio" id="compe" name="major" value="computer-engineering">
+  <label for="compe">computer engineering</label><br>
+  <input type="radio" id="engineering" name="major" value="engineering">
+  <label for="engineering">engineering</label><br>
+  <input type="radio" id="undecided" name="major" value="undecided">
+  <label for="undecided">undecided</label><br>
+  <input type="radio" id="other-major" name="major" value="other">
+  <label for="other-major">Other</label>
+  <input type="text" id = "other-major=textbox"><br>
+</form>
+
+<!discussion>
+<form id = "discussion">
+    <br><p id = "discussion-prompt"> What ENES 101 Discussion Section are you in: </p>
+    <input type="text" id = "discussion-prompt-textbox"><br>
+</form>
+
+<!gpa>
+<form id="gpa">
+  <br><p id=gpa-prompt>my current GPA is:</p>
+  <input type="radio" id="4" name="gpa" value="4">
+  <label for="4">3.75 - 4.00</label><br>
+  <input type="radio" id="3.5" name="gpa" value="3.5">
+  <label for="3.5">3.50 - 3.74</label><br>
+  <input type="radio" id="3.25" name="gpa" value="3.25">
+  <label for="3.25">3.25 - 3.49</label><br>
+  <input type="radio" id="3" name="gpa" value="3">
+  <label for="3">3.00 - 3.24</label><br>
+  <input type="radio" id="2.75" name="gpa" value="2.75">
+  <label for="2.75">2.75 - 2.99</label><br>
+  <input type="radio" id="2.5" name="major" value="2.5">
+  <label for="2.5">2.50 - 2.74</label><br>
+  <input type="radio" id="2" name="major" value="2">
+  <label for="2">< 2.50</label><br>
+  <input type="radio" id="none" name="major" value="none">
+  <label for="none">N/A</label><br>
+</form>
+
+<!program affiliation>
+<form id = "program">
+    <br><p id = "program-prompt">Program affiliation: Are you a part of  a program that provides a community of support
+    (this may include scholarship, mentors etc). </p>
+    <input type="radio" id="no-program" name="program" value="no">
+    <label for="no-program">no</label><br>
+    <input type="radio" id="yes-program" name="program" value="yes">
+    <label for="yes-program">yes</label>
+    <input type="text" id = "yes-program-textbox"><br>
+</form>
+
+<!professional org affiliation>
+<form id="professional">
+  <br><p id=professional-prompt>Professional Organization Affiliation (select all that apply):</p>
+  <input type="checkbox" id="asme" name="professional" value="asme">
+  <label for="asme">American Society of Mechanical Engineers (ASME)</label><br>
+  <input type="checkbox" id="aiaa" name="professional" value="aiaa">
+  <label for="aiaa">American Institute of Aeronautics and Astronautics (AIAA)</label><br>
+  <input type="checkbox" id="swe" name="professional" value="swe">
+  <label for="swe">Society of Women Engineers (SWE)</label><br>
+  <input type="checkbox" id="nsbe" name="professional" value="nsbe">
+  <label for="nsbe">National Society of Black Engineers (NSBE)</label><br>
+  <input type="checkbox" id="shpe" name="professional" value="shpe">
+  <label for="shpe">Society of Hispanic Professional Engineers (SHPE)</label><br>
+  <input type="checkbox" id="sae" name="professional" value="sae">
+  <label for="sae">Society of Automotive Engineers (SAE)</label><br>
+  <input type="checkbox" id="ieee" name="professional" value="ieee">
+  <label for="ieee">Institute of Electrical and Electronics Engineers (IEEE)</label><br>
+  <input type="checkbox" id="aiche" name="professional" value="aiche">
+  <label for="aiche">American Institute of Chemical Engineers (AiCHE)</label><br>
+  <input type="checkbox" id="tbp" name="professional" value="Tau-beta-pi">
+  <label for="TBP">Tau Beta Pi</label><br>
+  <input type="checkbox" id="none-prof" name="professional" value="none">
+  <label for="none">None</label><br>
+  <input type="checkbox" id="other-professional" name="professional" value="other">
+  <label for="other-ethnicity">Other, please specify</label>
+  <input type="text" id = "other-professional-textbox"><br>
+</form>
+
+<!enrollment status>
+<form id = "enrollment">
+    <br><p id = "enrollment-prompt">Enrollment Status:</p>
+    <input type="radio" id="part" name="enrollment" value="part-time">
+    <label for="part">part-time</label><br>
+    <input type="radio" id="full" name="enrollment" value="full-time">
+    <label for="full">full-time</label>
+</form>
+
+<!before college>
+<form id = "prior">
+    <br><p id = "prior-prompt">Where were you immediately before starting at this institution?</p>
+    <input type="radio" id="highschool" name="prior" value="high school">
+    <label for="highschool">High School</label><br>
+    <input type="radio" id="associate" name="prior" value="2-year college">
+    <label for="associate">2-year college</label><br>
+    <input type="radio" id="undergraduate" name="prior" value="4-year college">
+    <label for="undergraduate">4-year college</label><br>
+    <input type="radio" id="military" name="prior" value="military">
+    <label for="military">Military</label><br>
+    <input type="radio" id="vocation" name="prior" value="vocation/technical school">
+    <label for="vocation">Vocation/Technical School</label><br>
+    <input type="radio" id="working" name="prior" value="working">
+    <label for="working">Working a full time job</label><br>
+    <input type="radio" id="other-prior" name="prior" value="other">
+    <label for="other-prior">Other, please specify</label><br>
+    <input type = "text" id = "other-prior-textbox">
+</form>
+
+<!internship experience>
+<form id = "internship">
+    <br><p id = "internship-prompt">Have you previously had an internship or co-op in engineering or an
+    engineering-related field?</p>
+    <input type="radio" id="no-internship" name="internship" value="no">
+    <label for="no-internship">no</label><br>
+    <input type="radio" id="yes-internship" name="internship" value="yes">
+    <label for="yes-internship">yes</label>
+</form>
+
+<!research experience>
+<form id = "research">
+    <br><p id = "research-prompt">Have you done on-campus research?</p>
+    <input type="radio" id="no-research" name="research" value="no">
+    <label for="no-research">no</label><br>
+    <input type="radio" id="yes-research" name="research" value="yes">
+    <label for="yes-research">yes</label>
+</form>
+
+<!parent engineer>
+<form id = "parent-engineer">
+    <br><p id = "parent-engineer-prompt">Do you have a parent/guardian who is an Engineer?</p>
+    <input type="radio" id="no-parent-engineer" name="parent-engineer" value="no">
+    <label for="no-parent-engineer">no</label><br>
+    <input type="radio" id="yes-parent-engineer" name="parent-engineer" value="yes">
+    <label for="yes-parent-engineer">yes</label>
+</form>
+
+<!family engineer>
+<form id = "family-engineer">
+    <br><p id = "family-engineer-prompt">Do you have a family member who is an Engineer?</p>
+    <input type="radio" id="no-family-engineer" name="family-engineer" value="no">
+    <label for="no-family-engineer">no</label><br>
+    <input type="radio" id="yes-family-engineer" name="family-engineer" value="yes">
+    <label for="yes-family-engineer">yes</label>
+</form>
+
+<!previous school impact>
+<form id = "previous-school-impact">
+    <br><p id = "previous-school-impact-prompt">Did a previous school program or course(s) impact your decision to
+    pursue engineering?</p>
+    <input type="radio" id="no-previous-school-impact" name="previous-school-impact" value="no">
+    <label for="no-previous-school-impact">no</label><br>
+    <input type="radio" id="yes-previous-school-impact" name="previous-school-impact" value="yes">
+    <label for="yes-previous-school-impact">yes</label>
+    <input type="text" id = yes-previous-school-impact"><br>
+</form>
+
+</div>
+
+<!section two: impressions of engineering>
+<div class = "section two">
+    Impressions of engineering
+</div>
+
+<!section three: Faculty/Staff Support>
+<div class = "section three">
+    Faculty/Staff Support
+</div>
+
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
