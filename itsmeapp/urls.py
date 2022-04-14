@@ -1,9 +1,9 @@
 from django.urls import path
 
 from . import views
-from .views import BasicAPI
+from .views import SurveyResultsAPI
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('api/', BasicAPI.as_view())
+    path('api/', SurveyResultsAPI.as_view())
 ]
