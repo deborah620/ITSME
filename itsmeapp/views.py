@@ -12,6 +12,10 @@ def index(request):
 
 
 class SurveyResultsAPI(APIView):
+    # get api for survey results
+    def get(self, request):
+        survey_data = list(Survey.objects.values())
+        return Response(survey_data)
 
     # post api for survey results
     # request object has info about request, ie POST, data, etc
