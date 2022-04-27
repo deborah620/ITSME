@@ -35,7 +35,8 @@
         General background information <br>
 
     <!gender>
-    <form id="gender" action="/api/SurveyResultsAPI.as_view()" method="post">
+    <form id="gender" action="{% url 'survey_result_api' %}" method="post">
+      {% csrf_token %}
       <p id=gender-prompt>Gender:</p>
       <input type="radio" id="male" name="gender" value="male">
       <label for="male">Male</label><br>
@@ -47,7 +48,7 @@
     </form>
 
     <!ethnicity>
-    <form id="ethnicity" method="post">
+    <form id="ethnicity" action="{% url 'survey_result_api' %}" method="post">
       <br><p id=ethnicity-prompt>Ethnicity/Citizenship (check two max):</p>
       <input type="checkbox" id="African" name="ethnicity" value="African/Black American">
       <label for="African">African/Black American</label><br>
@@ -69,7 +70,7 @@
     </form>
 
     <!grade>
-    <form id="grade" method="post">
+    <form id="grade" action="{% url 'survey_result_api' %}" method="post">
       <br><p id=grade-prompt>As of today, I am a:</p>
       <input type="radio" id="first" name="grade" value="first">
       <label for="first">first-year student</label><br>
@@ -84,7 +85,7 @@
     </form>
 
     <!major>
-    <form id="major" method="post">
+    <form id="major" action="{% url 'survey_result_api' %}" method="post">
       <br><p id=major-prompt>I am a ____ major:</p>
       <input type="radio" id="chemical" name="major" value="chemical-engineering">
       <label for="chemical">chemical engineering</label><br>
@@ -102,13 +103,13 @@
     </form>
 
     <!discussion>
-    <form id = "discussion" method="post">
+    <form id = "discussion" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "discussion-prompt"> What ENES 101 Discussion Section are you in: </p>
         <input type="text" id = "discussion-prompt-textbox"><br>
     </form>
 
     <!gpa>
-    <form id="gpa" method="post">
+    <form id="gpa" action="{% url 'survey_result_api' %}" method="post">
       <br><p id=gpa-prompt>my current GPA is:</p>
       <input type="radio" id="4" name="gpa" value="4">
       <label for="4">3.75 - 4.00</label><br>
@@ -129,7 +130,7 @@
     </form>
 
     <!program affiliation>
-    <form id = "program" method="post">
+    <form id = "program" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "program-prompt">Program affiliation: Are you a part of  a program that provides a community of support
         (this may include scholarship, mentors etc). </p>
         <input type="radio" id="no-program" name="program" value="no">
@@ -140,7 +141,7 @@
     </form>
 
     <!professional org affiliation>
-    <form id="professional" method="post">
+    <form id="professional" action="{% url 'survey_result_api' %}" method="post">
       <br><p id=professional-prompt>Professional Organization Affiliation (select all that apply):</p>
       <input type="checkbox" id="asme" name="professional" value="asme">
       <label for="asme">American Society of Mechanical Engineers (ASME)</label><br>
@@ -168,7 +169,7 @@
     </form>
 
     <!enrollment status>
-    <form id = "enrollment" method="post">
+    <form id = "enrollment" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "enrollment-prompt">Enrollment Status:</p>
         <input type="radio" id="part" name="enrollment" value="part-time">
         <label for="part">part-time</label><br>
@@ -177,7 +178,7 @@
     </form>
 
     <!before college>
-    <form id = "prior" method="post">
+    <form id = "prior" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "prior-prompt">Where were you immediately before starting at this institution?</p>
         <input type="radio" id="highschool" name="prior" value="high school">
         <label for="highschool">High School</label><br>
@@ -197,7 +198,7 @@
     </form>
 
     <!internship experience>
-    <form id = "internship" method="post">
+    <form id = "internship" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "internship-prompt">Have you previously had an internship or co-op in engineering or an
         engineering-related field?</p>
         <input type="radio" id="no-internship" name="internship" value="no">
@@ -207,7 +208,7 @@
     </form>
 
     <!research experience>
-    <form id = "research" method="post">
+    <form id = "research" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "research-prompt">Have you done on-campus research?</p>
         <input type="radio" id="no-research" name="research" value="no">
         <label for="no-research">no</label><br>
@@ -216,7 +217,7 @@
     </form>
 
     <!parent engineer>
-    <form id = "parent-engineer" method="post">
+    <form id = "parent-engineer" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "parent-engineer-prompt">Do you have a parent/guardian who is an Engineer?</p>
         <input type="radio" id="no-parent-engineer" name="parent-engineer" value="no">
         <label for="no-parent-engineer">no</label><br>
@@ -225,7 +226,7 @@
     </form>
 
     <!family engineer>
-    <form id = "family-engineer" method="post">
+    <form id = "family-engineer" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "family-engineer-prompt">Do you have a family member who is an Engineer?</p>
         <input type="radio" id="no-family-engineer" name="family-engineer" value="no">
         <label for="no-family-engineer">no</label><br>
@@ -234,7 +235,7 @@
     </form>
 
     <!previous school impact>
-    <form id = "previous-school-impact" method="post">
+    <form id = "previous-school-impact" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "previous-school-impact-prompt">Did a previous school program or course(s) impact your decision to
         pursue engineering?</p>
         <input type="radio" id="no-previous-school-impact" name="previous-school-impact" value="no">
@@ -251,7 +252,7 @@
         Impressions of engineering <br>
 
     <!how certain you would finish degree>
-    <form id = "finish-degree" method="post">
+    <form id = "finish-degree" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "how-certain-you-would-finish-degree-prompt">When You began your engineering degree, how certain were you that you would complete it?</p>
         <input type="radio" id="Very-Uncertain" name="finish-degree" value="Very-Uncertain">
         <label for="Very-Uncertain">Very Uncertain</label><br>
@@ -266,7 +267,7 @@
     </form>
 
     <!how certain you would complete engineering degree at this institution>
-    <form id = "finish-degree-here" method="post">
+    <form id = "finish-degree-here" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "how-certain-you-would-complete-engineering-degree-at-this-institution-prompt">At the present time, how certain are you that you will complete an engineering degree at this institution?</p>
         <input type="radio" id="Very-Uncertain" name="finish-degree-here" value="Very-Uncertain">
         <label for="Very-Uncertain">Very Uncertain</label><br>
@@ -281,7 +282,7 @@
     </form>
 
     <!Technology plays an important role in solving society's problems>
-    <form id = "technology-importance" method="post">
+    <form id = "technology-importance" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "Technology-plays-an-important-role-in-solving-society's-problems-prompt">Technology plays an important role in solving society's problems?</p>
         <input type="radio" id="Not-A-Reason" name="technology-importance" value="Not-A-Reason">
         <label for="Not-A-Reason">Not a Reason</label><br>
@@ -296,7 +297,7 @@
     </form>
 
     <!Parents would disapprove different major>
-    <form id = "parents_disprove_difft" method="post">
+    <form id = "parents_disprove_difft" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "Parents-would-disapprove-different-major">My parent(s) would disapprove if I choose a major other than engineering?</p>
         <input type="radio" id="Not-A-Reason" name="parents_disprove_difft" value="Not-A-Reason">
         <label for="Not-A-Reason">Not a Reason</label><br>
@@ -311,7 +312,7 @@
     </form>
 
     <!Engineers have contributed to fixing world problems>
-    <form id = "engineer_fix_world" method="post">
+    <form id = "engineer_fix_world" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "Engineers-have-contributed-to-fixing-world-problems-prompt">Engineers have contributed greatly to fixing problems in the world?</p>
         <input type="radio" id="Not-A-Reason" name="engineer_fix_worlds" value="Not-A-Reason">
         <label for="Not-A-Reason">Not a Reason</label><br>
@@ -326,7 +327,7 @@
     </form>
 
     <!Engineers are well payed>
-    <form id = "engineer_paid" method="post">
+    <form id = "engineer_paid" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "Engineers-are-well-paid-prompt">Engineers are well paid?</p>
         <input type="radio" id="Not-A-Reason" name="engineer_paid" value="Not-A-Reason">
         <label for="Not-A-Reason">Not a Reason</label><br>
@@ -341,7 +342,7 @@
     </form>
 
     <!Parents want you to be engineer>
-    <form id = "parents_want" method="post">
+    <form id = "parents_want" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "Parents-want-you-to-be-engineer-prompt">My parent(s) want me to be an engineer?</p>
         <input type="radio" id="Not-A-Reason" name="parents_want" value="Not-A-Reason">
         <label for="Not-A-Reason">Not a Reason</label><br>
@@ -356,7 +357,7 @@
     </form>
 
     <!Engineering degree will guarantee job>
-    <form id = "job_guarantee" method="post">
+    <form id = "job_guarantee" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "Engineering-degree-will-guarantee-job-prompt">An engineering degree will guarentee me a job when I graduate?</p>
         <input type="radio" id="Not-A-Reason" name="job_guarantee" value="Not-A-Reason">
         <label for="Not-A-Reason">Not a Reason</label><br>
@@ -371,7 +372,7 @@
     </form>
 
     <!Faculty member has encouraged me>
-    <form id = "faculty_encor" method="post">
+    <form id = "faculty_encor" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "Faculty-member-has-encouraged-me-prompt">A faculty member, academic advisor, teaching assistant or other university affiliated member has encouraged and/or inspired me to study engineering?</p>
         <input type="radio" id="Not-A-Reason" name="faculty_encor" value="Not-A-Reason">
         <label for="Not-A-Reason">Not a Reason</label><br>
@@ -386,7 +387,7 @@
     </form>
 
     <!Non-univeristy mentor has encouraged me>
-    <form id = "mentor_encor" method="post">
+    <form id = "mentor_encor" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "Non-univeristy-mentor-has-encouraged-me-prompt">A non-university affiliated mentor has encouraged and/or inspired me to study engineering?</p>
         <input type="radio" id="Not-A-Reason" name="other_encor" value="Not-A-Reason">
         <label for="Not-A-Reason">Not a Reason</label><br>
@@ -401,7 +402,7 @@
     </form>
 
     <!A mentor has introuduced me to opportunities>
-    <form id = "intro_opportunity" method="post">
+    <form id = "intro_opportunity" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "A-mentor-has-introuduced-me-to-opportunities-prompt">A mentor has introduced me to people and opportunities in engineering?</p>
         <input type="radio" id="Not-A-Reason" name="intro_opportunity" value="Not-A-Reason">
         <label for="Not-A-Reason">Not a Reason</label><br>
@@ -416,7 +417,7 @@
     </form>
 
     <!I feel good doing engineering>
-    <form id = "feel_good" method="post">
+    <form id = "feel_good" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "I-feel-good-doing-engineering-prompt">I feel good when I am doing engineering?</p>
         <input type="radio" id="Not-A-Reason" name="feel_good" value="Not-A-Reason">
         <label for="Not-A-Reason">Not a Reason</label><br>
@@ -431,7 +432,7 @@
     </form>
 
     <!I like to build stuff>
-    <form id = "like-build" method="post">
+    <form id = "like-build" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "I-like-to-build-stuff-prompt">I like to build stuff?</p>
         <input type="radio" id="Not-A-Reason" name="like-build" value="Not-A-Reason">
         <label for="Not-A-Reason">Not a Reason</label><br>
@@ -446,7 +447,7 @@
     </form>
 
     <!I think engineering is fun>
-    <form id = "engineer-fun" method="post">
+    <form id = "engineer-fun" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "I-think-engineering-is-fun-prompt">I think engineering is fun?</p>
         <input type="radio" id="Not-A-Reason" name="engineer-fun" value="Not-A-Reason">
         <label for="Not-A-Reason">Not a Reason</label><br>
@@ -461,7 +462,7 @@
     </form>
 
     <!Engineering skills can be used for society>
-    <form id = "use-society" method="post">
+    <form id = "use-society" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "Engineering-skills-can-be-used-for-society-prompt">Engineering skills can be used for the good of society?</p>
         <input type="radio" id="Not-A-Reason" name="use-society" value="Not-A-Reason">
         <label for="Not-A-Reason">Not a Reason</label><br>
@@ -476,7 +477,7 @@
     </form>
 
     <!I think engineering is interesting>
-    <form id = "engineer-interesting" method="post">
+    <form id = "engineer-interesting" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "I-think-engineering-is-interesting-prompt">I think Engineering is interesting?</p>
         <input type="radio" id="Not-A-Reason" name="engineer-interesting" value="Not-A-Reason">
         <label for="Not-A-Reason">Not a Reason</label><br>
@@ -491,7 +492,7 @@
     </form>
 
     <!I like to figure out how things work>
-    <form id = "figure-out-work" method="post">
+    <form id = "figure-out-work" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "I-like-to-figure-out-how-things-work-prompt">I like to figure out how things work?</p>
         <input type="radio" id="Not-A-Reason" name="figure-out-work" value="Not-A-Reason">
         <label for="Not-A-Reason">Not a Reason</label><br>
@@ -506,7 +507,7 @@
     </form>
 
     <!Mentoring program>
-    <form id = "mentoring-program" method="post">
+    <form id = "mentoring-program" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "Mentoring-program-prompt">Mentoring programs (Meyerhoff or CWIT) have encouraged and/or inspired me to study?</p>
         <input type="radio" id="Not-A-Reason" name="mentoring-program" value="Not-A-Reason">
         <label for="Not-A-Reason">Not a Reason</label><br>
