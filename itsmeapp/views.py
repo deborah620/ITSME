@@ -58,4 +58,4 @@ class SurveyResultsAPI(APIView):
             mentoring_program=req_data.get('mentoring-program')
         )
         survey_data.save()
-        return Response(req_data, status=status.HTTP_200_OK)
+        return HttpResponse(req_data, status=status.HTTP_200_OK)
