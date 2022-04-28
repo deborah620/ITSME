@@ -68,7 +68,8 @@ class SurveyResultsAPI(APIView):
     def json(self, request):
         response = Survey.objects.all().values()
         response_list = list(response)
-
+        """
+        manual way in case the automatic way doesn't work
         req_data = request.data
         json_survey = {'gender': req_data.get('gender'),
                        'ethnicity': req_data.get('ethnicity'),
@@ -104,5 +105,6 @@ class SurveyResultsAPI(APIView):
                        'figure_out_work': req_data.get('figure-out-work'),
                        'mentoring_program': req_data.get('mentoring-program')
                        }
-        # return JsonResponse(json_survey)
+        return JsonResponse(json_survey)
+        """
         return JsonResponse(response_list)

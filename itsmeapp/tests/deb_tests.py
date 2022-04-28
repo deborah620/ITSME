@@ -5,6 +5,7 @@ from itsmeapp.views import SurveyResultsAPI
 import json
 
 """
+couldn't get this to work properly
 # testing JSON format
 class TestJsonFormat(TestCase):
     def setUp(self):
@@ -40,11 +41,11 @@ class JSONViewTestCase(TestCase):
 """
 
 
-# testing the survey model
+# testing the survey model, gender and ethnicity only
 class TestSubmit(TestCase):
 
     def test(self):
-        form = Survey.objects.create(gender="male", ethnicity='ethnicity', grade=False,
+        form = Survey.objects.create(gender="male", ethnicity='white', grade=False,
                                      major=False,
                                      discussion=False,
                                      gpa=False,
@@ -78,3 +79,4 @@ class TestSubmit(TestCase):
                                      )
 
         self.assertEqual(form.gender, "male", msg="gender is male")
+        self.assertEqual(form.ethnicity, "white", msg="ethnicity is white")
