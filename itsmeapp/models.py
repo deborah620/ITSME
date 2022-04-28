@@ -5,6 +5,7 @@ from django.db import models
 
 class Survey(models.Model):
     # models for the html front end survey results
+    objects = models.Manager()
     gender = models.TextField()
     ethnicity = models.TextField()
     grade = models.TextField()
@@ -19,10 +20,10 @@ class Survey(models.Model):
     research = models.BooleanField()
     parent_engineer = models.BooleanField()
     family_engineer = models.BooleanField()
-    previous_school_impact = models.BooleanField()
-    finish_degree = models.BooleanField()
-    finish_degree_here = models.BooleanField()
-    technology_importance = models.BooleanField()
+    previous_school_impact = models.TextField()
+    finish_degree = models.TextField()
+    finish_degree_here = models.TextField()
+    technology_importance = models.TextField()
     parents_disprove_difft = models.TextField()
     engineer_fix_world = models.TextField()
     engineer_paid = models.TextField()
