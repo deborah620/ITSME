@@ -36,6 +36,7 @@ def populate_results_csv(db_filepath, csv_filepath):
 
     connect.close()
 
+
 def download_file(request):
     # Define Django project base directory
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -54,6 +55,7 @@ def download_file(request):
     # Set the HTTP header for sending to browser
     response['Content-Disposition'] = "attachment; filename=%s" % csv_filename
     # Return the response value
+    path.close()
     return response
 
 
