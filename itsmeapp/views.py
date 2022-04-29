@@ -4,18 +4,16 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.http import HttpResponse
 from .models import Survey
-<<<<<<< HEAD
 from django.http import JsonResponse
-=======
 import os
 import mimetypes
 import sqlite3
 import csv
->>>>>>> develop
 
 
 def index(request):
     return render(request, 'itsmeapp/index.html', context={})
+
 
 def populate_results_csv(db_filepath, csv_filepath):
     connect = sqlite3.connect(db_filepath)
@@ -66,7 +64,7 @@ def download_file(request):
 class SurveyResultsAPI(APIView):
 
     # get api for survey results
-    self = None
+    # self = None
 
     def get(self, request):
         survey_data = list(Survey.objects.values())
