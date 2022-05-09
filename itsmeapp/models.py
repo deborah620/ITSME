@@ -5,7 +5,7 @@ from django.db import models
 
 class Survey(models.Model):
     # models for the html front end survey results
-    # objects = models.Manager()
+    objects = models.Manager()
     gender = models.TextField()
     ethnicity = models.TextField()
     grade = models.TextField()
