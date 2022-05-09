@@ -39,3 +39,4 @@ class Survey(models.Model):
     engineer_interesting = models.TextField()
     figure_out_work = models.TextField()
     mentoring_program = models.TextField()
+
