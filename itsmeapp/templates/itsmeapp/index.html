@@ -41,11 +41,11 @@
     <form id="gender" action="{% url 'survey_result_api' %}" method="post">
       {% csrf_token %}
       <p id=gender-prompt>Gender:</p>
-      <input type="radio" id="male" name="gender" value="male">
+      <input type="radio" id="male" name="gender" value="1">
       <label for="male">Male</label><br>
-      <input type="radio" id="female" name="gender" value="female">
+      <input type="radio" id="female" name="gender" value="2">
       <label for="female">Female</label><br>
-      <input type="radio" id="other-gender" name="gender" value="other">
+      <input type="radio" id="other-gender" name="gender" value="0">
       <label for="other-gender">Other</label>
       <input type="text" id = "other-gender-textbox"><br>
     </form>
@@ -53,21 +53,21 @@
     <!ethnicity>
     <form id="ethnicity" action="{% url 'survey_result_api' %}" method="post">
       <br><p id=ethnicity-prompt>Ethnicity/Citizenship (check two max):</p>
-      <input type="checkbox" id="African" name="ethnicity" value="African/Black American">
+      <input type="checkbox" id="African" name="ethnicity" value="1">
       <label for="African">African/Black American</label><br>
-      <input type="checkbox" id="Indian" name="ethnicity" value="Indian">
+      <input type="checkbox" id="Indian" name="ethnicity" value="2">
       <label for="Indian">American Indian/Alaskin Native</label><br>
-      <input type="checkbox" id="Asian" name="ethnicity" value="Asian">
+      <input type="checkbox" id="Asian" name="ethnicity" value="3">
       <label for="Asian">Asian & Pacific American</label><br>
-      <input type="checkbox" id="Latina" name="ethnicity" value="Latina">
+      <input type="checkbox" id="Latina" name="ethnicity" value="4">
       <label for="Latina">Latina/Hispanic American</label><br>
-      <input type="checkbox" id="White" name="ethnicity" value="White">
+      <input type="checkbox" id="White" name="ethnicity" value="5">
       <label for="White">White American</label><br>
-      <input type="checkbox" id="Foreign" name="ethnicity" value="Foreign">
+      <input type="checkbox" id="Foreign" name="ethnicity" value="6">
       <label for="Foreign">Foreign National on student visa</label><br>
-      <input type="checkbox" id="green-card" name="ethnicity" value="green-card">
+      <input type="checkbox" id="green-card" name="ethnicity" value="7">
       <label for="green-card">Foreign National/U.S. Resident (green card)</label><br>
-      <input type="checkbox" id="other-ethnicity" name="ethnicity" value="other">
+      <input type="checkbox" id="other-ethnicity" name="ethnicity" value="0">
       <label for="other-ethnicity">Other, please specify</label>
       <input type="text" id = other-ethnicity-textbox><br>
     </form>
@@ -75,32 +75,32 @@
     <!grade>
     <form id="grade" action="{% url 'survey_result_api' %}" method="post">
       <br><p id=grade-prompt>As of today, I am a:</p>
-      <input type="radio" id="first" name="grade" value="first">
+      <input type="radio" id="first" name="grade" value="1">
       <label for="first">first-year student</label><br>
-      <input type="radio" id="second" name="grade" value="second">
+      <input type="radio" id="second" name="grade" value="2">
       <label for="second">second-year student</label><br>
-      <input type="radio" id="third" name="grade" value="third">
+      <input type="radio" id="third" name="grade" value="3">
       <label for="third">third-year student</label>
-      <input type="radio" id="fourth" name="grade" value="fourth">
+      <input type="radio" id="fourth" name="grade" value="4">
       <label for="fourth">fourth-year student</label><br>
-      <input type="radio" id="fifth" name="grade" value="fifth">
+      <input type="radio" id="fifth" name="grade" value="5">
       <label for="fifth">fifth-year student or above</label>
     </form>
 
     <!major>
     <form id="major" action="{% url 'survey_result_api' %}" method="post">
       <br><p id=major-prompt>I am a ____ major:</p>
-      <input type="radio" id="chemical" name="major" value="chemical-engineering">
+      <input type="radio" id="chemical" name="major" value="1">
       <label for="chemical">chemical engineering</label><br>
-      <input type="radio" id="mechanical" name="major" value="mechanical-engineering">
+      <input type="radio" id="mechanical" name="major" value="2">
       <label for="mechanical">mechanical engineering</label><br>
-      <input type="radio" id="compe" name="major" value="computer-engineering">
+      <input type="radio" id="compe" name="major" value="3">
       <label for="compe">computer engineering</label><br>
-      <input type="radio" id="engineering" name="major" value="engineering">
+      <input type="radio" id="engineering" name="major" value="4">
       <label for="engineering">engineering</label><br>
-      <input type="radio" id="undecided" name="major" value="undecided">
+      <input type="radio" id="undecided" name="major" value="5">
       <label for="undecided">undecided</label><br>
-      <input type="radio" id="other-major" name="major" value="other">
+      <input type="radio" id="other-major" name="major" value="0">
       <label for="other-major">Other</label>
       <input type="text" id = "other-major=textbox"><br>
     </form>
@@ -128,7 +128,7 @@
       <label for="2.5">2.50 - 2.74</label><br>
       <input type="radio" id="2" name="major" value="2">
       <label for="2">< 2.50</label><br>
-      <input type="radio" id="none" name="major" value="none">
+      <input type="radio" id="none" name="major" value="0">
       <label for="none">N/A</label><br>
     </form>
 
@@ -136,9 +136,9 @@
     <form id = "program" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "program-prompt">Program affiliation: Are you a part of  a program that provides a community of support
         (this may include scholarship, mentors etc). </p>
-        <input type="radio" id="no-program" name="program" value="no">
+        <input type="radio" id="no-program" name="program" value="0">
         <label for="no-program">no</label><br>
-        <input type="radio" id="yes-program" name="program" value="yes">
+        <input type="radio" id="yes-program" name="program" value="1">
         <label for="yes-program">yes</label>
         <input type="text" id = "yes-program-textbox"><br>
     </form>
@@ -146,27 +146,27 @@
     <!professional org affiliation>
     <form id="professional" action="{% url 'survey_result_api' %}" method="post">
       <br><p id=professional-prompt>Professional Organization Affiliation (select all that apply):</p>
-      <input type="checkbox" id="asme" name="professional" value="asme">
+      <input type="checkbox" id="asme" name="professional" value="1">
       <label for="asme">American Society of Mechanical Engineers (ASME)</label><br>
-      <input type="checkbox" id="aiaa" name="professional" value="aiaa">
+      <input type="checkbox" id="aiaa" name="professional" value="2">
       <label for="aiaa">American Institute of Aeronautics and Astronautics (AIAA)</label><br>
-      <input type="checkbox" id="swe" name="professional" value="swe">
+      <input type="checkbox" id="swe" name="professional" value="3">
       <label for="swe">Society of Women Engineers (SWE)</label><br>
-      <input type="checkbox" id="nsbe" name="professional" value="nsbe">
+      <input type="checkbox" id="nsbe" name="professional" value="4">
       <label for="nsbe">National Society of Black Engineers (NSBE)</label><br>
-      <input type="checkbox" id="shpe" name="professional" value="shpe">
+      <input type="checkbox" id="shpe" name="professional" value="5">
       <label for="shpe">Society of Hispanic Professional Engineers (SHPE)</label><br>
-      <input type="checkbox" id="sae" name="professional" value="sae">
+      <input type="checkbox" id="sae" name="professional" value="6">
       <label for="sae">Society of Automotive Engineers (SAE)</label><br>
-      <input type="checkbox" id="ieee" name="professional" value="ieee">
+      <input type="checkbox" id="ieee" name="professional" value="7">
       <label for="ieee">Institute of Electrical and Electronics Engineers (IEEE)</label><br>
-      <input type="checkbox" id="aiche" name="professional" value="aiche">
+      <input type="checkbox" id="aiche" name="professional" value="8">
       <label for="aiche">American Institute of Chemical Engineers (AiCHE)</label><br>
-      <input type="checkbox" id="tbp" name="professional" value="Tau-beta-pi">
+      <input type="checkbox" id="tbp" name="professional" value="9">
       <label for="TBP">Tau Beta Pi</label><br>
-      <input type="checkbox" id="none-prof" name="professional" value="none">
+      <input type="checkbox" id="none-prof" name="professional" value="10">
       <label for="none">None</label><br>
-      <input type="checkbox" id="other-professional" name="professional" value="other">
+      <input type="checkbox" id="other-professional" name="professional" value="0">
       <label for="other-ethnicity">Other, please specify</label>
       <input type="text" id = "other-professional-textbox"><br>
     </form>
@@ -174,28 +174,28 @@
     <!enrollment status>
     <form id = "enrollment" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "enrollment-prompt">Enrollment Status:</p>
-        <input type="radio" id="part" name="enrollment" value="part-time">
+        <input type="radio" id="part" name="enrollment" value="0">
         <label for="part">part-time</label><br>
-        <input type="radio" id="full" name="enrollment" value="full-time">
+        <input type="radio" id="full" name="enrollment" value="1">
         <label for="full">full-time</label>
     </form>
 
     <!before college>
     <form id = "prior" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "prior-prompt">Where were you immediately before starting at this institution?</p>
-        <input type="radio" id="highschool" name="prior" value="high school">
+        <input type="radio" id="highschool" name="prior" value="1">
         <label for="highschool">High School</label><br>
-        <input type="radio" id="associate" name="prior" value="2-year college">
+        <input type="radio" id="associate" name="prior" value="2">
         <label for="associate">2-year college</label><br>
-        <input type="radio" id="undergraduate" name="prior" value="4-year college">
+        <input type="radio" id="undergraduate" name="prior" value="3">
         <label for="undergraduate">4-year college</label><br>
-        <input type="radio" id="military" name="prior" value="military">
+        <input type="radio" id="military" name="prior" value="4">
         <label for="military">Military</label><br>
-        <input type="radio" id="vocation" name="prior" value="vocation/technical school">
+        <input type="radio" id="vocation" name="prior" value="5">
         <label for="vocation">Vocation/Technical School</label><br>
-        <input type="radio" id="working" name="prior" value="working">
+        <input type="radio" id="working" name="prior" value="6">
         <label for="working">Working a full time job</label><br>
-        <input type="radio" id="other-prior" name="prior" value="other">
+        <input type="radio" id="other-prior" name="prior" value="0">
         <label for="other-prior">Other, please specify</label><br>
         <input type = "text" id = "other-prior-textbox">
     </form>
@@ -204,36 +204,36 @@
     <form id = "internship" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "internship-prompt">Have you previously had an internship or co-op in engineering or an
         engineering-related field?</p>
-        <input type="radio" id="no-internship" name="internship" value="no">
+        <input type="radio" id="no-internship" name="internship" value="0">
         <label for="no-internship">no</label><br>
-        <input type="radio" id="yes-internship" name="internship" value="yes">
+        <input type="radio" id="yes-internship" name="internship" value="1">
         <label for="yes-internship">yes</label>
     </form>
 
     <!research experience>
     <form id = "research" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "research-prompt">Have you done on-campus research?</p>
-        <input type="radio" id="no-research" name="research" value="no">
+        <input type="radio" id="no-research" name="research" value="0">
         <label for="no-research">no</label><br>
-        <input type="radio" id="yes-research" name="research" value="yes">
+        <input type="radio" id="yes-research" name="research" value="1">
         <label for="yes-research">yes</label>
     </form>
 
     <!parent engineer>
     <form id = "parent-engineer" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "parent-engineer-prompt">Do you have a parent/guardian who is an Engineer?</p>
-        <input type="radio" id="no-parent-engineer" name="parent-engineer" value="no">
+        <input type="radio" id="no-parent-engineer" name="parent-engineer" value="0">
         <label for="no-parent-engineer">no</label><br>
-        <input type="radio" id="yes-parent-engineer" name="parent-engineer" value="yes">
+        <input type="radio" id="yes-parent-engineer" name="parent-engineer" value="1">
         <label for="yes-parent-engineer">yes</label>
     </form>
 
     <!family engineer>
     <form id = "family-engineer" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "family-engineer-prompt">Do you have a family member who is an Engineer?</p>
-        <input type="radio" id="no-family-engineer" name="family-engineer" value="no">
+        <input type="radio" id="no-family-engineer" name="family-engineer" value="0">
         <label for="no-family-engineer">no</label><br>
-        <input type="radio" id="yes-family-engineer" name="family-engineer" value="yes">
+        <input type="radio" id="yes-family-engineer" name="family-engineer" value="1">
         <label for="yes-family-engineer">yes</label>
     </form>
 
@@ -241,9 +241,9 @@
     <form id = "previous-school-impact" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "previous-school-impact-prompt">Did a previous school program or course(s) impact your decision to
         pursue engineering?</p>
-        <input type="radio" id="no-previous-school-impact" name="previous-school-impact" value="no">
+        <input type="radio" id="no-previous-school-impact" name="previous-school-impact" value="0">
         <label for="no-previous-school-impact">no</label><br>
-        <input type="radio" id="yes-previous-school-impact" name="previous-school-impact" value="yes">
+        <input type="radio" id="yes-previous-school-impact" name="previous-school-impact" value="1">
         <label for="yes-previous-school-impact">yes</label>
         <input type="text" id = yes-previous-school-impact"><br>
     </form>
@@ -257,902 +257,902 @@
     <!how certain you would finish degree>
     <form id = "finish-degree" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "how-certain-you-would-finish-degree-prompt">When You began your engineering degree, how certain were you that you would complete it?</p>
-        <input type="radio" id="Very-Uncertain" name="finish-degree" value="Very-Uncertain">
-        <label for="Very-Uncertain">Very Uncertain</label><br>
-        <input type="radio" id="Uncertain" name="finish-degree" value="Uncertain">
-        <label for="Uncertain">Uncertain</label><br>
-        <input type="radio" id="Neutral" name="finish-degree" value="Neutral">
-        <label for="Neutral">Neutral</label><br>
-        <input type="radio" id="Certain" name="finish-degree" value="Certain">
-        <label for="Certain">Certain</label><br>
-        <input type="radio" id="Very-Certain" name="finish-degree" value="Very-Certain">
-        <label for="Very-Certain">Very-Certain</label><br>
+        <input type="radio" id="Very-Uncertain-finish" name="finish-degree" value="1">
+        <label for="Very-Uncertain-finish">Very Uncertain</label><br>
+        <input type="radio" id="Uncertain-finish" name="finish-degree" value="2">
+        <label for="Uncertain-finish">Uncertain</label><br>
+        <input type="radio" id="Neutral-finish" name="finish-degree" value="3">
+        <label for="Neutral-finish">Neutral</label><br>
+        <input type="radio" id="Certain-finish" name="finish-degree" value="4">
+        <label for="Certain-finish">Certain</label><br>
+        <input type="radio" id="Very-Certain-finish" name="finish-degree" value="5">
+        <label for="Very-Certain-finish">Very-Certain</label><br>
     </form>
 
     <!how certain you would complete engineering degree at this institution>
     <form id = "finish-degree-here" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "how-certain-you-would-complete-engineering-degree-at-this-institution-prompt">At the present time, how certain are you that you will complete an engineering degree at this institution?</p>
-        <input type="radio" id="Very-Uncertain" name="finish-degree-here" value="Very-Uncertain">
-        <label for="Very-Uncertain">Very Uncertain</label><br>
-        <input type="radio" id="Uncertain" name="finish-degree-here" value="Uncertain">
-        <label for="Uncertain">Uncertain</label><br>
-        <input type="radio" id="Neutral" name="finish-degree-here" value="Neutral">
-        <label for="Neutral">Neutral</label><br>
-        <input type="radio" id="Certain" name="finish-degree-here" value="Certain">
-        <label for="Certain">Certain</label><br>
-        <input type="radio" id="Very-Certain" name="finish-degree-here" value="Very-Certain">
-        <label for="Very-Certain">Very-Certain</label><br>
+        <input type="radio" id="Very-Uncertain-fhere" name="finish-degree-here" value="1">
+        <label for="Very-Uncertain-fhere">Very Uncertain</label><br>
+        <input type="radio" id="Uncertain-fhere" name="finish-degree-here" value="2">
+        <label for="Uncertain-fhere">Uncertain</label><br>
+        <input type="radio" id="Neutral-fhere" name="finish-degree-here" value="3">
+        <label for="Neutral-fhere">Neutral</label><br>
+        <input type="radio" id="Certain-fhere" name="finish-degree-here" value="4">
+        <label for="Certain-fhere">Certain</label><br>
+        <input type="radio" id="Very-Certain-fhere" name="finish-degree-here" value="5">
+        <label for="Very-Certain-fhere">Very-Certain</label><br>
     </form>
 
     <!Technology plays an important role in solving society's problems>
     <form id = "technology-importance" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "Technology-plays-an-important-role-in-solving-society's-problems-prompt">Technology plays an important role in solving society's problems?</p>
-        <input type="radio" id="Not-A-Reason-tech" name="technology-importance" value="Not-A-Reason-tech">
+        <input type="radio" id="Not-A-Reason-tech" name="technology-importance" value="1">
         <label for="Not-A-Reason-tech">Not a Reason</label><br>
-        <input type="radio" id="Minimal-Reason-tech" name="technology-importance" value="Minimal-Reason-tech">
+        <input type="radio" id="Minimal-Reason-tech" name="technology-importance" value="2">
         <label for="Minimal-Reason-tech">Minimal Reason</label><br>
-        <input type="radio" id="Moderate-Reason-tech" name="technology-importance" value="Moderate-Reason-tech">
+        <input type="radio" id="Moderate-Reason-tech" name="technology-importance" value="3">
         <label for="Moderate-Reason-tech">Moderate Reason</label><br>
-        <input type="radio" id="Major-Reason-tech" name="technology-importance" value="Major-Reason-tech">
+        <input type="radio" id="Major-Reason-tech" name="technology-importance" value="4">
         <label for="Major-Reason-tech">Major Reason</label><br>
-        <input type="radio" id="I-prefer-not-to-answer-tech" name="technology-importance" value="I-prefer-not-to-answer-tech">
+        <input type="radio" id="I-prefer-not-to-answer-tech" name="technology-importance" value="0">
         <label for="I-prefer-not-to-answer-tech">I prefer not to answer</label><br>
     </form>
 
     <!Parents would disapprove different major>
     <form id = "parents-disprove-difft" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "Parents-would-disapprove-different-major">My parent(s) would disapprove if I choose a major other than engineering?</p>
-        <input type="radio" id="Not-A-Reason" name="parents-disprove-difft" value="True">
-        <label for="Not-A-Reason">Not a Reason</label><br>
-        <input type="radio" id="Minimal-Reason" name="parents-disprove-difft" value="Minimal-Reason">
-        <label for="Minimal-Reason">Minimal Reason</label><br>
-        <input type="radio" id="Moderate-Reason" name="parents-disprove-difft" value="Moderate-Reason">
-        <label for="Moderate-Reason">Moderate Reason</label><br>
-        <input type="radio" id="Major-Reason" name="parents-disprove-difft" value="Major-Reason">
-        <label for="Major-Reason">Major Reason</label><br>
-        <input type="radio" id="I-prefer-not-to-answer" name="parents-disprove-difft" value="I-prefer-not-to-answer">
-        <label for="I-prefer-not-to-answer">I prefer not to answer</label><br>
+        <input type="radio" id="Not-A-Reason-parents" name="parents-disprove-difft" value="1">
+        <label for="Not-A-Reason-parents">Not a Reason</label><br>
+        <input type="radio" id="Minimal-Reason-parents" name="parents-disprove-difft" value="2">
+        <label for="Minimal-Reason-parents">Minimal Reason</label><br>
+        <input type="radio" id="Moderate-Reason-parents" name="parents-disprove-difft" value="3">
+        <label for="Moderate-Reason-parents">Moderate Reason</label><br>
+        <input type="radio" id="Major-Reason-parents" name="parents-disprove-difft" value="4">
+        <label for="Major-Reason-parents">Major Reason</label><br>
+        <input type="radio" id="I-prefer-not-to-answer-parents" name="parents-disprove-difft" value="0">
+        <label for="I-prefer-not-to-answer-parents">I prefer not to answer</label><br>
     </form>
 
     <!Engineers have contributed to fixing world problems>
     <form id = "engineer-fix-world" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "Engineers-have-contributed-to-fixing-world-problems-prompt">Engineers have contributed greatly to fixing problems in the world?</p>
-        <input type="radio" id="Not-A-Reason-fix" name="engineer-fix-world" value="True">
+        <input type="radio" id="Not-A-Reason-fix" name="engineer-fix-world" value="1">
         <label for="Not-A-Reason-fix">Not a Reason</label><br>
-        <input type="radio" id="Minimal-Reason" name="engineer-fix-world" value="Minimal-Reason">
-        <label for="Minimal-Reason">Minimal Reason</label><br>
-        <input type="radio" id="Moderate-Reason" name="engineer-fix-world" value="Moderate-Reason">
-        <label for="Moderate-Reason">Moderate Reason</label><br>
-        <input type="radio" id="Major-Reason" name="engineer-fix-world" value="Major-Reason">
-        <label for="Major-Reason">Major Reason</label><br>
-        <input type="radio" id="I-prefer-not-to-answer" name="engineer-fix-world" value="I-prefer-not-to-answer">
-        <label for="I-prefer-not-to-answer">I prefer not to answer</label><br>
+        <input type="radio" id="Minimal-Reason-fix" name="engineer-fix-world" value="2">
+        <label for="Minimal-Reason-fix">Minimal Reason</label><br>
+        <input type="radio" id="Moderate-Reason-fix" name="engineer-fix-world" value="3">
+        <label for="Moderate-Reason-fix">Moderate Reason</label><br>
+        <input type="radio" id="Major-Reason-fix" name="engineer-fix-world" value="4">
+        <label for="Major-Reason-fix">Major Reason</label><br>
+        <input type="radio" id="I-prefer-not-to-answer-fix" name="engineer-fix-world" value="0">
+        <label for="I-prefer-not-to-answer-fix">I prefer not to answer</label><br>
     </form>
 
     <!Engineers are well payed>
     <form id = "engineer_paid" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "Engineers-are-well-paid-prompt">Engineers are well paid?</p>
-        <input type="radio" id="Not-A-Reason" name="engineer_paid" value="True">
-        <label for="Not-A-Reason">Not a Reason</label><br>
-        <input type="radio" id="Minimal-Reason" name="engineer_paid" value="Minimal-Reason">
-        <label for="Minimal-Reason">Minimal Reason</label><br>
-        <input type="radio" id="Moderate-Reason" name="engineer_paid" value="Moderate-Reason">
-        <label for="Moderate-Reason">Moderate Reason</label><br>
-        <input type="radio" id="Major-Reason" name="engineer_paid" value="Major-Reason">
-        <label for="Major-Reason">Major Reason</label><br>
-        <input type="radio" id="I-prefer-not-to-answer" name="engineer_paid" value="I-prefer-not-to-answer">
-        <label for="I-prefer-not-to-answer">I prefer not to answer</label><br>
+        <input type="radio" id="Not-A-Reason-paid" name="engineer_paid" value="1">
+        <label for="Not-A-Reason-paid">Not a Reason</label><br>
+        <input type="radio" id="Minimal-Reason-paid" name="engineer_paid" value="2">
+        <label for="Minimal-Reason-paid">Minimal Reason</label><br>
+        <input type="radio" id="Moderate-Reason-paid" name="engineer_paid" value="3">
+        <label for="Moderate-Reason-paid">Moderate Reason</label><br>
+        <input type="radio" id="Major-Reason-paid" name="engineer_paid" value="4">
+        <label for="Major-Reason-paid">Major Reason</label><br>
+        <input type="radio" id="I-prefer-not-to-answer-paid" name="engineer_paid" value="0">
+        <label for="I-prefer-not-to-answer-paid">I prefer not to answer</label><br>
     </form>
 
     <!Parents want you to be engineer>
     <form id = "parents_want" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "Parents-want-you-to-be-engineer-prompt">My parent(s) want me to be an engineer?</p>
-        <input type="radio" id="Not-A-Reason" name="parents_want" value="True">
-        <label for="Not-A-Reason">Not a Reason</label><br>
-        <input type="radio" id="Minimal-Reason" name="parents_want" value="Minimal-Reason">
-        <label for="Minimal-Reason">Minimal Reason</label><br>
-        <input type="radio" id="Moderate-Reason" name="parents_want" value="Moderate-Reason">
-        <label for="Moderate-Reason">Moderate Reason</label><br>
-        <input type="radio" id="Major-Reason" name="parents_want" value="Major-Reason">
-        <label for="Major-Reason">Major Reason</label><br>
-        <input type="radio" id="I-prefer-not-to-answer" name="parents_want" value="I-prefer-not-to-answer">
-        <label for="I-prefer-not-to-answer">I prefer not to answer</label><br>
+        <input type="radio" id="Not-A-Reason-pwant" name="parents_want" value="1">
+        <label for="Not-A-Reason-pwant">Not a Reason</label><br>
+        <input type="radio" id="Minimal-Reason-pwant" name="parents_want" value="2">
+        <label for="Minimal-Reason-pwant">Minimal Reason</label><br>
+        <input type="radio" id="Moderate-Reason-pwant" name="parents_want" value="3">
+        <label for="Moderate-Reason-pwant">Moderate Reason</label><br>
+        <input type="radio" id="Major-Reason-pwant" name="parents_want" value="4">
+        <label for="Major-Reason-pwant">Major Reason</label><br>
+        <input type="radio" id="I-prefer-not-to-answer-pwant" name="parents_want" value="0">
+        <label for="I-prefer-not-to-answer-pwant">I prefer not to answer</label><br>
     </form>
 
     <!Engineering degree will guarantee job>
     <form id = "job_guarantee" action="{% url 'survey_result_api' %}" method="post">
-        <br><p id = "Engineering-degree-will-guarantee-job-prompt">An engineering degree will guarentee me a job when I graduate?</p>
-        <input type="radio" id="Not-A-Reason" name="job_guarantee" value="True">
-        <label for="Not-A-Reason">Not a Reason</label><br>
-        <input type="radio" id="Minimal-Reason" name="job_guarantee" value="Minimal-Reason">
-        <label for="Minimal-Reason">Minimal Reason</label><br>
-        <input type="radio" id="Moderate-Reason" name="job_guarantee" value="Moderate-Reason">
-        <label for="Moderate-Reason">Moderate Reason</label><br>
-        <input type="radio" id="Major-Reason" name="job_guarantee" value="Major-Reason">
-        <label for="Major-Reason">Major Reason</label><br>
-        <input type="radio" id="I-prefer-not-to-answer" name="job_guarantee" value="I-prefer-not-to-answer">
-        <label for="I-prefer-not-to-answer">I prefer not to answer</label><br>
+        <br><p id = "Engineering-degree-will-guarantee-job-prompt">An engineering degree will guarantee me a job when I graduate?</p>
+        <input type="radio" id="Not-A-Reason-job" name="job_guarantee" value="1">
+        <label for="Not-A-Reason-job">Not a Reason</label><br>
+        <input type="radio" id="Minimal-Reason-job" name="job_guarantee" value="2">
+        <label for="Minimal-Reason-job">Minimal Reason</label><br>
+        <input type="radio" id="Moderate-Reason-job" name="job_guarantee" value="3">
+        <label for="Moderate-Reason-job">Moderate Reason</label><br>
+        <input type="radio" id="Major-Reason-job" name="job_guarantee" value="4">
+        <label for="Major-Reason-job">Major Reason</label><br>
+        <input type="radio" id="I-prefer-not-to-answer-job" name="job_guarantee" value="0">
+        <label for="I-prefer-not-to-answer-job">I prefer not to answer</label><br>
     </form>
 
     <!Faculty member has encouraged me>
     <form id = "faculty_encor" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "Faculty-member-has-encouraged-me-prompt">A faculty member, academic advisor, teaching assistant or other university affiliated member has encouraged and/or inspired me to study engineering?</p>
-        <input type="radio" id="Not-A-Reason" name="faculty_encor" value="Not-A-Reason">
-        <label for="Not-A-Reason">Not a Reason</label><br>
-        <input type="radio" id="Minimal-Reason" name="faculty_encor" value="Minimal-Reason">
-        <label for="Minimal-Reason">Minimal Reason</label><br>
-        <input type="radio" id="Moderate-Reason" name="faculty_encor" value="Moderate-Reason">
-        <label for="Moderate-Reason">Moderate Reason</label><br>
-        <input type="radio" id="Major-Reason" name="faculty_encor" value="Major-Reason">
-        <label for="Major-Reason">Major Reason</label><br>
-        <input type="radio" id="I-prefer-not-to-answer" name="faculty_encor" value="I-prefer-not-to-answer">
-        <label for="I-prefer-not-to-answer">I prefer not to answer</label><br>
+        <input type="radio" id="Not-A-Reason-faculty" name="faculty_encor" value="1">
+        <label for="Not-A-Reason-faculty">Not a Reason</label><br>
+        <input type="radio" id="Minimal-Reason-faculty" name="faculty_encor" value="2">
+        <label for="Minimal-Reason-faculty">Minimal Reason</label><br>
+        <input type="radio" id="Moderate-Reason-faculty" name="faculty_encor" value="3">
+        <label for="Moderate-Reason-faculty">Moderate Reason</label><br>
+        <input type="radio" id="Major-Reason-faculty" name="faculty_encor" value="4">
+        <label for="Major-Reason-faculty">Major Reason</label><br>
+        <input type="radio" id="I-prefer-not-to-answer-faculty" name="faculty_encor" value="0">
+        <label for="I-prefer-not-to-answer-faculty">I prefer not to answer</label><br>
     </form>
 
-    <!Non-univeristy mentor has encouraged me>
+    <!Non-university mentor has encouraged me>
     <form id = "mentor_encor" action="{% url 'survey_result_api' %}" method="post">
-        <br><p id = "Non-univeristy-mentor-has-encouraged-me-prompt">A non-university affiliated mentor has encouraged and/or inspired me to study engineering?</p>
-        <input type="radio" id="Not-A-Reason" name="other_encor" value="Not-A-Reason">
-        <label for="Not-A-Reason">Not a Reason</label><br>
-        <input type="radio" id="Minimal-Reason" name="other_encor" value="Minimal-Reason">
-        <label for="Minimal-Reason">Minimal Reason</label><br>
-        <input type="radio" id="Moderate-Reason" name="other_encor" value="Moderate-Reason">
-        <label for="Moderate-Reason">Moderate Reason</label><br>
-        <input type="radio" id="Major-Reason" name="other_encor" value="Major-Reason">
-        <label for="Major-Reason">Major Reason</label><br>
-        <input type="radio" id="I-prefer-not-to-answer" name="other_encor" value="I-prefer-not-to-answer">
-        <label for="I-prefer-not-to-answer">I prefer not to answer</label><br>
+        <br><p id = "Non-university-mentor-has-encouraged-me-prompt">A non-university affiliated mentor has encouraged and/or inspired me to study engineering?</p>
+        <input type="radio" id="Not-A-Reason-mentor" name="other_encor" value="1">
+        <label for="Not-A-Reason-mentor">Not a Reason</label><br>
+        <input type="radio" id="Minimal-Reason-mentor" name="other_encor" value="2">
+        <label for="Minimal-Reason-mentor">Minimal Reason</label><br>
+        <input type="radio" id="Moderate-Reason-mentor" name="other_encor" value="3">
+        <label for="Moderate-Reason-mentor">Moderate Reason</label><br>
+        <input type="radio" id="Major-Reason-mentor" name="other_encor" value="4">
+        <label for="Major-Reason-mentor">Major Reason</label><br>
+        <input type="radio" id="I-prefer-not-to-answer-mentor" name="other_encor" value="0">
+        <label for="I-prefer-not-to-answer-mentor">I prefer not to answer</label><br>
     </form>
 
-    <!A mentor has introuduced me to opportunities>
+    <!A mentor has introduced me to opportunities>
     <form id = "intro_opportunity" action="{% url 'survey_result_api' %}" method="post">
-        <br><p id = "A-mentor-has-introuduced-me-to-opportunities-prompt">A mentor has introduced me to people and opportunities in engineering?</p>
-        <input type="radio" id="Not-A-Reason" name="intro_opportunity" value="Not-A-Reason">
-        <label for="Not-A-Reason">Not a Reason</label><br>
-        <input type="radio" id="Minimal-Reason" name="intro_opportunity" value="Minimal-Reason">
-        <label for="Minimal-Reason">Minimal Reason</label><br>
-        <input type="radio" id="Moderate-Reason" name="intro_opportunity" value="Moderate-Reason">
-        <label for="Moderate-Reason">Moderate Reason</label><br>
-        <input type="radio" id="Major-Reason" name="intro_opportunity" value="Major-Reason">
-        <label for="Major-Reason">Major Reason</label><br>
-        <input type="radio" id="I-prefer-not-to-answer" name="intro_opportunity" value="I-prefer-not-to-answer">
-        <label for="I-prefer-not-to-answer">I prefer not to answer</label><br>
+        <br><p id = "A-mentor-has-introduced-me-to-opportunities-prompt">A mentor has introduced me to people and opportunities in engineering?</p>
+        <input type="radio" id="Not-A-Reason-oppr" name="intro_opportunity" value="1">
+        <label for="Not-A-Reason-oppr">Not a Reason</label><br>
+        <input type="radio" id="Minimal-Reason-oppr" name="intro_opportunity" value="2">
+        <label for="Minimal-Reason-oppr">Minimal Reason</label><br>
+        <input type="radio" id="Moderate-Reason-oppr" name="intro_opportunity" value="3">
+        <label for="Moderate-Reason-oppr">Moderate Reason</label><br>
+        <input type="radio" id="Major-Reason-oppr" name="intro_opportunity" value="4">
+        <label for="Major-Reason-oppr">Major Reason</label><br>
+        <input type="radio" id="I-prefer-not-to-answer-oppr" name="intro_opportunity" value="0">
+        <label for="I-prefer-not-to-answer-oppr">I prefer not to answer</label><br>
     </form>
 
     <!I feel good doing engineering>
     <form id = "feel_good" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "I-feel-good-doing-engineering-prompt">I feel good when I am doing engineering?</p>
-        <input type="radio" id="Not-A-Reason" name="feel_good" value="Not-A-Reason">
-        <label for="Not-A-Reason">Not a Reason</label><br>
-        <input type="radio" id="Minimal-Reason" name="feel_good" value="Minimal-Reason">
-        <label for="Minimal-Reason">Minimal Reason</label><br>
-        <input type="radio" id="Moderate-Reason" name="feel_good" value="Moderate-Reason">
-        <label for="Moderate-Reason">Moderate Reason</label><br>
-        <input type="radio" id="Major-Reason" name="feel_good" value="Major-Reason">
-        <label for="Major-Reason">Major Reason</label><br>
-        <input type="radio" id="I-prefer-not-to-answer" name="feel_good" value="I-prefer-not-to-answer">
-        <label for="I-prefer-not-to-answer">I prefer not to answer</label><br>
+        <input type="radio" id="Not-A-Reason-good" name="feel_good" value="1">
+        <label for="Not-A-Reason-good">Not a Reason</label><br>
+        <input type="radio" id="Minimal-Reason-good" name="feel_good" value="2">
+        <label for="Minimal-Reason-good">Minimal Reason</label><br>
+        <input type="radio" id="Moderate-Reason-good" name="feel_good" value="3">
+        <label for="Moderate-Reason-good">Moderate Reason</label><br>
+        <input type="radio" id="Major-Reason-good" name="feel_good" value="4">
+        <label for="Major-Reason-good">Major Reason</label><br>
+        <input type="radio" id="I-prefer-not-to-answer-good" name="feel_good" value="0">
+        <label for="I-prefer-not-to-answer-good">I prefer not to answer</label><br>
     </form>
 
     <!I like to build stuff>
     <form id = "like-build" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "I-like-to-build-stuff-prompt">I like to build stuff?</p>
-        <input type="radio" id="Not-A-Reason" name="like-build" value="Not-A-Reason">
-        <label for="Not-A-Reason">Not a Reason</label><br>
-        <input type="radio" id="Minimal-Reason" name="like-build" value="Minimal-Reason">
-        <label for="Minimal-Reason">Minimal Reason</label><br>
-        <input type="radio" id="Moderate-Reason" name="like-build" value="Moderate-Reason">
-        <label for="Moderate-Reason">Moderate Reason</label><br>
-        <input type="radio" id="Major-Reason" name="like-build" value="Major-Reason">
-        <label for="Major-Reason">Major Reason</label><br>
-        <input type="radio" id="I-prefer-not-to-answer" name="like-build" value="I-prefer-not-to-answer">
-        <label for="I-prefer-not-to-answer">I prefer not to answer</label><br>
+        <input type="radio" id="Not-A-Reason-build" name="like-build" value="1">
+        <label for="Not-A-Reason-build">Not a Reason</label><br>
+        <input type="radio" id="Minimal-Reason-build" name="like-build" value="2">
+        <label for="Minimal-Reason-build">Minimal Reason</label><br>
+        <input type="radio" id="Moderate-Reason-build" name="like-build" value="3">
+        <label for="Moderate-Reason-build">Moderate Reason</label><br>
+        <input type="radio" id="Major-Reason-build" name="like-build" value="4">
+        <label for="Major-Reason-build">Major Reason</label><br>
+        <input type="radio" id="I-prefer-not-to-answer-build" name="like-build" value="0">
+        <label for="I-prefer-not-to-answer-build">I prefer not to answer</label><br>
     </form>
 
     <!I think engineering is fun>
     <form id = "engineer-fun" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "I-think-engineering-is-fun-prompt">I think engineering is fun?</p>
-        <input type="radio" id="Not-A-Reason" name="engineer-fun" value="Not-A-Reason">
-        <label for="Not-A-Reason">Not a Reason</label><br>
+        <input type="radio" id="Not-A-Reason-fun" name="engineer-fun" value="1">
+        <label for="Not-A-Reason-fun">Not a Reason</label><br>
 
-        <input type="radio" id="Minimal-Reason" name="engineer-fun" value="Minimal-Reason">
-        <label for="Minimal-Reason">Minimal Reason</label><br>
+        <input type="radio" id="Minimal-Reason-fun" name="engineer-fun" value="2">
+        <label for="Minimal-Reason-fun">Minimal Reason</label><br>
 
-        <input type="radio" id="Moderate-Reason" name="engineer-fun" value="Moderate-Reason">
-        <label for="Moderate-Reason">Moderate Reason</label><br>
+        <input type="radio" id="Moderate-Reason-fun" name="engineer-fun" value="3">
+        <label for="Moderate-Reason-fun">Moderate Reason</label><br>
 
-        <input type="radio" id="Major-Reason" name="engineer-fun" value="Major-Reason">
-        <label for="Major-Reason">Major Reason</label><br>
+        <input type="radio" id="Major-Reason-fun" name="engineer-fun" value="4">
+        <label for="Major-Reason-fun">Major Reason</label><br>
 
-        <input type="radio" id="I-prefer-not-to-answer" name="engineer-fun" value="I-prefer-not-to-answer">
-        <label for="I-prefer-not-to-answer">I prefer not to answer</label><br>
+        <input type="radio" id="I-prefer-not-to-answer-fun" name="engineer-fun" value="0">
+        <label for="I-prefer-not-to-answer-fun">I prefer not to answer</label><br>
     </form>
 
     <!Engineering skills can be used for society>
     <form id = "use-society" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "Engineering-skills-can-be-used-for-society-prompt">Engineering skills can be used for the good of society?</p>
-        <input type="radio" id="Not-A-Reason" name="use-society" value="Not-A-Reason">
-        <label for="Not-A-Reason">Not a Reason</label><br>
-        <input type="radio" id="Minimal-Reason" name="use-society" value="Minimal-Reason">
-        <label for="Minimal-Reason">Minimal Reason</label><br>
-        <input type="radio" id="Moderate-Reason" name="use-society" value="Moderate-Reason">
-        <label for="Moderate-Reason">Moderate Reason</label><br>
-        <input type="radio" id="Major-Reason" name="use-society" value="Major-Reason">
-        <label for="Major-Reason">Major Reason</label><br>
-        <input type="radio" id="I-prefer-not-to-answer" name="use-society" value="I-prefer-not-to-answer">
-        <label for="I-prefer-not-to-answer">I prefer not to answer</label><br>
+        <input type="radio" id="Not-A-Reason-society" name="use-society" value="1">
+        <label for="Not-A-Reason-society">Not a Reason</label><br>
+        <input type="radio" id="Minimal-Reason-society" name="use-society" value="2">
+        <label for="Minimal-Reason-society">Minimal Reason</label><br>
+        <input type="radio" id="Moderate-Reason-society" name="use-society" value="3">
+        <label for="Moderate-Reason-society">Moderate Reason</label><br>
+        <input type="radio" id="Major-Reason-society" name="use-society" value="4">
+        <label for="Major-Reason-society">Major Reason</label><br>
+        <input type="radio" id="I-prefer-not-to-answer-society" name="use-society" value="0">
+        <label for="I-prefer-not-to-answer-society">I prefer not to answer</label><br>
     </form>
 
     <!I think engineering is interesting>
     <form id = "engineer-interesting" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "I-think-engineering-is-interesting-prompt">I think Engineering is interesting?</p>
-        <input type="radio" id="Not-A-Reason" name="engineer-interesting" value="Not-A-Reason">
-        <label for="Not-A-Reason">Not a Reason</label><br>
-        <input type="radio" id="Minimal-Reason" name="engineer-interesting" value="Minimal-Reason">
-        <label for="Minimal-Reason">Minimal Reason</label><br>
-        <input type="radio" id="Moderate-Reason" name="engineer-interesting" value="Moderate-Reason">
-        <label for="Moderate-Reason">Moderate Reason</label><br>
-        <input type="radio" id="Major-Reason" name="engineer-interesting" value="Major-Reason">
-        <label for="Major-Reason">Major Reason</label><br>
-        <input type="radio" id="I-prefer-not-to-answer" name="engineer-interesting" value="I-prefer-not-to-answer">
-        <label for="I-prefer-not-to-answer">I prefer not to answer</label><br>
+        <input type="radio" id="Not-A-Reason-inter" name="engineer-interesting" value="1">
+        <label for="Not-A-Reason-inter">Not a Reason</label><br>
+        <input type="radio" id="Minimal-Reason-inter" name="engineer-interesting" value="2">
+        <label for="Minimal-Reason-inter">Minimal Reason</label><br>
+        <input type="radio" id="Moderate-Reason-inter" name="engineer-interesting" value="3">
+        <label for="Moderate-Reason-inter">Moderate Reason</label><br>
+        <input type="radio" id="Major-Reason-inter" name="engineer-interesting" value="4">
+        <label for="Major-Reason-inter">Major Reason</label><br>
+        <input type="radio" id="I-prefer-not-to-answer-inter" name="engineer-interesting" value="0">
+        <label for="I-prefer-not-to-answer-inter">I prefer not to answer</label><br>
     </form>
 
     <!I like to figure out how things work>
     <form id = "figure-out-work" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "I-like-to-figure-out-how-things-work-prompt">I like to figure out how things work?</p>
-        <input type="radio" id="Not-A-Reason" name="figure-out-work" value="Not-A-Reason">
-        <label for="Not-A-Reason">Not a Reason</label><br>
-        <input type="radio" id="Minimal-Reason" name="figure-out-work" value="Minimal-Reason">
-        <label for="Minimal-Reason">Minimal Reason</label><br>
-        <input type="radio" id="Moderate-Reason" name="figure-out-work" value="Moderate-Reason">
-        <label for="Moderate-Reason">Moderate Reason</label><br>
-        <input type="radio" id="Major-Reason" name="figure-out-work" value="Major-Reason">
-        <label for="Major-Reason">Major Reason</label><br>
-        <input type="radio" id="I-prefer-not-to-answer" name="figure-out-work" value="I-prefer-not-to-answer">
-        <label for="I-prefer-not-to-answer">I prefer not to answer</label><br>
+        <input type="radio" id="Not-A-Reason-work" name="figure-out-work" value="1">
+        <label for="Not-A-Reason-work">Not a Reason</label><br>
+        <input type="radio" id="Minimal-Reason-work" name="figure-out-work" value="2">
+        <label for="Minimal-Reason-work">Minimal Reason</label><br>
+        <input type="radio" id="Moderate-Reason-work" name="figure-out-work" value="3">
+        <label for="Moderate-Reason-work">Moderate Reason</label><br>
+        <input type="radio" id="Major-Reason-work" name="figure-out-work" value="4">
+        <label for="Major-Reason-work">Major Reason</label><br>
+        <input type="radio" id="I-prefer-not-to-answer-work" name="figure-out-work" value="0">
+        <label for="I-prefer-not-to-answer-work">I prefer not to answer</label><br>
     </form>
 
     <!Mentoring program>
     <form id = "mentoring-program" action="{% url 'survey_result_api' %}" method="post">
         <br><p id = "Mentoring-program-prompt">Mentoring programs (Meyerhoff or CWIT) have encouraged and/or inspired me to study?</p>
-        <input type="radio" id="Not-A-Reason" name="mentoring-program" value="Not-A-Reason">
-        <label for="Not-A-Reason">Not a Reason</label><br>
-        <input type="radio" id="Minimal-Reason" name="mentoring-program" value="Minimal-Reason">
-        <label for="Minimal-Reason">Minimal Reason</label><br>
-        <input type="radio" id="Moderate-Reason" name="mentoring-program" value="Moderate-Reason">
-        <label for="Moderate-Reason">Moderate Reason</label><br>
-        <input type="radio" id="Major-Reason" name="mentoring-program" value="Major-Reason">
-        <label for="Major-Reason">Major Reason</label><br>
-        <input type="radio" id="I-prefer-not-to-answer" name="mentoring-program" value="I-prefer-not-to-answer">
-        <label for="I-prefer-not-to-answer">I prefer not to answer</label><br>
+        <input type="radio" id="Not-A-Reason-mp" name="mentoring-program" value="1">
+        <label for="Not-A-Reason-mp">Not a Reason</label><br>
+        <input type="radio" id="Minimal-Reason-mp" name="mentoring-program" value="2">
+        <label for="Minimal-Reason-mp">Minimal Reason</label><br>
+        <input type="radio" id="Moderate-Reason-mp" name="mentoring-program" value="3">
+        <label for="Moderate-Reason-mp">Moderate Reason</label><br>
+        <input type="radio" id="Major-Reason-mp" name="mentoring-program" value="4">
+        <label for="Major-Reason-mp">Major Reason</label><br>
+        <input type="radio" id="I-prefer-not-to-answer-mp" name="mentoring-program" value="0">
+        <label for="I-prefer-not-to-answer-mp">I prefer not to answer</label><br>
     </form>
 
   <!Relate to people around me>
-  <form id = "Relate to people around me">
+  <form id = "Relate" action="{% url 'survey_result_api' %}" method="post">
       <br><p id = "Relate to people around me-prompt">I can relate to the people around me in my classes</p>
-      <input type="radio" id="Strongly Disagree" name="Relate to people around me" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="Relate to people around me" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Slightly Disagree" name="Relate to people around me" value="Slightly Disagree">
-      <label for="Slightly Disagree">Slightly Disagree</label><br>
-      <input type="radio" id="Neither Disagree nor Agree" name="Relate to people around me" value="Neither Disagree nor Agree">
-      <label for="Neither Disagree nor Agree">Neither Disagree nor Agree</label><br>
-      <input type="radio" id="Slightly Agree" name="Relate to people around me" value="Slightly Agree">
-      <label for="Slightly Agree">Slightly Agree</label><br>
-      <input type="radio" id="Agree" name="Relate to people around me" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="Relate to people around me" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
-      <input type="radio" id="Don't Know" name="Relate to people around me" value="Don't Know">
-      <label for="Don't Know">Don't Know</label><br>
+      <input type="radio" id="Strongly-Disagree-relate" name="Relate" value="1">
+      <label for="Strongly-Disagree-relate">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-relate" name="Relate" value="2">
+      <label for="Disagree-relate">Disagree</label><br>
+      <input type="radio" id="Slightly-Disagree-relate" name="Relate" value="3">
+      <label for="Slightly-Disagree-relate">Slightly Disagree</label><br>
+      <input type="radio" id="Neither-Disagree-relate" name="Relate" value="4">
+      <label for="Neither-Disagree-relate">Neither Disagree nor Agree</label><br>
+      <input type="radio" id="Slightly-Agree-relate" name="Relate" value="5">
+      <label for="Slightly-Agree-relate">Slightly Agree</label><br>
+      <input type="radio" id="Agree-relate" name="Relate" value="6">
+      <label for="Agree-relate">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-relate" name="Relate" value="7">
+      <label for="Strongly-Agree-relate">Strongly Agree</label><br>
+      <input type="radio" id="dk-relate" name="Relate" value="0">
+      <label for="dk-relate">Don't Know</label><br>
   </form>
 
   <!Lot in common with other students in class>
-  <form id = "Lot in common with other students in class">
-      <br><p id = "Lot in common with other students in class-prompt">I have a lot in common with other students in my classes</p>
-      <input type="radio" id="Strongly Disagree" name="Lot in common with other students in class" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="Lot in common with other students in class" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Slightly Disagree" name="Lot in common with other students in class" value="Slightly Disagree">
-      <label for="Slightly Disagree">Slightly Disagree</label><br>
-      <input type="radio" id="Neither Disagree nor Agree" name="Lot in common with other students in class" value="Neither Disagree nor Agree">
-      <label for="Neither Disagree nor Agree">Neither Disagree nor Agree</label><br>
-      <input type="radio" id="Slightly Agree" name="Lot in common with other students in class" value="Slightly Agree">
-      <label for="Slightly Agree">Slightly Agree</label><br>
-      <input type="radio" id="Agree" name="Lot in common with other students in class" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="Lot in common with other students in class" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
-      <input type="radio" id="Don't Know" name="Lot in common with other students in class" value="Don't Know">
-      <label for="Don't Know">Don't Know</label><br>
+  <form id = "lot-common" action="{% url 'survey_result_api' %}" method="post">
+      <br><p id = "lot-common-prompt">I have a lot in common with other students in my classes</p>
+      <input type="radio" id="Strongly-Disagree-lot" name="lot-common" value="1">
+      <label for="Strongly-Disagree-lot">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-lot" name="lot-common" value="2">
+      <label for="Disagree-lot">Disagree</label><br>
+      <input type="radio" id="Slightly-Disagree-lot" name="lot-common" value="3">
+      <label for="Slightly-Disagree-lot">Slightly Disagree</label><br>
+      <input type="radio" id="Neither-Disagree-lot" name="lot-common" value="4">
+      <label for="Neither-Disagree-lot">Neither Disagree nor Agree</label><br>
+      <input type="radio" id="Slightly-Agree-lot" name="lot-common" value="5">
+      <label for="Slightly-Agree-lot">Slightly Agree</label><br>
+      <input type="radio" id="Agree-lot" name="lot-common" value="6">
+      <label for="Agree-lot">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-lot" name="lot-common" value="7">
+      <label for="Strongly-Agree-lot">Strongly Agree</label><br>
+      <input type="radio" id="dk-lot" name="lot-common" value="0">
+      <label for="dk-lot">Don't Know</label><br>
   </form>
 
   <!The other students in my classes share my personal interests>
-  <form id = "The other students in my classes share my personal interests">
+  <form id = "others-share" action="{% url 'survey_result_api' %}" method="post">
       <br><p id = "The other students in my classes share my personal interests-prompt">The other students in my classes share my personal interests</p>
-      <input type="radio" id="Strongly Disagree" name="The other students in my classes share my personal interests" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="Lot in common with other students in class" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Slightly Disagree" name="The other students in my classes share my personal interests" value="Slightly Disagree">
-      <label for="Slightly Disagree">Slightly Disagree</label><br>
-      <input type="radio" id="Neither Disagree nor Agree" name="The other students in my classes share my personal interests" value="Neither Disagree nor Agree">
-      <label for="Neither Disagree nor Agree">Neither Disagree nor Agree</label><br>
-      <input type="radio" id="Slightly Agree" name="The other students in my classes share my personal interests" value="Slightly Agree">
-      <label for="Slightly Agree">Slightly Agree</label><br>
-      <input type="radio" id="Agree" name="The other students in my classes share my personal interests" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="The other students in my classes share my personal interests" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
-      <input type="radio" id="Don't Know" name="The other students in my classes share my personal interests" value="Don't Know">
-      <label for="Don't Know">Don't Know</label><br>
+      <input type="radio" id="Strongly-Disagree-share" name="others-share" value="1">
+      <label for="Strongly-Disagree-share">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-share" name="others-share" value="2">
+      <label for="Disagree-share">Disagree</label><br>
+      <input type="radio" id="Slightly-Disagree-share" name="others-share" value="3">
+      <label for="Slightly-Disagree-share">Slightly Disagree</label><br>
+      <input type="radio" id="Neither-Disagree-share" name="others-share" value="4">
+      <label for="Neither-Disagree-share">Neither Disagree nor Agree</label><br>
+      <input type="radio" id="Slightly-Agree-share" name="others-share" value="5">
+      <label for="Slightly-Agree-share">Slightly Agree</label><br>
+      <input type="radio" id="Agree-share" name="others-share" value="6">
+      <label for="Agree-share">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-share" name="others-share" value="7">
+      <label for="Strongly-Agree-share">Strongly Agree</label><br>
+      <input type="radio" id="dk-share" name="others-share" value="0">
+      <label for="dk-share">Don't Know</label><br>
   </form>
 
   <!I can relate to the people around me in my extracurricular activities>
-  <form id = "I can relate to the people around me in my extracurricular activities">
+  <form id = "relate-extra" action="{% url 'survey_result_api' %}" method="post">
       <br><p id = "I can relate to the people around me in my extracurricular activities-prompt">I can relate to the people around me in my extracurricular activities</p>
-      <input type="radio" id="Strongly Disagree" name="I can relate to the people around me in my extracurricular activities" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="I can relate to the people around me in my extracurricular activities" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Slightly Disagree" name="I can relate to the people around me in my extracurricular activities" value="Slightly Disagree">
-      <label for="Slightly Disagree">Slightly Disagree</label><br>
-      <input type="radio" id="Neither Disagree nor Agree" name="I can relate to the people around me in my extracurricular activities" value="Neither Disagree nor Agree">
-      <label for="Neither Disagree nor Agree">Neither Disagree nor Agree</label><br>
-      <input type="radio" id="Slightly Agree" name="I can relate to the people around me in my extracurricular activities" value="Slightly Agree">
-      <label for="Slightly Agree">Slightly Agree</label><br>
-      <input type="radio" id="Agree" name="I can relate to the people around me in my extracurricular activities" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="I can relate to the people around me in my extracurricular activities" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
-      <input type="radio" id="Don't Know" name="I can relate to the people around me in my extracurricular activities" value="Don't Know">
-      <label for="Don't Know">Don't Know</label><br>
+      <input type="radio" id="Strongly-Disagree-extra" name="relate-extra" value="1">
+      <label for="Strongly-Disagree-extra">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-extra" name="relate-extra" value="2">
+      <label for="Disagree-extra">Disagree</label><br>
+      <input type="radio" id="Slightly-Disagree-extra" name="relate-extra" value="3">
+      <label for="Slightly-Disagree-extra">Slightly Disagree</label><br>
+      <input type="radio" id="Neither-Disagree-extra" name="relate-extra" value="4">
+      <label for="Neither-Disagree-extra">Neither Disagree nor Agree</label><br>
+      <input type="radio" id="Slightly-Agree-extra" name="relate-extra" value="5">
+      <label for="Slightly-Agree-extra">Slightly Agree</label><br>
+      <input type="radio" id="Agree-extra" name="relate-extra" value="6">
+      <label for="Agree-extra">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-extra" name="relate-extra" value="7">
+      <label for="Strongly-Agree-extra">Strongly Agree</label><br>
+      <input type="radio" id="dk-extra" name="relate-extra" value="0">
+      <label for="dk-extra">Don't Know</label><br>
   </form>
 
   <!Can succeed in an engineering career>
-  <form id = "Can succeed in an engineering career">
+  <form id = "succeed" action="{% url 'survey_result_api' %}" method="post">
       <br><p id = "Can succeed in an engineering career-prompt">Someone like me can succeed in an engineering career</p>
-      <input type="radio" id="Strongly Disagree" name="Can succeed in an engineering career" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="Can succeed in an engineering career" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Slightly Disagree" name="Can succeed in an engineering career" value="Slightly Disagree">
-      <label for="Slightly Disagree">Slightly Disagree</label><br>
-      <input type="radio" id="Neither Disagree nor Agree" name="Can succeed in an engineering career" value="Neither Disagree nor Agree">
-      <label for="Neither Disagree nor Agree">Neither Disagree nor Agree</label><br>
-      <input type="radio" id="Slightly Agree" name="Can succeed in an engineering career" value="Slightly Agree">
-      <label for="Slightly Agree">Slightly Agree</label><br>
-      <input type="radio" id="Agree" name="Can succeed in an engineering career" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="Can succeed in an engineering career" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
-      <input type="radio" id="Don't Know" name="Can succeed in an engineering career" value="Don't Know">
-      <label for="Don't Know">Don't Know</label><br>
+      <input type="radio" id="Strongly-Disagree-succeed" name="succeed" value="1">
+      <label for="Strongly-Disagree-succeed">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-succeed" name="succeed" value="2">
+      <label for="Disagree-succeed">Disagree</label><br>
+      <input type="radio" id="Slightly-Disagree-succeed" name="succeed" value="3">
+      <label for="Slightly-Disagree-succeed">Slightly Disagree</label><br>
+      <input type="radio" id="Neither-Disagree-succeed" name="succeed" value="4">
+      <label for="Neither-Disagree-succeed">Neither Disagree nor Agree</label><br>
+      <input type="radio" id="Slightly-Agree-succeed" name="succeed" value="5">
+      <label for="Slightly-Agree-succeed">Slightly Agree</label><br>
+      <input type="radio" id="Agree-succeed" name="succeed" value="6">
+      <label for="Agree-succeed">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-succeed" name="succeed" value="7">
+      <label for="Strongly-Agree-succeed">Strongly Agree</label><br>
+      <input type="radio" id="dk-succeed" name="succeed" value="0">
+      <label for="dk-succeed">Don't Know</label><br>
   </form>
 
   <!A degree will allow me to obtain a well paying job>
-  <form id = "A degree will allow me to obtain a well paying job">
+  <form id = "well-paying" action="{% url 'survey_result_api' %}" method="post">
       <br><p id = "A degree will allow me to obtain a well paying job-prompt">A degree will allow me to obtain a well paying job</p>
-      <input type="radio" id="Strongly Disagree" name="A degree will allow me to obtain a well paying job" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="A degree will allow me to obtain a well paying job" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Slightly Disagree" name="A degree will allow me to obtain a well paying job" value="Slightly Disagree">
-      <label for="Slightly Disagree">Slightly Disagree</label><br>
-      <input type="radio" id="Neither Disagree nor Agree" name="A degree will allow me to obtain a well paying job" value="Neither Disagree nor Agree">
-      <label for="Neither Disagree nor Agree">Neither Disagree nor Agree</label><br>
-      <input type="radio" id="Slightly Agree" name="A degree will allow me to obtain a well paying job" value="Slightly Agree">
-      <label for="Slightly Agree">Slightly Agree</label><br>
-      <input type="radio" id="Agree" name="A degree will allow me to obtain a well paying job" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="A degree will allow me to obtain a well paying job" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
-      <input type="radio" id="Don't Know" name="A degree will allow me to obtain a well paying job" value="Don't Know">
-      <label for="Don't Know">Don't Know</label><br>
+      <input type="radio" id="Strongly-Disagree-money" name="well-paying" value="1">
+      <label for="Strongly-Disagree-money">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-money" name="well-paying" value="2">
+      <label for="Disagree-money">Disagree</label><br>
+      <input type="radio" id="Slightly-Disagree-money" name="well-paying" value="3">
+      <label for="Slightly-Disagree-money">Slightly Disagree</label><br>
+      <input type="radio" id="Neither-Disagree-money" name="well-paying" value="4">
+      <label for="Neither-Disagree-money">Neither Disagree nor Agree</label><br>
+      <input type="radio" id="Slightly-Agree-money" name="well-paying" value="5">
+      <label for="Slightly-Agree-money">Slightly Agree</label><br>
+      <input type="radio" id="Agree-money" name="well-paying" value="6">
+      <label for="Agree-money">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-money" name="well-paying" value="7">
+      <label for="Strongly-Agree-money">Strongly Agree</label><br>
+      <input type="radio" id="dk-money" name="well-paying" value="0">
+      <label for="dk-money">Don't Know</label><br>
   </form>
 
-  <!I expect to be treated fairly on the job. That is, I expect to be given the same opportunitues for pay raises and promotions as my fellow worker if I enter Engineering>
-  <form id = "I expect to be treated fairly on the job. That is, I expect to be given the same opportunitues for pay raises and promotions as my fellow worker if I enter Engineering">
-      <br><p id = "I expect to be treated fairly on the job. That is, I expect to be given the same opportunitues for pay raises and promotions as my fellow worker if I enter Engineering-prompt">I expect to be treated fairly on the job. That is, I expect to be given the same opportunitues for pay raises and promotions as my fellow worker if I enter Engineering</p>
-      <input type="radio" id="Strongly Disagree" name="I expect to be treated fairly on the job. That is, I expect to be given the same opportunitues for pay raises and promotions as my fellow worker if I enter Engineering" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="I expect to be treated fairly on the job. That is, I expect to be given the same opportunitues for pay raises and promotions as my fellow worker if I enter Engineering" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Slightly Disagree" name="I expect to be treated fairly on the job. That is, I expect to be given the same opportunitues for pay raises and promotions as my fellow worker if I enter Engineering" value="Slightly Disagree">
-      <label for="Slightly Disagree">Slightly Disagree</label><br>
-      <input type="radio" id="Neither Disagree nor Agree" name="I expect to be treated fairly on the job. That is, I expect to be given the same opportunitues for pay raises and promotions as my fellow worker if I enter Engineering" value="Neither Disagree nor Agree">
-      <label for="Neither Disagree nor Agree">Neither Disagree nor Agree</label><br>
-      <input type="radio" id="Slightly Agree" name="I expect to be treated fairly on the job. That is, I expect to be given the same opportunitues for pay raises and promotions as my fellow worker if I enter Engineering" value="Slightly Agree">
-      <label for="Slightly Agree">Slightly Agree</label><br>
-      <input type="radio" id="Agree" name="I expect to be treated fairly on the job. That is, I expect to be given the same opportunitues for pay raises and promotions as my fellow worker if I enter Engineering" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="I expect to be treated fairly on the job. That is, I expect to be given the same opportunitues for pay raises and promotions as my fellow worker if I enter Engineering" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
-      <input type="radio" id="Don't Know" name="I expect to be treated fairly on the job. That is, I expect to be given the same opportunitues for pay raises and promotions as my fellow worker if I enter Engineering" value="Don't Know">
-      <label for="Don't Know">Don't Know</label><br>
+  <!I expect to be treated fairly on the job. That is, I expect to be given the same opportunities for pay raises and promotions as my fellow worker if I enter Engineering>
+  <form id = "expect" action="{% url 'survey_result_api' %}" method="post">
+      <br><p id = "I expect to be treated fairly on the job. That is, I expect to be given the same opportunities for pay raises and promotions as my fellow worker if I enter Engineering-prompt">I expect to be treated fairly on the job. That is, I expect to be given the same opportunitues for pay raises and promotions as my fellow worker if I enter Engineering</p>
+      <input type="radio" id="Strongly-Disagree-expect" name="expect" value="1">
+      <label for="Strongly-Disagree-expect">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-expect" name="expect" value="2">
+      <label for="Disagree-expect">Disagree</label><br>
+      <input type="radio" id="Slightly-Disagree-expect" name="expect" value="3">
+      <label for="Slightly-Disagree-expect">Slightly Disagree</label><br>
+      <input type="radio" id="Neither-Disagree-expect" name="expect" value="4">
+      <label for="Neither-Disagree-expect">Neither Disagree nor Agree</label><br>
+      <input type="radio" id="Slightly-Agree-expect" name="expect" value="5">
+      <label for="Slightly-Agree-expect">Slightly Agree</label><br>
+      <input type="radio" id="Agree-expect" name="expect" value="6">
+      <label for="Agree-expect">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-expect" name="expect" value="7">
+      <label for="Strongly-Agree-expect">Strongly Agree</label><br>
+      <input type="radio" id="dk-expect" name="expect" value="0">
+      <label for="dk-expect">Don't Know</label><br>
   </form>
 
   <!A degree in engineering will give me the kind of lifestyle I want>
-  <form id = "A degree in engineering will give me the kind of lifestyle I want">
+  <form id = "lifestyle" action="{% url 'survey_result_api' %}" method="post">
       <br><p id = "A degree in engineering will give me the kind of lifestyle I want-prompt">A degree in engineering will give me the kind of lifestyle I want</p>
-      <input type="radio" id="Strongly Disagree" name="A degree in engineering will give me the kind of lifestyle I want" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="A degree in engineering will give me the kind of lifestyle I want" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Slightly Disagree" name="A degree in engineering will give me the kind of lifestyle I want" value="Slightly Disagree">
-      <label for="Slightly Disagree">Slightly Disagree</label><br>
-      <input type="radio" id="Neither Disagree nor Agree" name="A degree in engineering will give me the kind of lifestyle I want" value="Neither Disagree nor Agree">
-      <label for="Neither Disagree nor Agree">Neither Disagree nor Agree</label><br>
-      <input type="radio" id="Slightly Agree" name="A degree in engineering will give me the kind of lifestyle I want" value="Slightly Agree">
-      <label for="Slightly Agree">Slightly Agree</label><br>
-      <input type="radio" id="Agree" name="A degree in engineering will give me the kind of lifestyle I want" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="A degree in engineering will give me the kind of lifestyle I want" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
-      <input type="radio" id="Don't Know" name="A degree in engineering will give me the kind of lifestyle I want" value="Don't Know">
-      <label for="Don't Know">Don't Know</label><br>
+      <input type="radio" id="Strongly-Disagree-lifestyle" name="lifestyle" value="1">
+      <label for="Strongly-Disagree-lifestyle">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-lifestyle" name="lifestyle" value="2">
+      <label for="Disagree-lifestyle">Disagree</label><br>
+      <input type="radio" id="Slightly-Disagree-lifestyle" name="lifestyle" value="3">
+      <label for="Slightly-Disagree-lifestyle">Slightly Disagree</label><br>
+      <input type="radio" id="Neither-Disagree-lifestyle" name="lifestyle" value="4">
+      <label for="Neither-Disagree-lifestyle">Neither Disagree nor Agree</label><br>
+      <input type="radio" id="Slightly-Agree-lifestyle" name="lifestyle" value="5">
+      <label for="Slightly-Agree-lifestyle">Slightly Agree</label><br>
+      <input type="radio" id="Agree-lifestyle" name="lifestyle" value="6">
+      <label for="Agree-lifestyle">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-lifestyle" name="lifestyle" value="7">
+      <label for="Strongly-Agree-lifestyle">Strongly Agree</label><br>
+      <input type="radio" id="dk-lifestyle" name="lifestyle" value="0">
+      <label for="dk-lifestyle">Don't Know</label><br>
   </form>
 
   <!I expect to feel "part of the group" on my job if I enter Engineering>
-  <form id = "I expect to feel 'part of the group' on my job if I enter Engineering">
+  <form id = "part-group" action="{% url 'survey_result_api' %}" method="post">
       <br><p id = "I expect to feel 'part of the group' on my job if I enter Engineering-prompt">I expect to feel "part of the group" on my job if I enter engineering</p>
-      <input type="radio" id="Strongly Disagree" name="I expect to feel 'part of the group' on my job if I enter Engineering" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="I expect to feel 'part of the group' on my job if I enter Engineering" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Slightly Disagree" name="I expect to feel 'part of the group' on my job if I enter Engineering" value="Slightly Disagree">
-      <label for="Slightly Disagree">Slightly Disagree</label><br>
-      <input type="radio" id="Neither Disagree nor Agree" name="I expect to feel 'part of the group' on my job if I enter Engineering" value="Neither Disagree nor Agree">
-      <label for="Neither Disagree nor Agree">Neither Disagree nor Agree</label><br>
-      <input type="radio" id="Slightly Agree" name="I expect to feel 'part of the group' on my job if I enter Engineering" value="Slightly Agree">
-      <label for="Slightly Agree">Slightly Agree</label><br>
-      <input type="radio" id="Agree" name="I expect to feel 'part of the group' on my job if I enter Engineering" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="I expect to feel 'part of the group' on my job if I enter Engineering" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
-      <input type="radio" id="Don't Know" name="I expect to feel 'part of the group' on my job if I enter Engineering" value="Don't Know">
-      <label for="Don't Know">Don't Know</label><br>
+      <input type="radio" id="Strongly-Disagree-part" name="" value="1">
+      <label for="Strongly-Disagree-part">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-part" name="" value="2">
+      <label for="Disagree-part">Disagree</label><br>
+      <input type="radio" id="Slightly-Disagree-part" name="" value="3">
+      <label for="Slightly-Disagree-part">Slightly Disagree</label><br>
+      <input type="radio" id="Neither-Disagree-part" name="" value="4">
+      <label for="Neither-Disagree-part">Neither Disagree nor Agree</label><br>
+      <input type="radio" id="Slightly-Agree-part" name="" value="5">
+      <label for="Slightly-Agree-part">Slightly Agree</label><br>
+      <input type="radio" id="Agree-part" name="" value="6">
+      <label for="Agree-part">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-part" name="" value="7">
+      <label for="Strongly-Agree-part">Strongly Agree</label><br>
+      <input type="radio" id="dk-part" name="" value="0">
+      <label for="dk-part">Don't Know</label><br>
   </form>
 
   <!A degree in engineering will allow me to get a job where I can use my talents and creativity>
   <form id = "A degree in engineering will allow me to get a job where I can use my talents and creativity">
       <br><p id = "A degree in engineering will allow me to get a job where I can use my talents and creativity-prompt">A degree in engineering will allow me to get a job where I can use my talents and creativity</p>
-      <input type="radio" id="Strongly Disagree" name="A degree in engineering will allow me to get a job where I can use my talents and creativity" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="A degree in engineering will allow me to get a job where I can use my talents and creativity" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Slightly Disagree" name="A degree in engineering will allow me to get a job where I can use my talents and creativity" value="Slightly Disagree">
-      <label for="Slightly Disagree">Slightly Disagree</label><br>
-      <input type="radio" id="Neither Disagree nor Agree" name="A degree in engineering will allow me to get a job where I can use my talents and creativity" value="Neither Disagree nor Agree">
-      <label for="Neither Disagree nor Agree">Neither Disagree nor Agree</label><br>
-      <input type="radio" id="Slightly Agree" name="A degree in engineering will allow me to get a job where I can use my talents and creativity" value="Slightly Agree">
-      <label for="Slightly Agree">Slightly Agree</label><br>
-      <input type="radio" id="Agree" name="A degree in engineering will allow me to get a job where I can use my talents and creativity" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="A degree in engineering will allow me to get a job where I can use my talents and creativity" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
-      <input type="radio" id="Don't Know" name="A degree in engineering will allow me to get a job where I can use my talents and creativity" value="Don't Know">
-      <label for="Don't Know">Don't Know</label><br>
+      <input type="radio" id="Strongly-Disagree-part" name="" value="1">
+      <label for="Strongly-Disagree-part">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-part" name="" value="2">
+      <label for="Disagree-part">Disagree</label><br>
+      <input type="radio" id="Slightly-Disagree-part" name="" value="3">
+      <label for="Slightly-Disagree-part">Slightly Disagree</label><br>
+      <input type="radio" id="Neither-Disagree-part" name="" value="4">
+      <label for="Neither-Disagree-part">Neither Disagree nor Agree</label><br>
+      <input type="radio" id="Slightly-Agree-part" name="" value="5">
+      <label for="Slightly-Agree-part">Slightly Agree</label><br>
+      <input type="radio" id="Agree-part" name="" value="6">
+      <label for="Agree-part">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-part" name="" value="7">
+      <label for="Strongly-Agree-part">Strongly Agree</label><br>
+      <input type="radio" id="dk-part" name="" value="0">
+      <label for="dk-part">Don't Know</label><br>
   </form>
 
   <!A degree in engineering will allow me to obtain a job that I like>
   <form id = "A degree in engineering will allow me to obtain a job that I like">
       <br><p id = "A degree in engineering will allow me to obtain a job that I like-prompt">A degree in engineering will allow me to obtain a job that I like</p>
-      <input type="radio" id="Strongly Disagree" name="A degree in engineering will allow me to obtain a job that I like" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="A degree in engineering will allow me to obtain a job that I like" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Slightly Disagree" name="A degree in engineering will allow me to obtain a job that I like" value="Slightly Disagree">
-      <label for="Slightly Disagree">Slightly Disagree</label><br>
-      <input type="radio" id="Neither Disagree nor Agree" name="A degree in engineering will allow me to obtain a job that I like" value="Neither Disagree nor Agree">
-      <label for="Neither Disagree nor Agree">Neither Disagree nor Agree</label><br>
-      <input type="radio" id="Slightly Agree" name="A degree in engineering will allow me to obtain a job that I like" value="Slightly Agree">
-      <label for="Slightly Agree">Slightly Agree</label><br>
-      <input type="radio" id="Agree" name="A degree in engineering will allow me to obtain a job that I like" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="A degree in engineering will allow me to obtain a job that I like" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
-      <input type="radio" id="Don't Know" name="A degree in engineering will allow me to obtain a job that I like" value="Don't Know">
-      <label for="Don't Know">Don't Know</label><br>
+      <input type="radio" id="Strongly-Disagree-part" name="" value="1">
+      <label for="Strongly-Disagree-part">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-part" name="" value="2">
+      <label for="Disagree-part">Disagree</label><br>
+      <input type="radio" id="Slightly-Disagree-part" name="" value="3">
+      <label for="Slightly-Disagree-part">Slightly Disagree</label><br>
+      <input type="radio" id="Neither-Disagree-part" name="" value="4">
+      <label for="Neither-Disagree-part">Neither Disagree nor Agree</label><br>
+      <input type="radio" id="Slightly-Agree-part" name="" value="5">
+      <label for="Slightly-Agree-part">Slightly Agree</label><br>
+      <input type="radio" id="Agree-part" name="" value="6">
+      <label for="Agree-part">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-part" name="" value="7">
+      <label for="Strongly-Agree-part">Strongly Agree</label><br>
+      <input type="radio" id="dk-part" name="" value="0">
+      <label for="dk-part">Don't Know</label><br>
   </form>
 
   !I can cope with not doing well on a test>
   <form id = "I can cope with not doing well on a test">
       <br><p id = "I can cope with not doing well on a test-prompt">I can cope with not doing well on a test</p>
-      <input type="radio" id="Strongly Disagree" name="I can cope with not doing well on a test" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="I can cope with not doing well on a test" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Slightly Disagree" name="I can cope with not doing well on a test" value="Slightly Disagree">
-      <label for="Slightly Disagree">Slightly Disagree</label><br>
-      <input type="radio" id="Neither Disagree nor Agree" name="A degree in engineering will allow me to obtain a job that I like" value="Neither Disagree nor Agree">
-      <label for="Neither Disagree nor Agree">Neither Disagree nor Agree</label><br>
-      <input type="radio" id="Slightly Agree" name="I can cope with not doing well on a test" value="Slightly Agree">
-      <label for="Slightly Agree">Slightly Agree</label><br>
-      <input type="radio" id="Agree" name="I can cope with not doing well on a test" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="I can cope with not doing well on a test" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
-      <input type="radio" id="Don't Know" name="I can cope with not doing well on a test" value="Don't Know">
-      <label for="Don't Know">Don't Know</label><br>
+      <input type="radio" id="Strongly-Disagree-part" name="" value="1">
+      <label for="Strongly-Disagree-part">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-part" name="" value="2">
+      <label for="Disagree-part">Disagree</label><br>
+      <input type="radio" id="Slightly-Disagree-part" name="" value="3">
+      <label for="Slightly-Disagree-part">Slightly Disagree</label><br>
+      <input type="radio" id="Neither-Disagree-part" name="" value="4">
+      <label for="Neither-Disagree-part">Neither Disagree nor Agree</label><br>
+      <input type="radio" id="Slightly-Agree-part" name="" value="5">
+      <label for="Slightly-Agree-part">Slightly Agree</label><br>
+      <input type="radio" id="Agree-part" name="" value="6">
+      <label for="Agree-part">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-part" name="" value="7">
+      <label for="Strongly-Agree-part">Strongly Agree</label><br>
+      <input type="radio" id="dk-part" name="" value="0">
+      <label for="dk-part">Don't Know</label><br>
   </form>
 
   !I can make friends with people from different background/or values>
   <form id = "I can make friends with people from different background/or values">
       <br><p id = "I can make friends with people from different background/or values-prompt">I can make friends with people from different background/or values</p>
-      <input type="radio" id="Strongly Disagree" name="I can make friends with people from different background/or values" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="I can make friends with people from different background/or values" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Slightly Disagree" name="I can make friends with people from different background/or values" value="Slightly Disagree">
-      <label for="Slightly Disagree">Slightly Disagree</label><br>
-      <input type="radio" id="Neither Disagree nor Agree" name="I can make friends with people from different background/or values" value="Neither Disagree nor Agree">
-      <label for="Neither Disagree nor Agree">Neither Disagree nor Agree</label><br>
-      <input type="radio" id="Slightly Agree" name="I can make friends with people from different background/or values" value="Slightly Agree">
-      <label for="Slightly Agree">Slightly Agree</label><br>
-      <input type="radio" id="Agree" name="I can make friends with people from different background/or values" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="I can make friends with people from different background/or values" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
-      <input type="radio" id="Don't Know" name="I can make friends with people from different background/or values" value="Don't Know">
-      <label for="Don't Know">Don't Know</label><br>
+      <input type="radio" id="Strongly-Disagree-part" name="" value="1">
+      <label for="Strongly-Disagree-part">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-part" name="" value="2">
+      <label for="Disagree-part">Disagree</label><br>
+      <input type="radio" id="Slightly-Disagree-part" name="" value="3">
+      <label for="Slightly-Disagree-part">Slightly Disagree</label><br>
+      <input type="radio" id="Neither-Disagree-part" name="" value="4">
+      <label for="Neither-Disagree-part">Neither Disagree nor Agree</label><br>
+      <input type="radio" id="Slightly-Agree-part" name="" value="5">
+      <label for="Slightly-Agree-part">Slightly Agree</label><br>
+      <input type="radio" id="Agree-part" name="" value="6">
+      <label for="Agree-part">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-part" name="" value="7">
+      <label for="Strongly-Agree-part">Strongly Agree</label><br>
+      <input type="radio" id="dk-part" name="" value="0">
+      <label for="dk-part">Don't Know</label><br>
   </form>
 
   !I can cope with friend's disapproval of my chosen major>
   <form id = "I can cope with friend's disapproval of my chosen major">
       <br><p id = "I can cope with friend's disapproval of my chosen major-prompt">I can cope with friend's disapproval of my chosen major</p>
-      <input type="radio" id="Strongly Disagree" name="I can cope with friend's disapproval of my chosen major" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="I can cope with friend's disapproval of my chosen major" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Slightly Disagree" name="I can cope with friend's disapproval of my chosen major" value="Slightly Disagree">
-      <label for="Slightly Disagree">Slightly Disagree</label><br>
-      <input type="radio" id="Neither Disagree nor Agree" name="I can cope with friend's disapproval of my chosen major" value="Neither Disagree nor Agree">
-      <label for="Neither Disagree nor Agree">Neither Disagree nor Agree</label><br>
-      <input type="radio" id="Slightly Agree" name="I can cope with friend's disapproval of my chosen major" value="Slightly Agree">
-      <label for="Slightly Agree">Slightly Agree</label><br>
-      <input type="radio" id="Agree" name="I can cope with friend's disapproval of my chosen major" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="I can cope with friend's disapproval of my chosen major" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
-      <input type="radio" id="Don't Know" name="I can cope with friend's disapproval of my chosen major" value="Don't Know">
-      <label for="Don't Know">Don't Know</label><br>
+      <input type="radio" id="Strongly-Disagree-part" name="" value="1">
+      <label for="Strongly-Disagree-part">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-part" name="" value="2">
+      <label for="Disagree-part">Disagree</label><br>
+      <input type="radio" id="Slightly-Disagree-part" name="" value="3">
+      <label for="Slightly-Disagree-part">Slightly Disagree</label><br>
+      <input type="radio" id="Neither-Disagree-part" name="" value="4">
+      <label for="Neither-Disagree-part">Neither Disagree nor Agree</label><br>
+      <input type="radio" id="Slightly-Agree-part" name="" value="5">
+      <label for="Slightly-Agree-part">Slightly Agree</label><br>
+      <input type="radio" id="Agree-part" name="" value="6">
+      <label for="Agree-part">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-part" name="" value="7">
+      <label for="Strongly-Agree-part">Strongly Agree</label><br>
+      <input type="radio" id="dk-part" name="" value="0">
+      <label for="dk-part">Don't Know</label><br>
   </form>
 
   !I can cope with being the the only person of my race / ethnicity in my class>
   <form id = "I can cope with being the the only person of my race / ethnicity in my class">
       <br><p id = "I can cope with being the the only person of my race / ethnicity in my class-prompt">I can cope with being the the only person of my race / ethnicity in my class</p>
-      <input type="radio" id="Strongly Disagree" name="I can cope with being the the only person of my race / ethnicity in my class" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="I can cope with being the the only person of my race / ethnicity in my class" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Slightly Disagree" name="I can cope with being the the only person of my race / ethnicity in my class" value="Slightly Disagree">
-      <label for="Slightly Disagree">Slightly Disagree</label><br>
-      <input type="radio" id="Neither Disagree nor Agree" name="I can cope with being the the only person of my race / ethnicity in my class" value="Neither Disagree nor Agree">
-      <label for="Neither Disagree nor Agree">Neither Disagree nor Agree</label><br>
-      <input type="radio" id="Slightly Agree" name="I can cope with being the the only person of my race / ethnicity in my class" value="Slightly Agree">
-      <label for="Slightly Agree">Slightly Agree</label><br>
-      <input type="radio" id="Agree" name="I can cope with being the the only person of my race / ethnicity in my class" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="I can cope with being the the only person of my race / ethnicity in my class" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
-      <input type="radio" id="Don't Know" name="I can cope with being the the only person of my race / ethnicity in my class" value="Don't Know">
-      <label for="Don't Know">Don't Know</label><br>
+      <input type="radio" id="Strongly-Disagree-part" name="" value="1">
+      <label for="Strongly-Disagree-part">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-part" name="" value="2">
+      <label for="Disagree-part">Disagree</label><br>
+      <input type="radio" id="Slightly-Disagree-part" name="" value="3">
+      <label for="Slightly-Disagree-part">Slightly Disagree</label><br>
+      <input type="radio" id="Neither-Disagree-part" name="" value="4">
+      <label for="Neither-Disagree-part">Neither Disagree nor Agree</label><br>
+      <input type="radio" id="Slightly-Agree-part" name="" value="5">
+      <label for="Slightly-Agree-part">Slightly Agree</label><br>
+      <input type="radio" id="Agree-part" name="" value="6">
+      <label for="Agree-part">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-part" name="" value="7">
+      <label for="Strongly-Agree-part">Strongly Agree</label><br>
+      <input type="radio" id="dk-part" name="" value="0">
+      <label for="dk-part">Don't Know</label><br>
   </form>
 
   !I can approach a faculty or staff member to get assistance>
   <form id = "I can approach a faculty or staff member to get assistance">
       <br><p id = "I can approach a faculty or staff member to get assistance-prompt">I can cope with being the the only person of my race / ethnicity in my class</p>
-      <input type="radio" id="Strongly Disagree" name="I can approach a faculty or staff member to get assistance" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="I can approach a faculty or staff member to get assistance" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Slightly Disagree" name="I can approach a faculty or staff member to get assistance" value="Slightly Disagree">
-      <label for="Slightly Disagree">Slightly Disagree</label><br>
-      <input type="radio" id="Neither Disagree nor Agree" name="I can approach a faculty or staff member to get assistance" value="Neither Disagree nor Agree">
-      <label for="Neither Disagree nor Agree">Neither Disagree nor Agree</label><br>
-      <input type="radio" id="Slightly Agree" name="I can approach a faculty or staff member to get assistance" value="Slightly Agree">
-      <label for="Slightly Agree">Slightly Agree</label><br>
-      <input type="radio" id="Agree" name="I can approach a faculty or staff member to get assistance" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="I can approach a faculty or staff member to get assistance" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
-      <input type="radio" id="Don't Know" name="I can approach a faculty or staff member to get assistance" value="Don't Know">
-      <label for="Don't Know">Don't Know</label><br>
+      <input type="radio" id="Strongly-Disagree-part" name="" value="1">
+      <label for="Strongly-Disagree-part">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-part" name="" value="2">
+      <label for="Disagree-part">Disagree</label><br>
+      <input type="radio" id="Slightly-Disagree-part" name="" value="3">
+      <label for="Slightly-Disagree-part">Slightly Disagree</label><br>
+      <input type="radio" id="Neither-Disagree-part" name="" value="4">
+      <label for="Neither-Disagree-part">Neither Disagree nor Agree</label><br>
+      <input type="radio" id="Slightly-Agree-part" name="" value="5">
+      <label for="Slightly-Agree-part">Slightly Agree</label><br>
+      <input type="radio" id="Agree-part" name="" value="6">
+      <label for="Agree-part">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-part" name="" value="7">
+      <label for="Strongly-Agree-part">Strongly Agree</label><br>
+      <input type="radio" id="dk-part" name="" value="0">
+      <label for="dk-part">Don't Know</label><br>
   </form>
 
   !I can adjust to a new campus enviornement>
   <form id = "I can adjust to a new campus enviornement">
       <br><p id = "I can adjust to a new campus enviornement-prompt">I can adjust to a new campus enviornement</p>
-      <input type="radio" id="Strongly Disagree" name="I can adjust to a new campus enviornement" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="I can adjust to a new campus enviornement" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Slightly Disagree" name="I can adjust to a new campus enviornement" value="Slightly Disagree">
-      <label for="Slightly Disagree">Slightly Disagree</label><br>
-      <input type="radio" id="Neither Disagree nor Agree" name="I can adjust to a new campus enviornement" value="Neither Disagree nor Agree">
-      <label for="Neither Disagree nor Agree">Neither Disagree nor Agree</label><br>
-      <input type="radio" id="Slightly Agree" name="I can adjust to a new campus enviornement" value="Slightly Agree">
-      <label for="Slightly Agree">Slightly Agree</label><br>
-      <input type="radio" id="Agree" name="I can adjust to a new campus enviornement" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="I can adjust to a new campus enviornement" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
-      <input type="radio" id="Don't Know" name="I can adjust to a new campus enviornement" value="Don't Know">
-      <label for="Don't Know">Don't Know</label><br>
+      <input type="radio" id="Strongly-Disagree-part" name="" value="1">
+      <label for="Strongly-Disagree-part">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-part" name="" value="2">
+      <label for="Disagree-part">Disagree</label><br>
+      <input type="radio" id="Slightly-Disagree-part" name="" value="3">
+      <label for="Slightly-Disagree-part">Slightly Disagree</label><br>
+      <input type="radio" id="Neither-Disagree-part" name="" value="4">
+      <label for="Neither-Disagree-part">Neither Disagree nor Agree</label><br>
+      <input type="radio" id="Slightly-Agree-part" name="" value="5">
+      <label for="Slightly-Agree-part">Slightly Agree</label><br>
+      <input type="radio" id="Agree-part" name="" value="6">
+      <label for="Agree-part">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-part" name="" value="7">
+      <label for="Strongly-Agree-part">Strongly Agree</label><br>
+      <input type="radio" id="dk-part" name="" value="0">
+      <label for="dk-part">Don't Know</label><br>
   </form>
 
   !Self confidence (social)>
-  <form id = "Self confidence (social)">
+  <form id = "Self-confidence">
       <br><p id = "Self confidence (social)-prompt">Self confidence (social)</p>
-      <input type="radio" id="Not Important" name="Self confidence (social)" value="Not Important">
-      <label for="Not Important">Not Important</label><br>
-      <input type="radio" id="Some What Important" name="Self confidence (social)" value="Some What Important">
-      <label for="Some What Important">Some What Important</label><br>
-      <input type="radio" id="Very Important" name="Self confidence (social)" value="Very Important">
-      <label for="Very Important">Very Important</label><br>
-      <input type="radio" id="Crucial" name="Self confidence (social)" value="Crucial">
-      <label for="Crucial">Crucial</label><br>
-      <input type="radio" id="I prefer not to answer" name="Self confidence (social)" value="I prefer not to answer">
-      <label for="I prefer not to answer">I prefer not to answer</label><br>
+      <input type="radio" id="Not-Important-self" name="" value="1">
+      <label for="Not-Important-self">Not Important</label><br>
+      <input type="radio" id="Some-Important-self" name="" value="2">
+      <label for="Some-Important-self">Some What Important</label><br>
+      <input type="radio" id="Very-Important-self" name="" value="3">
+      <label for="Very-Important-self">Very Important</label><br>
+      <input type="radio" id="Crucial-self" name="" value="4">
+      <label for="Crucial-self">Crucial</label><br>
+      <input type="radio" id="other-self" name="" value="0">
+      <label for="other-self">I prefer not to answer</label><br>
   </form>
 
   !Leadership ability>
   <form id = "Leadership ability">
       <br><p id = "Leadership ability-prompt">Leadership ability</p>
-      <input type="radio" id="Not Important" name="Leadership ability" value="Not Important">
-      <label for="Not Important">Not Important</label><br>
-      <input type="radio" id="Some What Important" name="Leadership ability" value="Some What Important">
-      <label for="Some What Important">Some What Important</label><br>
-      <input type="radio" id="Very Important" name="Leadership ability" value="Very Important">
-      <label for="Very Important">Very Important</label><br>
-      <input type="radio" id="Crucial" name="SLeadership ability" value="Crucial">
-      <label for="Crucial">Crucial</label><br>
-      <input type="radio" id="I prefer not to answer" name="Leadership ability" value="I prefer not to answer">
-      <label for="I prefer not to answer">I prefer not to answer</label><br>
+      <input type="radio" id="Not-Important-self" name="" value="1">
+      <label for="Not-Important-self">Not Important</label><br>
+      <input type="radio" id="Some-Important-self" name="" value="2">
+      <label for="Some-Important-self">Some What Important</label><br>
+      <input type="radio" id="Very-Important-self" name="" value="3">
+      <label for="Very-Important-self">Very Important</label><br>
+      <input type="radio" id="Crucial-self" name="" value="4">
+      <label for="Crucial-self">Crucial</label><br>
+      <input type="radio" id="other-self" name="" value="0">
+      <label for="other-self">I prefer not to answer</label><br>
   </form>
 
   !Public speaking ability>
   <form id = "Public speaking ability">
       <br><p id = "Leadership ability-prompt">Public speaking ability</p>
-      <input type="radio" id="Not Important" name="Public speaking ability" value="Not Important">
-      <label for="Not Important">Not Important</label><br>
-      <input type="radio" id="Some What Important" name="Public speaking ability" value="Some What Important">
-      <label for="Some What Important">Some What Important</label><br>
-      <input type="radio" id="Very Important" name="Public speaking ability" value="Very Important">
-      <label for="Very Important">Very Important</label><br>
-      <input type="radio" id="Crucial" name="Public speaking ability" value="Crucial">
-      <label for="Crucial">Crucial</label><br>
-      <input type="radio" id="I prefer not to answer" name="Public speaking ability" value="I prefer not to answer">
-      <label for="I prefer not to answer">I prefer not to answer</label><br>
+      <input type="radio" id="Not-Important-self" name="" value="1">
+      <label for="Not-Important-self">Not Important</label><br>
+      <input type="radio" id="Some-Important-self" name="" value="2">
+      <label for="Some-Important-self">Some What Important</label><br>
+      <input type="radio" id="Very-Important-self" name="" value="3">
+      <label for="Very-Important-self">Very Important</label><br>
+      <input type="radio" id="Crucial-self" name="" value="4">
+      <label for="Crucial-self">Crucial</label><br>
+      <input type="radio" id="other-self" name="" value="0">
+      <label for="other-self">I prefer not to answer</label><br>
   </form>
 
   !Math ability>
   <form id = "Math ability">
       <br><p id = "Leadership ability-prompt">Math ability</p>
-      <input type="radio" id="Not Important" name="Math ability" value="Not Important">
-      <label for="Not Important">Not Important</label><br>
-      <input type="radio" id="Some What Important" name="Math ability" value="Some What Important">
-      <label for="Some What Important">Some What Important</label><br>
-      <input type="radio" id="Very Important" name="Math ability" value="Very Important">
-      <label for="Very Important">Very Important</label><br>
-      <input type="radio" id="Crucial" name="Math ability" value="Crucial">
-      <label for="Crucial">Crucial</label><br>
-      <input type="radio" id="I prefer not to answer" name="Math ability" value="I prefer not to answer">
-      <label for="I prefer not to answer">I prefer not to answer</label><br>
+      <input type="radio" id="Not-Important-self" name="" value="1">
+      <label for="Not-Important-self">Not Important</label><br>
+      <input type="radio" id="Some-Important-self" name="" value="2">
+      <label for="Some-Important-self">Some What Important</label><br>
+      <input type="radio" id="Very-Important-self" name="" value="3">
+      <label for="Very-Important-self">Very Important</label><br>
+      <input type="radio" id="Crucial-self" name="" value="4">
+      <label for="Crucial-self">Crucial</label><br>
+      <input type="radio" id="other-self" name="" value="0">
+      <label for="other-self">I prefer not to answer</label><br>
   </form>
 
   !Science ability>
   <form id = "Science ability">
       <br><p id = "Science ability-prompt">Science ability</p>
-      <input type="radio" id="Not Important" name="Science ability" value="Not Important">
-      <label for="Not Important">Not Important</label><br>
-      <input type="radio" id="Some What Important" name="Science ability" value="Some What Important">
-      <label for="Some What Important">Some What Important</label><br>
-      <input type="radio" id="Very Important" name="Science ability" value="Very Important">
-      <label for="Very Important">Very Important</label><br>
-      <input type="radio" id="Crucial" name="Science ability" value="Crucial">
-      <label for="Crucial">Crucial</label><br>
-      <input type="radio" id="I prefer not to answer" name="Science ability" value="I prefer not to answer">
-      <label for="I prefer not to answer">I prefer not to answer</label><br>
+      <input type="radio" id="Not-Important-self" name="" value="1">
+      <label for="Not-Important-self">Not Important</label><br>
+      <input type="radio" id="Some-Important-self" name="" value="2">
+      <label for="Some-Important-self">Some What Important</label><br>
+      <input type="radio" id="Very-Important-self" name="" value="3">
+      <label for="Very-Important-self">Very Important</label><br>
+      <input type="radio" id="Crucial-self" name="" value="4">
+      <label for="Crucial-self">Crucial</label><br>
+      <input type="radio" id="other-self" name="" value="0">
+      <label for="other-self">I prefer not to answer</label><br>
   </form>
 
   !Communication skills>
   <form id = "Communication skills">
       <br><p id = "Communication skills-prompt">Communication skills</p>
-      <input type="radio" id="Not Important" name="Communication skills" value="Not Important">
-      <label for="Not Important">Not Important</label><br>
-      <input type="radio" id="Some What Important" name="Communication skills" value="Some What Important">
-      <label for="Some What Important">Some What Important</label><br>
-      <input type="radio" id="Very Important" name="Communication skills" value="Very Important">
-      <label for="Very Important">Very Important</label><br>
-      <input type="radio" id="Crucial" name="Communication skills" value="Crucial">
-      <label for="Crucial">Crucial</label><br>
-      <input type="radio" id="I prefer not to answer" name="Communication skills" value="I prefer not to answer">
-      <label for="I prefer not to answer">I prefer not to answer</label><br>
+      <input type="radio" id="Not-Important-self" name="" value="1">
+      <label for="Not-Important-self">Not Important</label><br>
+      <input type="radio" id="Some-Important-self" name="" value="2">
+      <label for="Some-Important-self">Some What Important</label><br>
+      <input type="radio" id="Very-Important-self" name="" value="3">
+      <label for="Very-Important-self">Very Important</label><br>
+      <input type="radio" id="Crucial-self" name="" value="4">
+      <label for="Crucial-self">Crucial</label><br>
+      <input type="radio" id="other-self" name="" value="0">
+      <label for="other-self">I prefer not to answer</label><br>
   </form>
 
   !Ability to apply math and science principles in solving real world problems>
   <form id = "Ability to apply math and science principles in solving real world problems">
       <br><p id = "Ability to apply math and science principles in solving real world problems-prompt">Ability to apply math and science principles in solving real world problems</p>
-      <input type="radio" id="Not Important" name="Ability to apply math and science principles in solving real world problems" value="Not Important">
-      <label for="Not Important">Not Important</label><br>
-      <input type="radio" id="Some What Important" name="Ability to apply math and science principles in solving real world problems" value="Some What Important">
-      <label for="Some What Important">Some What Important</label><br>
-      <input type="radio" id="Very Important" name="Ability to apply math and science principles in solving real world problems" value="Very Important">
-      <label for="Very Important">Very Important</label><br>
-      <input type="radio" id="Crucial" name="Ability to apply math and science principles in solving real world problems" value="Crucial">
-      <label for="Crucial">Crucial</label><br>
-      <input type="radio" id="I prefer not to answer" name="Ability to apply math and science principles in solving real world problems" value="I prefer not to answer">
-      <label for="I prefer not to answer">I prefer not to answer</label><br>
+      <<input type="radio" id="Not-Important-self" name="" value="1">
+      <label for="Not-Important-self">Not Important</label><br>
+      <input type="radio" id="Some-Important-self" name="" value="2">
+      <label for="Some-Important-self">Some What Important</label><br>
+      <input type="radio" id="Very-Important-self" name="" value="3">
+      <label for="Very-Important-self">Very Important</label><br>
+      <input type="radio" id="Crucial-self" name="" value="4">
+      <label for="Crucial-self">Crucial</label><br>
+      <input type="radio" id="other-self" name="" value="0">
+      <label for="other-self">I prefer not to answer</label><br>
   </form>
 
   !Business ability>
   <form id = "Business ability">
       <br><p id = "Business ability-prompt">Business ability</p>
-      <input type="radio" id="Not Important" name="Business ability" value="Not Important">
-      <label for="Not Important">Not Important</label><br>
-      <input type="radio" id="Some What Important" name="Business ability" value="Some What Important">
-      <label for="Some What Important">Some What Important</label><br>
-      <input type="radio" id="Very Important" name="Business ability" value="Very Important">
-      <label for="Very Important">Very Important</label><br>
-      <input type="radio" id="Crucial" name="Business ability" value="Crucial">
-      <label for="Crucial">Crucial</label><br>
-      <input type="radio" id="I prefer not to answer" name="Business ability" value="I prefer not to answer">
-      <label for="I prefer not to answer">I prefer not to answer</label><br>
+     <input type="radio" id="Not-Important-self" name="" value="1">
+      <label for="Not-Important-self">Not Important</label><br>
+      <input type="radio" id="Some-Important-self" name="" value="2">
+      <label for="Some-Important-self">Some What Important</label><br>
+      <input type="radio" id="Very-Important-self" name="" value="3">
+      <label for="Very-Important-self">Very Important</label><br>
+      <input type="radio" id="Crucial-self" name="" value="4">
+      <label for="Crucial-self">Crucial</label><br>
+      <input type="radio" id="other-self" name="" value="0">
+      <label for="other-self">I prefer not to answer</label><br>
   </form>
 
   !Ability to perfrom in teams>
   <form id = "Ability to perfrom in teams">
       <br><p id = "Ability to perfrom in teams-prompt">Ability to perfrom in teams</p>
-      <input type="radio" id="Not Important" name="Ability to perfrom in teams" value="Not Important">
-      <label for="Not Important">Not Important</label><br>
-      <input type="radio" id="Some What Important" name="Ability to perfrom in teams" value="Some What Important">
-      <label for="Some What Important">Some What Important</label><br>
-      <input type="radio" id="Very Important" name="Ability to perfrom in teams" value="Very Important">
-      <label for="Very Important">Very Important</label><br>
-      <input type="radio" id="Crucial" name="Ability to perfrom in teams" value="Crucial">
-      <label for="Crucial">Crucial</label><br>
-      <input type="radio" id="I prefer not to answer" name="Ability to perfrom in teams" value="I prefer not to answer">
-      <label for="I prefer not to answer">I prefer not to answer</label><br>
+      <input type="radio" id="Not-Important-self" name="" value="1">
+      <label for="Not-Important-self">Not Important</label><br>
+      <input type="radio" id="Some-Important-self" name="" value="2">
+      <label for="Some-Important-self">Some What Important</label><br>
+      <input type="radio" id="Very-Important-self" name="" value="3">
+      <label for="Very-Important-self">Very Important</label><br>
+      <input type="radio" id="Crucial-self" name="" value="4">
+      <label for="Crucial-self">Crucial</label><br>
+      <input type="radio" id="other-self" name="" value="0">
+      <label for="other-self">I prefer not to answer</label><br>
   </form>
 
   !I expect that engineering will be a rewarding career>
   <form id = "I expect that engineering will be a rewarding career">
       <br><p id = "I expect that engineering will be a rewarding career-prompt">I expect that engineering will be a rewarding career</p>
-      <input type="radio" id="Strongly Disagree" name="I expect that engineering will be a rewarding career" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="I expect that engineering will be a rewarding career" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Neutral" name="I expect that engineering will be a rewarding career" value="Neutral">
-      <label for="Neutral">Neutral</label><br>
-      <input type="radio" id="Agree" name="I expect that engineering will be a rewarding career" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="I expect that engineering will be a rewarding career" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
+      <input type="radio" id="Strongly-Disagree-reward" name="" value="1">
+      <label for="Strongly-Disagree-reward">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-reward" name="" value="2">
+      <label for="Disagree-reward">Disagree</label><br>
+      <input type="radio" id="Neutral-reward" name="" value="3">
+      <label for="Neutral-reward">Neutral</label><br>
+      <input type="radio" id="Agree-reward" name="" value="4">
+      <label for="Agree-reward">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-reward" name="" value="5">
+      <label for="Strongly-Agree-reward">Strongly Agree</label><br>
   </form>
 
   !I expect that studying engineering will be rewarding>
   <form id = "I expect that studying engineering will be rewarding">
       <br><p id = "I expect that studying engineering will be rewarding-prompt">I expect that engineering will be a rewarding career</p>
-      <input type="radio" id="Strongly Disagree" name="I expect that studying engineering will be rewarding" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="I expect that studying engineering will be rewarding" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Neutral" name="I expect that studying engineering will be rewarding" value="Neutral">
-      <label for="Neutral">Neutral</label><br>
-      <input type="radio" id="Agree" name="I expect that studying engineering will be rewarding" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="I expect that studying engineering will be rewarding" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
+      <input type="radio" id="Strongly-Disagree-reward" name="" value="1">
+      <label for="Strongly-Disagree-reward">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-reward" name="" value="2">
+      <label for="Disagree-reward">Disagree</label><br>
+      <input type="radio" id="Neutral-reward" name="" value="3">
+      <label for="Neutral-reward">Neutral</label><br>
+      <input type="radio" id="Agree-reward" name="" value="4">
+      <label for="Agree-reward">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-reward" name="" value="5">
+      <label for="Strongly-Agree-reward">Strongly Agree</label><br>
   </form>
 
   !The advantages of studying engineering outweigh the disadvanges>
   <form id = "The advantages of studying engineering outweigh the disadvanges">
       <br><p id = "The advantages of studying engineering outweigh the disadvanges-prompt">The advantages of studying engineering outweigh the disadvanges</p>
-      <input type="radio" id="Strongly Disagree" name="The advantages of studying engineering outweigh the disadvanges" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="The advantages of studying engineering outweigh the disadvanges" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Neutral" name="The advantages of studying engineering outweigh the disadvanges" value="Neutral">
-      <label for="Neutral">Neutral</label><br>
-      <input type="radio" id="Agree" name="The advantages of studying engineering outweigh the disadvanges" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="The advantages of studying engineering outweigh the disadvanges" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
+      <input type="radio" id="Strongly-Disagree-reward" name="" value="1">
+      <label for="Strongly-Disagree-reward">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-reward" name="" value="2">
+      <label for="Disagree-reward">Disagree</label><br>
+      <input type="radio" id="Neutral-reward" name="" value="3">
+      <label for="Neutral-reward">Neutral</label><br>
+      <input type="radio" id="Agree-reward" name="" value="4">
+      <label for="Agree-reward">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-reward" name="" value="5">
+      <label for="Strongly-Agree-reward">Strongly Agree</label><br>
   </form>
 
   !I don't care for this career>
   <form id = "I don't care for this career">
       <br><p id = "I don't care for this career-prompt">I don't care for this career</p>
-      <input type="radio" id="Strongly Disagree" name="I don't care for this career" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="I don't care for this career" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Neutral" name="I don't care for this career" value="Neutral">
-      <label for="Neutral">Neutral</label><br>
-      <input type="radio" id="Agree" name="I don't care for this career" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="I don't care for this career" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
+      <input type="radio" id="Strongly-Disagree-reward" name="" value="1">
+      <label for="Strongly-Disagree-reward">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-reward" name="" value="2">
+      <label for="Disagree-reward">Disagree</label><br>
+      <input type="radio" id="Neutral-reward" name="" value="3">
+      <label for="Neutral-reward">Neutral</label><br>
+      <input type="radio" id="Agree-reward" name="" value="4">
+      <label for="Agree-reward">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-reward" name="" value="5">
+      <label for="Strongly-Agree-reward">Strongly Agree</label><br>
   </form>
 
   !The future benefits of studying engineering are worth the effort>
   <form id = "The future benefits of studying engineering are worth the effort">
       <br><p id = "The future benefits of studying engineering are worth the effort-prompt">The future benefits of studying engineering are worth the effort</p>
-      <input type="radio" id="Strongly Disagree" name="The future benefits of studying engineering are worth the effort" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="The future benefits of studying engineering are worth the effort" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Neutral" name="The future benefits of studying engineering are worth the effort" value="Neutral">
-      <label for="Neutral">Neutral</label><br>
-      <input type="radio" id="Agree" name="The future benefits of studying engineering are worth the effort" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="The future benefits of studying engineering are worth the effort" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
+      <input type="radio" id="Strongly-Disagree-reward" name="" value="1">
+      <label for="Strongly-Disagree-reward">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-reward" name="" value="2">
+      <label for="Disagree-reward">Disagree</label><br>
+      <input type="radio" id="Neutral-reward" name="" value="3">
+      <label for="Neutral-reward">Neutral</label><br>
+      <input type="radio" id="Agree-reward" name="" value="4">
+      <label for="Agree-reward">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-reward" name="" value="5">
+      <label for="Strongly-Agree-reward">Strongly Agree</label><br>
   </form>
 
   !I can think of several other majors that would be more rewarding than engineering>
   <form id = "I can think of several other majors that would be more rewarding than engineering">
       <br><p id = "I can think of several other majors that would be more rewarding than engineering-prompt">I can think of several other majors that would be more rewarding than engineering</p>
-      <input type="radio" id="Strongly Disagree" name="I can think of several other majors that would be more rewarding than engineering" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="I can think of several other majors that would be more rewarding than engineering" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Neutral" name="I can think of several other majors that would be more rewarding than engineering" value="Neutral">
-      <label for="Neutral">Neutral</label><br>
-      <input type="radio" id="Agree" name="I can think of several other majors that would be more rewarding than engineering" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="I can think of several other majors that would be more rewarding than engineering" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
+      <input type="radio" id="Strongly-Disagree-reward" name="" value="1">
+      <label for="Strongly-Disagree-reward">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-reward" name="" value="2">
+      <label for="Disagree-reward">Disagree</label><br>
+      <input type="radio" id="Neutral-reward" name="" value="3">
+      <label for="Neutral-reward">Neutral</label><br>
+      <input type="radio" id="Agree-reward" name="" value="4">
+      <label for="Agree-reward">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-reward" name="" value="5">
+      <label for="Strongly-Agree-reward">Strongly Agree</label><br>
   </form>
 
   !I have no desire to change to another major (ex. Biology, English, Chemistry, Art, History, etc.).>
   <form id = "I have no desire to change to another major (ex. Biology, English, Chemistry, Art, History, etc.).">
       <br><p id = "I have no desire to change to another major (ex. Biology, English, Chemistry, Art, History, etc.).-prompt">I have no desire to change to another major (ex. Biology, English, Chemistry, Art, History, etc.).</p>
-      <input type="radio" id="Strongly Disagree" name="I have no desire to change to another major (ex. Biology, English, Chemistry, Art, History, etc.)." value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="I have no desire to change to another major (ex. Biology, English, Chemistry, Art, History, etc.)." value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Neutral" name="I have no desire to change to another major (ex. Biology, English, Chemistry, Art, History, etc.)." value="Neutral">
-      <label for="Neutral">Neutral</label><br>
-      <input type="radio" id="Agree" name="I have no desire to change to another major (ex. Biology, English, Chemistry, Art, History, etc.)." value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="I have no desire to change to another major (ex. Biology, English, Chemistry, Art, History, etc.)." value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
+      <input type="radio" id="Strongly-Disagree-reward" name="" value="1">
+      <label for="Strongly-Disagree-reward">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-reward" name="" value="2">
+      <label for="Disagree-reward">Disagree</label><br>
+      <input type="radio" id="Neutral-reward" name="" value="3">
+      <label for="Neutral-reward">Neutral</label><br>
+      <input type="radio" id="Agree-reward" name="" value="4">
+      <label for="Agree-reward">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-reward" name="" value="5">
+      <label for="Strongly-Agree-reward">Strongly Agree</label><br>
   </form>
 
   !The rewards of getting an engineering degree are not worth the effort>
   <form id = "The rewards of getting an engineering degree are not worth the effort">
       <br><p id = "The rewards of getting an engineering degree are not worth the effort-prompt">The rewards of getting an engineering degree are not worth the effort</p>
-      <input type="radio" id="Strongly Disagree" name="The rewards of getting an engineering degree are not worth the effort" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="The rewards of getting an engineering degree are not worth the effort" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Neutral" name="The rewards of getting an engineering degree are not worth the effort" value="Neutral">
-      <label for="Neutral">Neutral</label><br>
-      <input type="radio" id="Agree" name="The rewards of getting an engineering degree are not worth the effort" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="The rewards of getting an engineering degree are not worth the effort" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
+      <input type="radio" id="Strongly-Disagree-reward" name="" value="1">
+      <label for="Strongly-Disagree-reward">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-reward" name="" value="2">
+      <label for="Disagree-reward">Disagree</label><br>
+      <input type="radio" id="Neutral-reward" name="" value="3">
+      <label for="Neutral-reward">Neutral</label><br>
+      <input type="radio" id="Agree-reward" name="" value="4">
+      <label for="Agree-reward">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-reward" name="" value="5">
+      <label for="Strongly-Agree-reward">Strongly Agree</label><br>
   </form>
 
   !From what I know, engineering is boring>
   <form id = "From what I know, engineering is boring">
       <br><p id = "From what I know, engineering is boring-prompt">From what I know, engineering is boring</p>
-      <input type="radio" id="Strongly Disagree" name="From what I know, engineering is boring" value="Strongly Disagree">
-      <label for="Strongly Disagree">Strongly Disagree</label><br>
-      <input type="radio" id="Disagree" name="From what I know, engineering is boring" value="Disagree">
-      <label for="Disagree">Disagree</label><br>
-      <input type="radio" id="Neutral" name="From what I know, engineering is boring" value="Neutral">
-      <label for="Neutral">Neutral</label><br>
-      <input type="radio" id="Agree" name="From what I know, engineering is boring" value="Agree">
-      <label for="Agree">Agree</label><br>
-      <input type="radio" id="Strongly Agree" name="From what I know, engineering is boring" value="Strongly Agree">
-      <label for="Strongly Agree">Strongly Agree</label><br>
+      <input type="radio" id="Strongly-Disagree-reward" name="" value="1">
+      <label for="Strongly-Disagree-reward">Strongly Disagree</label><br>
+      <input type="radio" id="Disagree-reward" name="" value="2">
+      <label for="Disagree-reward">Disagree</label><br>
+      <input type="radio" id="Neutral-reward" name="" value="3">
+      <label for="Neutral-reward">Neutral</label><br>
+      <input type="radio" id="Agree-reward" name="" value="4">
+      <label for="Agree-reward">Agree</label><br>
+      <input type="radio" id="Strongly-Agree-reward" name="" value="5">
+      <label for="Strongly-Agree-reward">Strongly Agree</label><br>
   </form>                                                                                                             
    </div>
 
