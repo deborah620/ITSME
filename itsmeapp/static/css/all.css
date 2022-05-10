@@ -1,0 +1,38 @@
+body {
+  background-color: lightblue;
+}
+
+h2 {
+  color: black;
+  text-align: left;
+  font-size: 20px;
+}
+#Very-Uncertain-finish{
+    position:relative;
+    left:290px;
+    bottom:60px;
+}
+#Uncertain-finish{
+    position:relative;
+    left:490px;
+    bottom:77px;
+}
+#Neutral-finish{
+    position:relative;
+    left:675px;
+    bottom:95px;
+}
+#Certain-finish{
+    position:relative;
+    left:870px;
+    bottom:109px;
+}
+#Very-Certain-finish{
+    position:relative;
+    left:1055px;
+    bottom:110px;
+}
+p {
+  font-family: verdana;
+  font-size: 20px;
+}

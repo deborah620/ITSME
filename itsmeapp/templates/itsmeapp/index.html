@@ -36,7 +36,7 @@
             <div class="left-align">
                 <!section one: background info>
                 <div class = "section one">
-                    General background information <br>
+                    <h2> General background information <br></h2>
 
                     <!gender>
                     <form id="gender" action="{% url 'survey_result_api' %}" method="post">
@@ -252,23 +252,49 @@
                 </div>
 
                 <!section two: impressions of engineering>
-                <div class = "section two">
-                    Impressions of engineering <br>
+                <div class="section two">
+                    <h2> Impressions of engineering <br> </h2>
+                    <div class="row row-cols-2 row-cols-md-6 mb-6 text-center">
+                        <div class="col themed-grid-col">
 
-                    <!how certain you would finish degree>
-                    <form id = "finish-degree" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "how-certain-you-would-finish-degree-prompt">When You began your engineering degree, how certain were you that you would complete it?</p>
-                        <input type="radio" id="Very-Uncertain-finish" name="finish-degree" value="1">
-                        <label for="Very-Uncertain-finish">Very Uncertain</label><br>
-                        <input type="radio" id="Uncertain-finish" name="finish-degree" value="2">
-                        <label for="Uncertain-finish">Uncertain</label><br>
-                        <input type="radio" id="Neutral-finish" name="finish-degree" value="3">
-                        <label for="Neutral-finish">Neutral</label><br>
-                        <input type="radio" id="Certain-finish" name="finish-degree" value="4">
-                        <label for="Certain-finish">Certain</label><br>
-                        <input type="radio" id="Very-Certain-finish" name="finish-degree" value="5">
-                        <label for="Very-Certain-finish">Very-Certain</label><br>
-                    </form>
+                        </div>
+                        <div class="col themed-grid-col">
+                            Very Uncertain
+                        </div>
+                        <div class="col themed-grid-col">
+                            Uncertain
+                        </div>
+                        <div class="col themed-grid-col">
+                            Neutral
+                        </div>
+                        <div class="col themed-grid-col">
+                            Certain
+                        </div>
+                        <div class="col themed-grid-col">
+                            Very Certain
+                        </div>
+                        <!how certain you would finish degree>
+                        <form id = "finish-degree" action="{% url 'survey_result_api' %}" method="post">
+                            <div class="row themed-grid-col">
+                                <p1>When You began your engineering degree, how certain were you that you would complete it?</p1>
+                            </div>
+                            <div class="row themed-grid-col">
+                                <input type="radio" id="Very-Uncertain-finish" name="finish-degree" value="1">
+                            </div>
+                            <div class="row themed-grid-col">
+                                <input type="radio" id="Uncertain-finish" name="finish-degree" value="2">
+                            </div>
+                            <div class="row themed-grid-col">
+                                <input type="radio" id="Neutral-finish" name="finish-degree" value="3">
+                            </div>
+                            <div class="row themed-grid-col">
+                                <input type="radio" id="Certain-finish" name="finish-degree" value="3">
+                            </div>
+                            <div class="row themed-grid-col">
+                               <input type="radio" id="Very-Certain-finish" name="finish-degree" value="5">
+                            </div>
+                        </form>
+                    </div>
 
                     <!how certain you would complete engineering degree at this institution>
                     <form id = "finish-degree-here" action="{% url 'survey_result_api' %}" method="post">
@@ -979,7 +1005,7 @@
                   <!Ability to apply math and science principles in solving real world problems>
                   <form id = "apply" action="{% url 'survey_result_api' %}" method="post">
                       <br><p id = "Ability to apply math and science principles in solving real world problems-prompt">Ability to apply math and science principles in solving real world problems</p>
-                      <<input type="radio" id="Not-Important-apply" name="apply" value="1">
+                      <input type="radio" id="Not-Important-apply" name="apply" value="1">
                       <label for="Not-Important-apply">Not Important</label><br>
                       <input type="radio" id="Some-Important-apply" name="apply" value="2">
                       <label for="Some-Important-apply">Some What Important</label><br>
