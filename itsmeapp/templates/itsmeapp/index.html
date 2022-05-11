@@ -40,15 +40,22 @@
                 <div class = "section1">
                     <h2> General background information <br></h2>
 
-
+                    <!section one is a list of buttons, click on to reveal the options>
                     <ul class="list-unstyled mb-0 py-3 pt-md-1">
 
+                         <!gender>
                           <li class="mb-1">
-                            <button class="btn d-inline-flex align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#getting-started-collapse" aria-expanded="true" aria-current="true">
+                            <button class="btn d-inline-flex align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#gender-collapse" aria-expanded="true" aria-current="true">
                               Gender:
                             </button>
-                                <div class="collapse show" id="getting-started-collapse">
+
+                           <!show this button's options as it is the first one>
+                            <div class="collapse show" id="gender-collapse">
+
+                                <!form to get user's response>
                                 <form id="gender" action="{% url 'survey_result_api' %}" method="post">
+
+                                      <!options are as a list>
                                       <ul class="list-unstyled fw-normal pb-1 small">
                                           <li><input type="radio" id="male" name="gender" value="1">
                                                 <label for="male">Male</label><br>
@@ -63,409 +70,462 @@
                                               <input type="text" id = "other-gender-textbox"><br>
                                           </li>
                                       </ul>
-                                  </form>
-                                </div>
-
-                          </li>
-                          <li class="mb-1">
-                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#customize-collapse" aria-expanded="false">
-                              Customize
-                            </button>
-
-                            <div class="collapse" id="customize-collapse">
-                              <ul class="list-unstyled fw-normal pb-1 small">
-                                  <li><a href="/docs/5.1/customize/overview/" class="d-inline-flex align-items-center rounded">Overview</a></li>
-                                  <li><a href="/docs/5.1/customize/sass/" class="d-inline-flex align-items-center rounded">Sass</a></li>
-                                  <li><a href="/docs/5.1/customize/options/" class="d-inline-flex align-items-center rounded">Options</a></li>
-                                  <li><a href="/docs/5.1/customize/color/" class="d-inline-flex align-items-center rounded">Color</a></li>
-                                  <li><a href="/docs/5.1/customize/components/" class="d-inline-flex align-items-center rounded">Components</a></li>
-                                  <li><a href="/docs/5.1/customize/css-variables/" class="d-inline-flex align-items-center rounded">CSS variables</a></li>
-                                  <li><a href="/docs/5.1/customize/optimize/" class="d-inline-flex align-items-center rounded">Optimize</a></li>
-                              </ul>
+                                </form>
                             </div>
                           </li>
+
+                          <!ethnicity>
                           <li class="mb-1">
-                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#layout-collapse" aria-expanded="false">
-                              Layout
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#ethnicity-collapse" aria-expanded="false" id="ethnicity-prompt">
+                              Ethnicity/Citizenship (check two max):
                             </button>
 
-                            <div class="collapse" id="layout-collapse">
-                              <ul class="list-unstyled fw-normal pb-1 small">
-                                  <li><a href="/docs/5.1/layout/breakpoints/" class="d-inline-flex align-items-center rounded">Breakpoints</a></li>
-                                  <li><a href="/docs/5.1/layout/containers/" class="d-inline-flex align-items-center rounded">Containers</a></li>
-                                  <li><a href="/docs/5.1/layout/grid/" class="d-inline-flex align-items-center rounded">Grid</a></li>
-                                  <li><a href="/docs/5.1/layout/columns/" class="d-inline-flex align-items-center rounded">Columns</a></li>
-                                  <li><a href="/docs/5.1/layout/gutters/" class="d-inline-flex align-items-center rounded">Gutters</a></li>
-                                  <li><a href="/docs/5.1/layout/utilities/" class="d-inline-flex align-items-center rounded">Utilities</a></li>
-                                  <li><a href="/docs/5.1/layout/z-index/" class="d-inline-flex align-items-center rounded">Z-index</a></li>
-                                  <li><a href="/docs/5.1/layout/css-grid/" class="d-inline-flex align-items-center rounded">CSS Grid</a></li>
-                              </ul>
+                            <div class="collapse" id="ethnicity-collapse">
+                                <form id="ethnicity" action="{% url 'survey_result_api' %}" method="post">
+                                  <ul class="list-unstyled fw-normal pb-1 small">
+                                    <li>
+                                        <input type="checkbox" id="African" name="ethnicity" value="1">
+                                        <label for="African">African/Black American</label><br>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="Indian" name="ethnicity" value="2">
+                                        <label for="Indian">American Indian/Alaskin Native</label><br>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="Asian" name="ethnicity" value="3">
+                                        <label for="Asian">Asian & Pacific American</label><br>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="Latina" name="ethnicity" value="4">
+                                        <label for="Latina">Latina/Hispanic American</label><br>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="White" name="ethnicity" value="5">
+                                        <label for="White">White American</label><br>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="Foreign" name="ethnicity" value="6">
+                                        <label for="Foreign">Foreign National on student visa</label><br>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="green-card" name="ethnicity" value="7">
+                                        <label for="green-card">Foreign National/U.S. Resident (green card)</label><br>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="other-ethnicity" name="ethnicity" value="0">
+                                        <label for="other-ethnicity">Other, please specify</label>
+                                        <input type="text" id = other-ethnicity-textbox><br>
+                                    </li>
+                                  </ul>
+                                </form>
                             </div>
                           </li>
+
+                          <!grade>
                           <li class="mb-1">
-                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#content-collapse" aria-expanded="false">
-                              Content
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#grade-collapse" aria-expanded="false">
+                             As of today, I am a:
                             </button>
 
-                            <div class="collapse" id="content-collapse">
-                              <ul class="list-unstyled fw-normal pb-1 small">
-                                  <li><a href="/docs/5.1/content/reboot/" class="d-inline-flex align-items-center rounded">Reboot</a></li>
-                                  <li><a href="/docs/5.1/content/typography/" class="d-inline-flex align-items-center rounded">Typography</a></li>
-                                  <li><a href="/docs/5.1/content/images/" class="d-inline-flex align-items-center rounded">Images</a></li>
-                                  <li><a href="/docs/5.1/content/tables/" class="d-inline-flex align-items-center rounded">Tables</a></li>
-                                  <li><a href="/docs/5.1/content/figures/" class="d-inline-flex align-items-center rounded">Figures</a></li>
-                              </ul>
+                            <div class="collapse" id="grade-collapse">
+                                <form id="grade" action="{% url 'survey_result_api' %}" method="post">
+
+                                  <ul class="list-unstyled fw-normal pb-1 small">
+                                      <li>
+                                          <input type="radio" id="first" name="grade" value="1">
+                                          <label for="first">first-year student</label><br>
+                                      </li>
+                                      <li>
+                                          <input type="radio" id="second" name="grade" value="2">
+                                          <label for="second">second-year student</label><br>
+                                      </li>
+                                      <li>
+                                          <input type="radio" id="third" name="grade" value="3">
+                                          <label for="third">third-year student</label>
+                                      </li>
+                                      <li>
+                                          <input type="radio" id="fourth" name="grade" value="4">
+                                          <label for="fourth">fourth-year student</label><br>
+
+                                      </li>
+                                      <li>
+                                          <input type="radio" id="fifth" name="grade" value="5">
+                                          <label for="fifth">fifth-year student or above</label>
+                                      </li>
+                                  </ul>
+                                </form>
                             </div>
                           </li>
+
+
+                          <!major>
                           <li class="mb-1">
-                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#forms-collapse" aria-expanded="false">
-                              Forms
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#major-collapse" aria-expanded="false">
+                              I am a ____ major:
                             </button>
 
-                            <div class="collapse" id="forms-collapse">
-                              <ul class="list-unstyled fw-normal pb-1 small">
-                                  <li><a href="/docs/5.1/forms/overview/" class="d-inline-flex align-items-center rounded">Overview</a></li>
-                                  <li><a href="/docs/5.1/forms/form-control/" class="d-inline-flex align-items-center rounded">Form control</a></li>
-                                  <li><a href="/docs/5.1/forms/select/" class="d-inline-flex align-items-center rounded">Select</a></li>
-                                  <li><a href="/docs/5.1/forms/checks-radios/" class="d-inline-flex align-items-center rounded">Checks &amp; radios</a></li>
-                                  <li><a href="/docs/5.1/forms/range/" class="d-inline-flex align-items-center rounded">Range</a></li>
-                                  <li><a href="/docs/5.1/forms/input-group/" class="d-inline-flex align-items-center rounded">Input group</a></li>
-                                  <li><a href="/docs/5.1/forms/floating-labels/" class="d-inline-flex align-items-center rounded">Floating labels</a></li>
-                                  <li><a href="/docs/5.1/forms/layout/" class="d-inline-flex align-items-center rounded">Layout</a></li>
-                                  <li><a href="/docs/5.1/forms/validation/" class="d-inline-flex align-items-center rounded">Validation</a></li>
-                              </ul>
+                            <div class="collapse" id="major-collapse">
+                                <form id="major" action="{% url 'survey_result_api' %}" method="post">
+                                  <ul class="list-unstyled fw-normal pb-1 small">
+                                      <li>
+                                          <input type="radio" id="chemical" name="major" value="1">
+                                          <label for="chemical">chemical engineering</label><br>
+                                      </li>
+                                      <li>
+                                          <input type="radio" id="mechanical" name="major" value="2">
+                                          <label for="mechanical">mechanical engineering</label><br>
+                                      </li>
+                                      <li>
+                                          <input type="radio" id="compe" name="major" value="3">
+                                          <label for="compe">computer engineering</label><br>
+                                      </li>
+                                      <li>
+                                          <input type="radio" id="engineering" name="major" value="4">
+                                          <label for="engineering">engineering</label><br>
+                                      </li>
+                                      <li>
+                                          <input type="radio" id="undecided" name="major" value="5">
+                                          <label for="undecided">undecided</label><br>
+                                      </li>
+                                      <li>
+                                          <input type="radio" id="other-major" name="major" value="0">
+                                          <label for="other-major">Other</label>
+                                          <input type="text" id = "other-major=textbox"><br>
+                                      </li>
+                                  </ul>
+                                </form>
                             </div>
                           </li>
+
+                          <!discussion>
                           <li class="mb-1">
-                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#components-collapse" aria-expanded="false">
-                              Components
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#discussion-collapse" aria-expanded="false">
+                              What ENES 101 Discussion Section are you in:
                             </button>
 
-                            <div class="collapse" id="components-collapse">
-                              <ul class="list-unstyled fw-normal pb-1 small">
-                                  <li><a href="/docs/5.1/components/accordion/" class="d-inline-flex align-items-center rounded">Accordion</a></li>
-                                  <li><a href="/docs/5.1/components/alerts/" class="d-inline-flex align-items-center rounded">Alerts</a></li>
-                                  <li><a href="/docs/5.1/components/badge/" class="d-inline-flex align-items-center rounded">Badge</a></li>
-                                  <li><a href="/docs/5.1/components/breadcrumb/" class="d-inline-flex align-items-center rounded">Breadcrumb</a></li>
-                                  <li><a href="/docs/5.1/components/buttons/" class="d-inline-flex align-items-center rounded">Buttons</a></li>
-                                  <li><a href="/docs/5.1/components/button-group/" class="d-inline-flex align-items-center rounded">Button group</a></li>
-                                  <li><a href="/docs/5.1/components/card/" class="d-inline-flex align-items-center rounded">Card</a></li>
-                                  <li><a href="/docs/5.1/components/carousel/" class="d-inline-flex align-items-center rounded">Carousel</a></li>
-                                  <li><a href="/docs/5.1/components/close-button/" class="d-inline-flex align-items-center rounded">Close button</a></li>
-                                  <li><a href="/docs/5.1/components/collapse/" class="d-inline-flex align-items-center rounded">Collapse</a></li>
-                                  <li><a href="/docs/5.1/components/dropdowns/" class="d-inline-flex align-items-center rounded">Dropdowns</a></li>
-                                  <li><a href="/docs/5.1/components/list-group/" class="d-inline-flex align-items-center rounded">List group</a></li>
-                                  <li><a href="/docs/5.1/components/modal/" class="d-inline-flex align-items-center rounded">Modal</a></li>
-                                  <li><a href="/docs/5.1/components/navs-tabs/" class="d-inline-flex align-items-center rounded">Navs &amp; tabs</a></li>
-                                  <li><a href="/docs/5.1/components/navbar/" class="d-inline-flex align-items-center rounded">Navbar</a></li>
-                                  <li><a href="/docs/5.1/components/offcanvas/" class="d-inline-flex align-items-center rounded">Offcanvas</a></li>
-                                  <li><a href="/docs/5.1/components/pagination/" class="d-inline-flex align-items-center rounded">Pagination</a></li>
-                                  <li><a href="/docs/5.1/components/placeholders/" class="d-inline-flex align-items-center rounded">Placeholders</a></li>
-                                  <li><a href="/docs/5.1/components/popovers/" class="d-inline-flex align-items-center rounded">Popovers</a></li>
-                                  <li><a href="/docs/5.1/components/progress/" class="d-inline-flex align-items-center rounded">Progress</a></li>
-                                  <li><a href="/docs/5.1/components/scrollspy/" class="d-inline-flex align-items-center rounded">Scrollspy</a></li>
-                                  <li><a href="/docs/5.1/components/spinners/" class="d-inline-flex align-items-center rounded">Spinners</a></li>
-                                  <li><a href="/docs/5.1/components/toasts/" class="d-inline-flex align-items-center rounded">Toasts</a></li>
-                                  <li><a href="/docs/5.1/components/tooltips/" class="d-inline-flex align-items-center rounded">Tooltips</a></li>
-                              </ul>
+                            <div class="collapse" id="discussion-collapse">
+                                 <form id = "discussion" action="{% url 'survey_result_api' %}" method="post">
+                                      <ul class="list-unstyled fw-normal pb-1 small">
+                                          <li>
+                                              <input type="text" id = "discussion-prompt-textbox"><br>
+                                          </li>
+                                      </ul>
+                                 </form>
                             </div>
                           </li>
+
+                          <!gpa>
                           <li class="mb-1">
-                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#helpers-collapse" aria-expanded="false">
-                              Helpers
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#gpa-collapse" aria-expanded="false">
+                              my current GPA is:
                             </button>
 
-                            <div class="collapse" id="helpers-collapse">
-                              <ul class="list-unstyled fw-normal pb-1 small">
-                                  <li><a href="/docs/5.1/helpers/clearfix/" class="d-inline-flex align-items-center rounded">Clearfix</a></li>
-                                  <li><a href="/docs/5.1/helpers/colored-links/" class="d-inline-flex align-items-center rounded">Colored links</a></li>
-                                  <li><a href="/docs/5.1/helpers/ratio/" class="d-inline-flex align-items-center rounded">Ratio</a></li>
-                                  <li><a href="/docs/5.1/helpers/position/" class="d-inline-flex align-items-center rounded">Position</a></li>
-                                  <li><a href="/docs/5.1/helpers/stacks/" class="d-inline-flex align-items-center rounded">Stacks</a></li>
-                                  <li><a href="/docs/5.1/helpers/visually-hidden/" class="d-inline-flex align-items-center rounded">Visually hidden</a></li>
-                                  <li><a href="/docs/5.1/helpers/stretched-link/" class="d-inline-flex align-items-center rounded">Stretched link</a></li>
-                                  <li><a href="/docs/5.1/helpers/text-truncation/" class="d-inline-flex align-items-center rounded">Text truncation</a></li>
-                                  <li><a href="/docs/5.1/helpers/vertical-rule/" class="d-inline-flex align-items-center rounded">Vertical rule</a></li>
-                              </ul>
+                            <div class="collapse" id="gpa-collapse">
+                                <form id="gpa" action="{% url 'survey_result_api' %}" method="post">
+                                  <ul class="list-unstyled fw-normal pb-1 small">
+                                      <li>
+                                          <input type="radio" id="4" name="gpa" value="4">
+                                          <label for="4">3.75 - 4.00</label><br>
+                                      </li>
+                                      <li>
+                                          <input type="radio" id="3.5" name="gpa" value="3.5">
+                                          <label for="3.5">3.50 - 3.74</label><br>
+                                      </li>
+                                      <li>
+                                          <input type="radio" id="3.25" name="gpa" value="3.25">
+                                          <label for="3.25">3.25 - 3.49</label><br>
+                                      </li>
+                                      <li>
+                                          <input type="radio" id="3" name="gpa" value="3">
+                                          <label for="3">3.00 - 3.24</label><br>
+                                      </li>
+                                      <li>
+                                          <input type="radio" id="2.75" name="gpa" value="2.75">
+                                          <label for="2.75">2.75 - 2.99</label><br>
+                                      </li>
+                                      <li>
+                                          <input type="radio" id="2.5" name="major" value="2.5">
+                                          <label for="2.5">2.50 - 2.74</label><br>
+                                      </li>
+                                      <li>
+                                          <input type="radio" id="2" name="major" value="2">
+                                          <label for="2">< 2.50</label><br>
+                                      </li>
+                                      <li>
+                                          <input type="radio" id="none" name="major" value="0">
+                                          <label for="none">N/A</label><br>
+                                      </li>
+                                  </ul>
+                                </form>
                             </div>
                           </li>
+
+
+                          <!program affiliation>
                           <li class="mb-1">
-                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#utilities-collapse" aria-expanded="false">
-                              Utilities
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#program-collapse" aria-expanded="false">
+                                Program affiliation:
                             </button>
 
-                            <div class="collapse" id="utilities-collapse">
-                              <ul class="list-unstyled fw-normal pb-1 small">
-                                  <li><a href="/docs/5.1/utilities/api/" class="d-inline-flex align-items-center rounded">API</a></li>
-                                  <li><a href="/docs/5.1/utilities/background/" class="d-inline-flex align-items-center rounded">Background</a></li>
-                                  <li><a href="/docs/5.1/utilities/borders/" class="d-inline-flex align-items-center rounded">Borders</a></li>
-                                  <li><a href="/docs/5.1/utilities/colors/" class="d-inline-flex align-items-center rounded">Colors</a></li>
-                                  <li><a href="/docs/5.1/utilities/display/" class="d-inline-flex align-items-center rounded">Display</a></li>
-                                  <li><a href="/docs/5.1/utilities/flex/" class="d-inline-flex align-items-center rounded">Flex</a></li>
-                                  <li><a href="/docs/5.1/utilities/float/" class="d-inline-flex align-items-center rounded">Float</a></li>
-                                  <li><a href="/docs/5.1/utilities/interactions/" class="d-inline-flex align-items-center rounded">Interactions</a></li>
-                                  <li><a href="/docs/5.1/utilities/opacity/" class="d-inline-flex align-items-center rounded">Opacity</a></li>
-                                  <li><a href="/docs/5.1/utilities/overflow/" class="d-inline-flex align-items-center rounded">Overflow</a></li>
-                                  <li><a href="/docs/5.1/utilities/position/" class="d-inline-flex align-items-center rounded">Position</a></li>
-                                  <li><a href="/docs/5.1/utilities/shadows/" class="d-inline-flex align-items-center rounded">Shadows</a></li>
-                                  <li><a href="/docs/5.1/utilities/sizing/" class="d-inline-flex align-items-center rounded">Sizing</a></li>
-                                  <li><a href="/docs/5.1/utilities/spacing/" class="d-inline-flex align-items-center rounded">Spacing</a></li>
-                                  <li><a href="/docs/5.1/utilities/text/" class="d-inline-flex align-items-center rounded">Text</a></li>
-                                  <li><a href="/docs/5.1/utilities/vertical-align/" class="d-inline-flex align-items-center rounded">Vertical align</a></li>
-                                  <li><a href="/docs/5.1/utilities/visibility/" class="d-inline-flex align-items-center rounded">Visibility</a></li>
-                              </ul>
+                            <div class="collapse" id="program-collapse">
+                                 <form id = "program" action="{% url 'survey_result_api' %}" method="post">
+                                      <ul class="list-unstyled fw-normal pb-1 small">
+                                        <li>
+                                             Are you a part of  a program that provides a community of support (this may include scholarship, mentors etc).
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="no-program" name="program" value="0">
+                                            <label for="no-program">no</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="yes-program" name="program" value="1">
+                                            <label for="yes-program">yes</label>
+                                            <input type="text" id = "yes-program-textbox"><br>
+                                        </li>
+                                      </ul>
+                                 </form>
                             </div>
                           </li>
+
+                          <!professional org affiliation>
                           <li class="mb-1">
-                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#extend-collapse" aria-expanded="false">
-                              Extend
+                                   <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#prof-collapse" aria-expanded="false">
+                                     Professional Organization Affiliation:
+                                   </button>
+
+                                   <div class="collapse" id="prof-collapse">
+                                       <form id="professional" action="{% url 'survey_result_api' %}" method="post">
+                                           <ul class="list-unstyled fw-normal pb-1 small">
+                                               <li>
+                                                   (select all that apply)
+                                               </li>
+                                               <li>
+                                                   <input type="checkbox" id="asme" name="professional" value="1">
+                                                   <label for="asme">American Society of Mechanical Engineers (ASME)</label><br>
+                                               </li>
+                                               <li>
+                                                   <input type="checkbox" id="aiaa" name="professional" value="2">
+                                                   <label for="aiaa">American Institute of Aeronautics and Astronautics (AIAA)</label><br>
+                                               </li>
+                                               <li>
+                                                   <input type="checkbox" id="swe" name="professional" value="3">
+                                                   <label for="swe">Society of Women Engineers (SWE)</label><br>
+                                               </li>
+                                               <li>
+                                                   <input type="checkbox" id="nsbe" name="professional" value="4">
+                                                   <label for="nsbe">National Society of Black Engineers (NSBE)</label><br>
+                                               </li>
+                                               <li>
+                                                    <input type="checkbox" id="shpe" name="professional" value="5">
+                                                    <label for="shpe">Society of Hispanic Professional Engineers (SHPE)</label><br>
+                                               </li>
+                                               <li>
+                                                   <input type="checkbox" id="sae" name="professional" value="6">
+                                                   <label for="sae">Society of Automotive Engineers (SAE)</label><br>
+                                               </li>
+                                               <li>
+                                                   <input type="checkbox" id="ieee" name="professional" value="7">
+                                                   <label for="ieee">Institute of Electrical and Electronics Engineers (IEEE)</label><br>
+                                               </li>
+                                               <li>
+                                                   <input type="checkbox" id="aiche" name="professional" value="8">
+                                                   <label for="aiche">American Institute of Chemical Engineers (AiCHE)</label><br>
+                                               </li>
+                                               <li>
+                                                   <input type="checkbox" id="tbp" name="professional" value="9">
+                                                   <label for="TBP">Tau Beta Pi</label><br>
+                                               </li>
+                                               <li>
+                                                   <input type="checkbox" id="none-prof" name="professional" value="10">
+                                                   <label for="none">None</label><br>
+                                               </li>
+                                               <li>
+                                                   <input type="checkbox" id="other-professional" name="professional" value="0">
+                                                   <label for="other-ethnicity">Other, please specify</label>
+                                                   <input type="text" id = "other-professional-textbox"><br>
+                                               </li>
+                                           </ul>
+                                       </form>
+                                   </div>
+                          </li>
+
+                          <!enrollment status>
+                          <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#enroll-collapse" aria-expanded="false">
+                                Enrollment Status:
                             </button>
 
-                            <div class="collapse" id="extend-collapse">
-                              <ul class="list-unstyled fw-normal pb-1 small">
-                                  <li><a href="/docs/5.1/extend/approach/" class="d-inline-flex align-items-center rounded">Approach</a></li>
-                                  <li><a href="/docs/5.1/extend/icons/" class="d-inline-flex align-items-center rounded">Icons</a></li>
-                              </ul>
+                            <div class="collapse" id="enroll-collapse">
+                                 <form id = "enrollment" action="{% url 'survey_result_api' %}" method="post">
+                                      <ul class="list-unstyled fw-normal pb-1 small">
+                                        <li>
+                                            <input type="radio" id="part" name="enrollment" value="0">
+                                            <label for="part">part-time</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="full" name="enrollment" value="1">
+                                            <label for="full">full-time</label>
+                                        </li>
+                                      </ul>
+                                 </form>
                             </div>
                           </li>
+
+                          <!before college>
                           <li class="mb-1">
-                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#about-collapse" aria-expanded="false">
-                              About
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#b4-collapse" aria-expanded="false">
+                               Where were you immediately before starting at this institution?
                             </button>
 
-                            <div class="collapse" id="about-collapse">
-                              <ul class="list-unstyled fw-normal pb-1 small">
-                                  <li><a href="/docs/5.1/about/overview/" class="d-inline-flex align-items-center rounded">Overview</a></li>
-                                  <li><a href="/docs/5.1/about/team/" class="d-inline-flex align-items-center rounded">Team</a></li>
-                                  <li><a href="/docs/5.1/about/brand/" class="d-inline-flex align-items-center rounded">Brand</a></li>
-                                  <li><a href="/docs/5.1/about/license/" class="d-inline-flex align-items-center rounded">License</a></li>
-                                  <li><a href="/docs/5.1/about/translations/" class="d-inline-flex align-items-center rounded">Translations</a></li>
-                              </ul>
+                            <div class="collapse" id="b4-collapse">
+                                <form id = "prior" action="{% url 'survey_result_api' %}" method="post">
+                                      <ul class="list-unstyled fw-normal pb-1 small">
+                                        <li>
+                                            <input type="radio" id="highschool" name="prior" value="1">
+                                            <label for="highschool">High School</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="associate" name="prior" value="2">
+                                            <label for="associate">2-year college</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="undergraduate" name="prior" value="3">
+                                            <label for="undergraduate">4-year college</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="military" name="prior" value="4">
+                                            <label for="military">Military</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="vocation" name="prior" value="5">
+                                            <label for="vocation">Vocation/Technical School</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="working" name="prior" value="6">
+                                            <label for="working">Working a full time job</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="other-prior" name="prior" value="0">
+                                            <label for="other-prior">Other, please specify</label><br>
+                                            <input type = "text" id = "other-prior-textbox">
+                                        </li>
+                                      </ul>
+                                 </form>
                             </div>
                           </li>
-                          <li class="my-3 mx-4 border-top"></li>
-                          <li>
-                            <a href="/docs/5.1/migration/" class="d-inline-flex align-items-center rounded">
-                              Migration
-                            </a>
-                          </li>
 
-                      </ul>
+                         <!internship experience>
+                         <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#intern-collapse" aria-expanded="false">
+                               Have you previously had an internship or co-op in engineering or an engineering-related field?
+                            </button>
 
+                            <div class="collapse" id="intern-collapse">
+                                <form id = "internship" action="{% url 'survey_result_api' %}" method="post">
+                                      <ul class="list-unstyled fw-normal pb-1 small">
+                                        <li>
+                                            <input type="radio" id="no-internship" name="internship" value="0">
+                                            <label for="no-internship">no</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="yes-internship" name="internship" value="1">
+                                            <label for="yes-internship">yes</label>
+                                        </li>
+                                      </ul>
+                                 </form>
+                            </div>
+                         </li>
 
+                         <!research experience>
+                         <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#research-collapse" aria-expanded="false">
+                                 Have you done on-campus research?
+                            </button>
 
+                            <div class="collapse" id="research-collapse">
+                                <form id = "research" action="{% url 'survey_result_api' %}" method="post">
+                                      <ul class="list-unstyled fw-normal pb-1 small">
+                                        <li>
+                                            <input type="radio" id="no-research" name="research" value="0">
+                                            <label for="no-research">no</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="yes-research" name="research" value="1">
+                                            <label for="yes-research">yes</label>
+                                        </li>
+                                      </ul>
+                                 </form>
+                            </div>
+                         </li>
 
-                    <!gender>
-                    <!form id="gender" action="{% url 'survey_result_api' %}" method="post">
-                      {% csrf_token %}
-                      <!div class="collapse bd-links">
+                         <!parent engineer>
+                         <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#parent-collapse" aria-expanded="false">
+                                 Do you have a parent/guardian who is an Engineer?
+                            </button>
 
-                          <!p id=gender-prompt>Gender:<!/p>
-                          <!div class="collapse show" id="getting-started-collapse">
+                            <div class="collapse" id="parent-collapse">
+                                <form id = "parent-engineer" action="{% url 'survey_result_api' %}" method="post">
+                                      <ul class="list-unstyled fw-normal pb-1 small">
+                                        <li>
+                                            <input type="radio" id="no-parent-engineer" name="parent-engineer" value="0">
+                                            <label for="no-parent-engineer">no</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="yes-parent-engineer" name="parent-engineer" value="1">
+                                            <label for="yes-parent-engineer">yes</label>
+                                        </li>
+                                      </ul>
+                                 </form>
+                            </div>
+                         </li>
 
-                          <!/div>
+                        <!family engineer>
+                        <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#fam-collapse" aria-expanded="false">
+                                 Do you have a family member who is an Engineer?
+                            </button>
 
-                      <!/div>
-                    <!/form>
+                            <div class="collapse" id="fam-collapse">
+                                <form id = "family-engineer" action="{% url 'survey_result_api' %}" method="post">
+                                      <ul class="list-unstyled fw-normal pb-1 small">
+                                        <li>
+                                            <input type="radio" id="no-family-engineer" name="family-engineer" value="0">
+                                            <label for="no-family-engineer">no</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="yes-family-engineer" name="family-engineer" value="1">
+                                            <label for="yes-family-engineer">yes</label>
+                                        </li>
+                                      </ul>
+                                 </form>
+                            </div>
+                        </li>
 
-                    <!ethnicity>
-                    <form id="ethnicity" action="{% url 'survey_result_api' %}" method="post">
-                      <br><p id=ethnicity-prompt>Ethnicity/Citizenship (check two max):</p>
-                      <input type="checkbox" id="African" name="ethnicity" value="1">
-                      <label for="African">African/Black American</label><br>
-                      <input type="checkbox" id="Indian" name="ethnicity" value="2">
-                      <label for="Indian">American Indian/Alaskin Native</label><br>
-                      <input type="checkbox" id="Asian" name="ethnicity" value="3">
-                      <label for="Asian">Asian & Pacific American</label><br>
-                      <input type="checkbox" id="Latina" name="ethnicity" value="4">
-                      <label for="Latina">Latina/Hispanic American</label><br>
-                      <input type="checkbox" id="White" name="ethnicity" value="5">
-                      <label for="White">White American</label><br>
-                      <input type="checkbox" id="Foreign" name="ethnicity" value="6">
-                      <label for="Foreign">Foreign National on student visa</label><br>
-                      <input type="checkbox" id="green-card" name="ethnicity" value="7">
-                      <label for="green-card">Foreign National/U.S. Resident (green card)</label><br>
-                      <input type="checkbox" id="other-ethnicity" name="ethnicity" value="0">
-                      <label for="other-ethnicity">Other, please specify</label>
-                      <input type="text" id = other-ethnicity-textbox><br>
-                    </form>
+                        <!previous school impact>
+                        <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#prev-collapse" aria-expanded="false">
+                                Did a previous school program or course(s) impact your decision to
+                                pursue engineering?
+                            </button>
 
-                    <!grade>
-                    <form id="grade" action="{% url 'survey_result_api' %}" method="post">
-                      <br><p id=grade-prompt>As of today, I am a:</p>
-                      <input type="radio" id="first" name="grade" value="1">
-                      <label for="first">first-year student</label><br>
-                      <input type="radio" id="second" name="grade" value="2">
-                      <label for="second">second-year student</label><br>
-                      <input type="radio" id="third" name="grade" value="3">
-                      <label for="third">third-year student</label>
-                      <input type="radio" id="fourth" name="grade" value="4">
-                      <label for="fourth">fourth-year student</label><br>
-                      <input type="radio" id="fifth" name="grade" value="5">
-                      <label for="fifth">fifth-year student or above</label>
-                    </form>
-
-                    <!major>
-                    <form id="major" action="{% url 'survey_result_api' %}" method="post">
-                      <br><p id=major-prompt>I am a ____ major:</p>
-                      <input type="radio" id="chemical" name="major" value="1">
-                      <label for="chemical">chemical engineering</label><br>
-                      <input type="radio" id="mechanical" name="major" value="2">
-                      <label for="mechanical">mechanical engineering</label><br>
-                      <input type="radio" id="compe" name="major" value="3">
-                      <label for="compe">computer engineering</label><br>
-                      <input type="radio" id="engineering" name="major" value="4">
-                      <label for="engineering">engineering</label><br>
-                      <input type="radio" id="undecided" name="major" value="5">
-                      <label for="undecided">undecided</label><br>
-                      <input type="radio" id="other-major" name="major" value="0">
-                      <label for="other-major">Other</label>
-                      <input type="text" id = "other-major=textbox"><br>
-                    </form>
-
-                    <!discussion>
-                    <form id = "discussion" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "discussion-prompt"> What ENES 101 Discussion Section are you in: </p>
-                        <input type="text" id = "discussion-prompt-textbox"><br>
-                    </form>
-
-                    <!gpa>
-                    <form id="gpa" action="{% url 'survey_result_api' %}" method="post">
-                      <br><p id=gpa-prompt>my current GPA is:</p>
-                      <input type="radio" id="4" name="gpa" value="4">
-                      <label for="4">3.75 - 4.00</label><br>
-                      <input type="radio" id="3.5" name="gpa" value="3.5">
-                      <label for="3.5">3.50 - 3.74</label><br>
-                      <input type="radio" id="3.25" name="gpa" value="3.25">
-                      <label for="3.25">3.25 - 3.49</label><br>
-                      <input type="radio" id="3" name="gpa" value="3">
-                      <label for="3">3.00 - 3.24</label><br>
-                      <input type="radio" id="2.75" name="gpa" value="2.75">
-                      <label for="2.75">2.75 - 2.99</label><br>
-                      <input type="radio" id="2.5" name="major" value="2.5">
-                      <label for="2.5">2.50 - 2.74</label><br>
-                      <input type="radio" id="2" name="major" value="2">
-                      <label for="2">< 2.50</label><br>
-                      <input type="radio" id="none" name="major" value="0">
-                      <label for="none">N/A</label><br>
-                    </form>
-
-                    <!program affiliation>
-                    <form id = "program" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "program-prompt">Program affiliation: Are you a part of  a program that provides a community of support
-                        (this may include scholarship, mentors etc). </p>
-                        <input type="radio" id="no-program" name="program" value="0">
-                        <label for="no-program">no</label><br>
-                        <input type="radio" id="yes-program" name="program" value="1">
-                        <label for="yes-program">yes</label>
-                        <input type="text" id = "yes-program-textbox"><br>
-                    </form>
-
-                    <!professional org affiliation>
-                    <form id="professional" action="{% url 'survey_result_api' %}" method="post">
-                      <br><p id=professional-prompt>Professional Organization Affiliation (select all that apply):</p>
-                      <input type="checkbox" id="asme" name="professional" value="1">
-                      <label for="asme">American Society of Mechanical Engineers (ASME)</label><br>
-                      <input type="checkbox" id="aiaa" name="professional" value="2">
-                      <label for="aiaa">American Institute of Aeronautics and Astronautics (AIAA)</label><br>
-                      <input type="checkbox" id="swe" name="professional" value="3">
-                      <label for="swe">Society of Women Engineers (SWE)</label><br>
-                      <input type="checkbox" id="nsbe" name="professional" value="4">
-                      <label for="nsbe">National Society of Black Engineers (NSBE)</label><br>
-                      <input type="checkbox" id="shpe" name="professional" value="5">
-                      <label for="shpe">Society of Hispanic Professional Engineers (SHPE)</label><br>
-                      <input type="checkbox" id="sae" name="professional" value="6">
-                      <label for="sae">Society of Automotive Engineers (SAE)</label><br>
-                      <input type="checkbox" id="ieee" name="professional" value="7">
-                      <label for="ieee">Institute of Electrical and Electronics Engineers (IEEE)</label><br>
-                      <input type="checkbox" id="aiche" name="professional" value="8">
-                      <label for="aiche">American Institute of Chemical Engineers (AiCHE)</label><br>
-                      <input type="checkbox" id="tbp" name="professional" value="9">
-                      <label for="TBP">Tau Beta Pi</label><br>
-                      <input type="checkbox" id="none-prof" name="professional" value="10">
-                      <label for="none">None</label><br>
-                      <input type="checkbox" id="other-professional" name="professional" value="0">
-                      <label for="other-ethnicity">Other, please specify</label>
-                      <input type="text" id = "other-professional-textbox"><br>
-                    </form>
-
-                    <!enrollment status>
-                    <form id = "enrollment" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "enrollment-prompt">Enrollment Status:</p>
-                        <input type="radio" id="part" name="enrollment" value="0">
-                        <label for="part">part-time</label><br>
-                        <input type="radio" id="full" name="enrollment" value="1">
-                        <label for="full">full-time</label>
-                    </form>
-
-                    <!before college>
-                    <form id = "prior" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "prior-prompt">Where were you immediately before starting at this institution?</p>
-                        <input type="radio" id="highschool" name="prior" value="1">
-                        <label for="highschool">High School</label><br>
-                        <input type="radio" id="associate" name="prior" value="2">
-                        <label for="associate">2-year college</label><br>
-                        <input type="radio" id="undergraduate" name="prior" value="3">
-                        <label for="undergraduate">4-year college</label><br>
-                        <input type="radio" id="military" name="prior" value="4">
-                        <label for="military">Military</label><br>
-                        <input type="radio" id="vocation" name="prior" value="5">
-                        <label for="vocation">Vocation/Technical School</label><br>
-                        <input type="radio" id="working" name="prior" value="6">
-                        <label for="working">Working a full time job</label><br>
-                        <input type="radio" id="other-prior" name="prior" value="0">
-                        <label for="other-prior">Other, please specify</label><br>
-                        <input type = "text" id = "other-prior-textbox">
-                    </form>
-
-                    <!internship experience>
-                    <form id = "internship" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "internship-prompt">Have you previously had an internship or co-op in engineering or an
-                        engineering-related field?</p>
-                        <input type="radio" id="no-internship" name="internship" value="0">
-                        <label for="no-internship">no</label><br>
-                        <input type="radio" id="yes-internship" name="internship" value="1">
-                        <label for="yes-internship">yes</label>
-                    </form>
-
-                    <!research experience>
-                    <form id = "research" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "research-prompt">Have you done on-campus research?</p>
-                        <input type="radio" id="no-research" name="research" value="0">
-                        <label for="no-research">no</label><br>
-                        <input type="radio" id="yes-research" name="research" value="1">
-                        <label for="yes-research">yes</label>
-                    </form>
-
-                    <!parent engineer>
-                    <form id = "parent-engineer" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "parent-engineer-prompt">Do you have a parent/guardian who is an Engineer?</p>
-                        <input type="radio" id="no-parent-engineer" name="parent-engineer" value="0">
-                        <label for="no-parent-engineer">no</label><br>
-                        <input type="radio" id="yes-parent-engineer" name="parent-engineer" value="1">
-                        <label for="yes-parent-engineer">yes</label>
-                    </form>
-
-                    <!family engineer>
-                    <form id = "family-engineer" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "family-engineer-prompt">Do you have a family member who is an Engineer?</p>
-                        <input type="radio" id="no-family-engineer" name="family-engineer" value="0">
-                        <label for="no-family-engineer">no</label><br>
-                        <input type="radio" id="yes-family-engineer" name="family-engineer" value="1">
-                        <label for="yes-family-engineer">yes</label>
-                    </form>
-
-                    <!previous school impact>
-                    <form id = "previous-school-impact" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "previous-school-impact-prompt">Did a previous school program or course(s) impact your decision to
-                        pursue engineering?</p>
-                        <input type="radio" id="no-previous-school-impact" name="previous-school-impact" value="0">
-                        <label for="no-previous-school-impact">no</label><br>
-                        <input type="radio" id="yes-previous-school-impact" name="previous-school-impact" value="1">
-                        <label for="yes-previous-school-impact">yes</label>
-                        <input type="text" id = yes-previous-school-impact"><br>
-                    </form>
-
+                            <div class="collapse" id="prev-collapse">
+                                <form id = "previous-school-impact" action="{% url 'survey_result_api' %}" method="post">
+                                      <ul class="list-unstyled fw-normal pb-1 small">
+                                        <li>
+                                            <input type="radio" id="no-previous-school-impact" name="previous-school-impact" value="0">
+                                            <label for="no-previous-school-impact">no</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="yes-previous-school-impact" name="previous-school-impact" value="1">
+                                            <label for="yes-previous-school-impact">yes</label>
+                                            <input type="text" id = yes-previous-school-impact"><br>
+                                        </li>
+                                      </ul>
+                                 </form>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
 
                 <!section two: impressions of engineering>
