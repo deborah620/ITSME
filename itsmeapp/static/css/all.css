@@ -7,6 +7,7 @@ h2 {
   text-align: left;
   font-size: 20px;
 }
+
 #Very-Uncertain-finish{
     position:relative;
     top:25px;
@@ -27,6 +28,7 @@ h2 {
     position:relative;
     top:25px;
 }
+
 #Very-Uncertain-fhere{
     position:relative;
     top:25px;
@@ -47,6 +49,70 @@ h2 {
     position:relative;
     top:25px;
 }
+
+#Not-A-Reason-tech{
+    position:relative;
+    top:25px;
+}
+#Minimal-Reason-tech{
+    position:relative;
+    top:25px;
+}
+#Moderate-Reason-tech{
+    position:relative;
+    top:25px;
+}
+#Major-Reason-tech{
+    position:relative;
+    top:25px;
+}
+#I-prefer-not-to-answer-tech{
+    position:relative;
+    top:25px;
+}
+
+#Not-A-Reason-parents{
+    position:relative;
+    top:25px;
+}
+#Minimal-Reason-parents{
+    position:relative;
+    top:25px;
+}
+#Moderate-Reason-parents{
+    position:relative;
+    top:25px;
+}
+#Major-Reason-parents{
+    position:relative;
+    top:25px;
+}
+#I-prefer-not-to-answer-parents{
+    position:relative;
+    top:25px;
+}
+
+#Not-A-Reason-fix{
+    position:relative;
+    top:25px;
+}
+#Minimal-Reason-fix{
+    position:relative;
+    top:25px;
+}
+#Moderate-Reason-fix{
+    position:relative;
+    top:25px;
+}
+#Major-Reason-fix{
+    position:relative;
+    top:25px;
+}
+#I-prefer-not-to-answer-fix{
+    position:relative;
+    top:25px;
+}
+
 p {
   font-family: verdana;
   font-size: 20px;

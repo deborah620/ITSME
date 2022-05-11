@@ -37,21 +37,236 @@
             </div>
             <div class="left-align">
                 <!section one: background info>
-                <div class = "section one">
+                <div class = "section1">
                     <h2> General background information <br></h2>
 
+
+                    <ul class="list-unstyled mb-0 py-3 pt-md-1">
+
+                          <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#getting-started-collapse" aria-expanded="true" aria-current="true">
+                              Gender:
+                            </button>
+                                <div class="collapse show" id="getting-started-collapse">
+                                <form id="gender" action="{% url 'survey_result_api' %}" method="post">
+                                      <ul class="list-unstyled fw-normal pb-1 small">
+                                          <li><input type="radio" id="male" name="gender" value="1">
+                                                <label for="male">Male</label><br>
+                                          </li>
+                                          <li>
+                                                <input type="radio" id="female" name="gender" value="2">
+                                                <label for="female">Female</label><br>
+                                          </li>
+                                          <li>
+                                              <input type="radio" id="other-gender" name="gender" value="0">
+                                              <label for="other-gender">Other</label>
+                                              <input type="text" id = "other-gender-textbox"><br>
+                                          </li>
+                                      </ul>
+                                  </form>
+                                </div>
+
+                          </li>
+                          <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#customize-collapse" aria-expanded="false">
+                              Customize
+                            </button>
+
+                            <div class="collapse" id="customize-collapse">
+                              <ul class="list-unstyled fw-normal pb-1 small">
+                                  <li><a href="/docs/5.1/customize/overview/" class="d-inline-flex align-items-center rounded">Overview</a></li>
+                                  <li><a href="/docs/5.1/customize/sass/" class="d-inline-flex align-items-center rounded">Sass</a></li>
+                                  <li><a href="/docs/5.1/customize/options/" class="d-inline-flex align-items-center rounded">Options</a></li>
+                                  <li><a href="/docs/5.1/customize/color/" class="d-inline-flex align-items-center rounded">Color</a></li>
+                                  <li><a href="/docs/5.1/customize/components/" class="d-inline-flex align-items-center rounded">Components</a></li>
+                                  <li><a href="/docs/5.1/customize/css-variables/" class="d-inline-flex align-items-center rounded">CSS variables</a></li>
+                                  <li><a href="/docs/5.1/customize/optimize/" class="d-inline-flex align-items-center rounded">Optimize</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#layout-collapse" aria-expanded="false">
+                              Layout
+                            </button>
+
+                            <div class="collapse" id="layout-collapse">
+                              <ul class="list-unstyled fw-normal pb-1 small">
+                                  <li><a href="/docs/5.1/layout/breakpoints/" class="d-inline-flex align-items-center rounded">Breakpoints</a></li>
+                                  <li><a href="/docs/5.1/layout/containers/" class="d-inline-flex align-items-center rounded">Containers</a></li>
+                                  <li><a href="/docs/5.1/layout/grid/" class="d-inline-flex align-items-center rounded">Grid</a></li>
+                                  <li><a href="/docs/5.1/layout/columns/" class="d-inline-flex align-items-center rounded">Columns</a></li>
+                                  <li><a href="/docs/5.1/layout/gutters/" class="d-inline-flex align-items-center rounded">Gutters</a></li>
+                                  <li><a href="/docs/5.1/layout/utilities/" class="d-inline-flex align-items-center rounded">Utilities</a></li>
+                                  <li><a href="/docs/5.1/layout/z-index/" class="d-inline-flex align-items-center rounded">Z-index</a></li>
+                                  <li><a href="/docs/5.1/layout/css-grid/" class="d-inline-flex align-items-center rounded">CSS Grid</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#content-collapse" aria-expanded="false">
+                              Content
+                            </button>
+
+                            <div class="collapse" id="content-collapse">
+                              <ul class="list-unstyled fw-normal pb-1 small">
+                                  <li><a href="/docs/5.1/content/reboot/" class="d-inline-flex align-items-center rounded">Reboot</a></li>
+                                  <li><a href="/docs/5.1/content/typography/" class="d-inline-flex align-items-center rounded">Typography</a></li>
+                                  <li><a href="/docs/5.1/content/images/" class="d-inline-flex align-items-center rounded">Images</a></li>
+                                  <li><a href="/docs/5.1/content/tables/" class="d-inline-flex align-items-center rounded">Tables</a></li>
+                                  <li><a href="/docs/5.1/content/figures/" class="d-inline-flex align-items-center rounded">Figures</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#forms-collapse" aria-expanded="false">
+                              Forms
+                            </button>
+
+                            <div class="collapse" id="forms-collapse">
+                              <ul class="list-unstyled fw-normal pb-1 small">
+                                  <li><a href="/docs/5.1/forms/overview/" class="d-inline-flex align-items-center rounded">Overview</a></li>
+                                  <li><a href="/docs/5.1/forms/form-control/" class="d-inline-flex align-items-center rounded">Form control</a></li>
+                                  <li><a href="/docs/5.1/forms/select/" class="d-inline-flex align-items-center rounded">Select</a></li>
+                                  <li><a href="/docs/5.1/forms/checks-radios/" class="d-inline-flex align-items-center rounded">Checks &amp; radios</a></li>
+                                  <li><a href="/docs/5.1/forms/range/" class="d-inline-flex align-items-center rounded">Range</a></li>
+                                  <li><a href="/docs/5.1/forms/input-group/" class="d-inline-flex align-items-center rounded">Input group</a></li>
+                                  <li><a href="/docs/5.1/forms/floating-labels/" class="d-inline-flex align-items-center rounded">Floating labels</a></li>
+                                  <li><a href="/docs/5.1/forms/layout/" class="d-inline-flex align-items-center rounded">Layout</a></li>
+                                  <li><a href="/docs/5.1/forms/validation/" class="d-inline-flex align-items-center rounded">Validation</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#components-collapse" aria-expanded="false">
+                              Components
+                            </button>
+
+                            <div class="collapse" id="components-collapse">
+                              <ul class="list-unstyled fw-normal pb-1 small">
+                                  <li><a href="/docs/5.1/components/accordion/" class="d-inline-flex align-items-center rounded">Accordion</a></li>
+                                  <li><a href="/docs/5.1/components/alerts/" class="d-inline-flex align-items-center rounded">Alerts</a></li>
+                                  <li><a href="/docs/5.1/components/badge/" class="d-inline-flex align-items-center rounded">Badge</a></li>
+                                  <li><a href="/docs/5.1/components/breadcrumb/" class="d-inline-flex align-items-center rounded">Breadcrumb</a></li>
+                                  <li><a href="/docs/5.1/components/buttons/" class="d-inline-flex align-items-center rounded">Buttons</a></li>
+                                  <li><a href="/docs/5.1/components/button-group/" class="d-inline-flex align-items-center rounded">Button group</a></li>
+                                  <li><a href="/docs/5.1/components/card/" class="d-inline-flex align-items-center rounded">Card</a></li>
+                                  <li><a href="/docs/5.1/components/carousel/" class="d-inline-flex align-items-center rounded">Carousel</a></li>
+                                  <li><a href="/docs/5.1/components/close-button/" class="d-inline-flex align-items-center rounded">Close button</a></li>
+                                  <li><a href="/docs/5.1/components/collapse/" class="d-inline-flex align-items-center rounded">Collapse</a></li>
+                                  <li><a href="/docs/5.1/components/dropdowns/" class="d-inline-flex align-items-center rounded">Dropdowns</a></li>
+                                  <li><a href="/docs/5.1/components/list-group/" class="d-inline-flex align-items-center rounded">List group</a></li>
+                                  <li><a href="/docs/5.1/components/modal/" class="d-inline-flex align-items-center rounded">Modal</a></li>
+                                  <li><a href="/docs/5.1/components/navs-tabs/" class="d-inline-flex align-items-center rounded">Navs &amp; tabs</a></li>
+                                  <li><a href="/docs/5.1/components/navbar/" class="d-inline-flex align-items-center rounded">Navbar</a></li>
+                                  <li><a href="/docs/5.1/components/offcanvas/" class="d-inline-flex align-items-center rounded">Offcanvas</a></li>
+                                  <li><a href="/docs/5.1/components/pagination/" class="d-inline-flex align-items-center rounded">Pagination</a></li>
+                                  <li><a href="/docs/5.1/components/placeholders/" class="d-inline-flex align-items-center rounded">Placeholders</a></li>
+                                  <li><a href="/docs/5.1/components/popovers/" class="d-inline-flex align-items-center rounded">Popovers</a></li>
+                                  <li><a href="/docs/5.1/components/progress/" class="d-inline-flex align-items-center rounded">Progress</a></li>
+                                  <li><a href="/docs/5.1/components/scrollspy/" class="d-inline-flex align-items-center rounded">Scrollspy</a></li>
+                                  <li><a href="/docs/5.1/components/spinners/" class="d-inline-flex align-items-center rounded">Spinners</a></li>
+                                  <li><a href="/docs/5.1/components/toasts/" class="d-inline-flex align-items-center rounded">Toasts</a></li>
+                                  <li><a href="/docs/5.1/components/tooltips/" class="d-inline-flex align-items-center rounded">Tooltips</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#helpers-collapse" aria-expanded="false">
+                              Helpers
+                            </button>
+
+                            <div class="collapse" id="helpers-collapse">
+                              <ul class="list-unstyled fw-normal pb-1 small">
+                                  <li><a href="/docs/5.1/helpers/clearfix/" class="d-inline-flex align-items-center rounded">Clearfix</a></li>
+                                  <li><a href="/docs/5.1/helpers/colored-links/" class="d-inline-flex align-items-center rounded">Colored links</a></li>
+                                  <li><a href="/docs/5.1/helpers/ratio/" class="d-inline-flex align-items-center rounded">Ratio</a></li>
+                                  <li><a href="/docs/5.1/helpers/position/" class="d-inline-flex align-items-center rounded">Position</a></li>
+                                  <li><a href="/docs/5.1/helpers/stacks/" class="d-inline-flex align-items-center rounded">Stacks</a></li>
+                                  <li><a href="/docs/5.1/helpers/visually-hidden/" class="d-inline-flex align-items-center rounded">Visually hidden</a></li>
+                                  <li><a href="/docs/5.1/helpers/stretched-link/" class="d-inline-flex align-items-center rounded">Stretched link</a></li>
+                                  <li><a href="/docs/5.1/helpers/text-truncation/" class="d-inline-flex align-items-center rounded">Text truncation</a></li>
+                                  <li><a href="/docs/5.1/helpers/vertical-rule/" class="d-inline-flex align-items-center rounded">Vertical rule</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#utilities-collapse" aria-expanded="false">
+                              Utilities
+                            </button>
+
+                            <div class="collapse" id="utilities-collapse">
+                              <ul class="list-unstyled fw-normal pb-1 small">
+                                  <li><a href="/docs/5.1/utilities/api/" class="d-inline-flex align-items-center rounded">API</a></li>
+                                  <li><a href="/docs/5.1/utilities/background/" class="d-inline-flex align-items-center rounded">Background</a></li>
+                                  <li><a href="/docs/5.1/utilities/borders/" class="d-inline-flex align-items-center rounded">Borders</a></li>
+                                  <li><a href="/docs/5.1/utilities/colors/" class="d-inline-flex align-items-center rounded">Colors</a></li>
+                                  <li><a href="/docs/5.1/utilities/display/" class="d-inline-flex align-items-center rounded">Display</a></li>
+                                  <li><a href="/docs/5.1/utilities/flex/" class="d-inline-flex align-items-center rounded">Flex</a></li>
+                                  <li><a href="/docs/5.1/utilities/float/" class="d-inline-flex align-items-center rounded">Float</a></li>
+                                  <li><a href="/docs/5.1/utilities/interactions/" class="d-inline-flex align-items-center rounded">Interactions</a></li>
+                                  <li><a href="/docs/5.1/utilities/opacity/" class="d-inline-flex align-items-center rounded">Opacity</a></li>
+                                  <li><a href="/docs/5.1/utilities/overflow/" class="d-inline-flex align-items-center rounded">Overflow</a></li>
+                                  <li><a href="/docs/5.1/utilities/position/" class="d-inline-flex align-items-center rounded">Position</a></li>
+                                  <li><a href="/docs/5.1/utilities/shadows/" class="d-inline-flex align-items-center rounded">Shadows</a></li>
+                                  <li><a href="/docs/5.1/utilities/sizing/" class="d-inline-flex align-items-center rounded">Sizing</a></li>
+                                  <li><a href="/docs/5.1/utilities/spacing/" class="d-inline-flex align-items-center rounded">Spacing</a></li>
+                                  <li><a href="/docs/5.1/utilities/text/" class="d-inline-flex align-items-center rounded">Text</a></li>
+                                  <li><a href="/docs/5.1/utilities/vertical-align/" class="d-inline-flex align-items-center rounded">Vertical align</a></li>
+                                  <li><a href="/docs/5.1/utilities/visibility/" class="d-inline-flex align-items-center rounded">Visibility</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#extend-collapse" aria-expanded="false">
+                              Extend
+                            </button>
+
+                            <div class="collapse" id="extend-collapse">
+                              <ul class="list-unstyled fw-normal pb-1 small">
+                                  <li><a href="/docs/5.1/extend/approach/" class="d-inline-flex align-items-center rounded">Approach</a></li>
+                                  <li><a href="/docs/5.1/extend/icons/" class="d-inline-flex align-items-center rounded">Icons</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li class="mb-1">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#about-collapse" aria-expanded="false">
+                              About
+                            </button>
+
+                            <div class="collapse" id="about-collapse">
+                              <ul class="list-unstyled fw-normal pb-1 small">
+                                  <li><a href="/docs/5.1/about/overview/" class="d-inline-flex align-items-center rounded">Overview</a></li>
+                                  <li><a href="/docs/5.1/about/team/" class="d-inline-flex align-items-center rounded">Team</a></li>
+                                  <li><a href="/docs/5.1/about/brand/" class="d-inline-flex align-items-center rounded">Brand</a></li>
+                                  <li><a href="/docs/5.1/about/license/" class="d-inline-flex align-items-center rounded">License</a></li>
+                                  <li><a href="/docs/5.1/about/translations/" class="d-inline-flex align-items-center rounded">Translations</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li class="my-3 mx-4 border-top"></li>
+                          <li>
+                            <a href="/docs/5.1/migration/" class="d-inline-flex align-items-center rounded">
+                              Migration
+                            </a>
+                          </li>
+
+                      </ul>
+
+
+
+
                     <!gender>
-                    <form id="gender" action="{% url 'survey_result_api' %}" method="post">
+                    <!form id="gender" action="{% url 'survey_result_api' %}" method="post">
                       {% csrf_token %}
-                      <p id=gender-prompt>Gender:</p>
-                      <input type="radio" id="male" name="gender" value="1">
-                      <label for="male">Male</label><br>
-                      <input type="radio" id="female" name="gender" value="2">
-                      <label for="female">Female</label><br>
-                      <input type="radio" id="other-gender" name="gender" value="0">
-                      <label for="other-gender">Other</label>
-                      <input type="text" id = "other-gender-textbox"><br>
-                    </form>
+                      <!div class="collapse bd-links">
+
+                          <!p id=gender-prompt>Gender:<!/p>
+                          <!div class="collapse show" id="getting-started-collapse">
+
+                          <!/div>
+
+                      <!/div>
+                    <!/form>
 
                     <!ethnicity>
                     <form id="ethnicity" action="{% url 'survey_result_api' %}" method="post">
@@ -283,7 +498,11 @@
                                 <p1>When You began your engineering degree, how certain were you that you would complete it?</p1>
                             </div>
                             <div class="col themed-grid-col">
+                                <!div class="image-radio">
+                                    <!input type="radio" id="Very-Uncertain-finish" name="finish-degree" value="1" style="display: none;"/>
+                                    <!img src="http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/thumbs-up.png" /></label>
                                 <input type="radio" id="Very-Uncertain-finish" name="finish-degree" value="1">
+                                <!/div>
                             </div>
                             <div class="col themed-grid-col">
                                 <input type="radio" id="Uncertain-finish" name="finish-degree" value="2">
@@ -324,110 +543,195 @@
                              </div>
                         </div>
                     </form>
+                     <br>
+
+                    <div class="row row-cols-md-6 mb-6 text-center">
+                        <div class="col themed-grid-col">
+
+                        </div>
+                        <div class="col themed-grid-col">
+                            Not a Reason
+                        </div>
+                        <div class="col themed-grid-col">
+                            Minimal Reason
+                        </div>
+                        <div class="col themed-grid-col">
+                            Moderate Reason
+                        </div>
+                        <div class="col themed-grid-col">
+                            Major Reason
+                        </div>
+                        <div class="col themed-grid-col">
+                            I prefer not to answer
+                        </div>
+                    </div>
 
                     <!Technology plays an important role in solving society's problems>
                     <form id = "technology-importance" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "Technology-plays-an-important-role-in-solving-society's-problems-prompt">Technology plays an important role in solving society's problems?</p>
-                        <input type="radio" id="Not-A-Reason-tech" name="technology-importance" value="1">
-                        <label for="Not-A-Reason-tech">Not a Reason</label><br>
-                        <input type="radio" id="Minimal-Reason-tech" name="technology-importance" value="2">
-                        <label for="Minimal-Reason-tech">Minimal Reason</label><br>
-                        <input type="radio" id="Moderate-Reason-tech" name="technology-importance" value="3">
-                        <label for="Moderate-Reason-tech">Moderate Reason</label><br>
-                        <input type="radio" id="Major-Reason-tech" name="technology-importance" value="4">
-                        <label for="Major-Reason-tech">Major Reason</label><br>
-                        <input type="radio" id="I-prefer-not-to-answer-tech" name="technology-importance" value="0">
-                        <label for="I-prefer-not-to-answer-tech">I prefer not to answer</label><br>
+                        <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                                <br><p1 id = "Technology-plays-an-important-role-in-solving-society's-problems-prompt">Technology plays an important role in solving society's problems?</p1>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Not-A-Reason-tech" name="technology-importance" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Minimal-Reason-tech" name="technology-importance" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Moderate-Reason-tech" name="technology-importance" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Major-Reason-tech" name="technology-importance" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="I-prefer-not-to-answer-tech" name="technology-importance" value="0">
+                            </div>
+                        </div>
                     </form>
 
                     <!Parents would disapprove different major>
                     <form id = "parents-disprove-difft" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "Parents-would-disapprove-different-major">My parent(s) would disapprove if I choose a major other than engineering?</p>
-                        <input type="radio" id="Not-A-Reason-parents" name="parents-disprove-difft" value="1">
-                        <label for="Not-A-Reason-parents">Not a Reason</label><br>
-                        <input type="radio" id="Minimal-Reason-parents" name="parents-disprove-difft" value="2">
-                        <label for="Minimal-Reason-parents">Minimal Reason</label><br>
-                        <input type="radio" id="Moderate-Reason-parents" name="parents-disprove-difft" value="3">
-                        <label for="Moderate-Reason-parents">Moderate Reason</label><br>
-                        <input type="radio" id="Major-Reason-parents" name="parents-disprove-difft" value="4">
-                        <label for="Major-Reason-parents">Major Reason</label><br>
-                        <input type="radio" id="I-prefer-not-to-answer-parents" name="parents-disprove-difft" value="0">
-                        <label for="I-prefer-not-to-answer-parents">I prefer not to answer</label><br>
+                        <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                                <br><p1>My parent(s) would disapprove if I choose a major other than engineering?</p1>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Not-A-Reason-parents" name="parents-disprove-difft" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Minimal-Reason-parents" name="parents-disprove-difft" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Moderate-Reason-parents" name="parents-disprove-difft" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Major-Reason-parents" name="parents-disprove-difft" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="I-prefer-not-to-answer-parents" name="parents-disprove-difft" value="0">
+                            </div>
+                        </div>
                     </form>
 
                     <!Engineers have contributed to fixing world problems>
                     <form id = "engineer-fix-world" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "Engineers-have-contributed-to-fixing-world-problems-prompt">Engineers have contributed greatly to fixing problems in the world?</p>
-                        <input type="radio" id="Not-A-Reason-fix" name="engineer-fix-world" value="1">
-                        <label for="Not-A-Reason-fix">Not a Reason</label><br>
-                        <input type="radio" id="Minimal-Reason-fix" name="engineer-fix-world" value="2">
-                        <label for="Minimal-Reason-fix">Minimal Reason</label><br>
-                        <input type="radio" id="Moderate-Reason-fix" name="engineer-fix-world" value="3">
-                        <label for="Moderate-Reason-fix">Moderate Reason</label><br>
-                        <input type="radio" id="Major-Reason-fix" name="engineer-fix-world" value="4">
-                        <label for="Major-Reason-fix">Major Reason</label><br>
-                        <input type="radio" id="I-prefer-not-to-answer-fix" name="engineer-fix-world" value="0">
-                        <label for="I-prefer-not-to-answer-fix">I prefer not to answer</label><br>
+                         <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                                <br><p1 id = "Engineers-have-contributed-to-fixing-world-problems-prompt">Engineers have contributed greatly to fixing problems in the world?</p1>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Not-A-Reason-fix" name="engineer-fix-world" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Minimal-Reason-fix" name="engineer-fix-world" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Moderate-Reason-fix" name="engineer-fix-world" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Major-Reason-fix" name="engineer-fix-world" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="I-prefer-not-to-answer-fix" name="engineer-fix-world" value="0">
+                            </div>
+                         </div>
                     </form>
 
                     <!Engineers are well payed>
                     <form id = "engineer_paid" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "Engineers-are-well-paid-prompt">Engineers are well paid?</p>
-                        <input type="radio" id="Not-A-Reason-paid" name="engineer_paid" value="1">
-                        <label for="Not-A-Reason-paid">Not a Reason</label><br>
-                        <input type="radio" id="Minimal-Reason-paid" name="engineer_paid" value="2">
-                        <label for="Minimal-Reason-paid">Minimal Reason</label><br>
-                        <input type="radio" id="Moderate-Reason-paid" name="engineer_paid" value="3">
-                        <label for="Moderate-Reason-paid">Moderate Reason</label><br>
-                        <input type="radio" id="Major-Reason-paid" name="engineer_paid" value="4">
-                        <label for="Major-Reason-paid">Major Reason</label><br>
-                        <input type="radio" id="I-prefer-not-to-answer-paid" name="engineer_paid" value="0">
-                        <label for="I-prefer-not-to-answer-paid">I prefer not to answer</label><br>
+                        <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                                <br><p1 id = "Engineers-are-well-paid-prompt">Engineers are well paid?</p1>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Not-A-Reason-paid" name="engineer_paid" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Minimal-Reason-paid" name="engineer_paid" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Moderate-Reason-paid" name="engineer_paid" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Major-Reason-paid" name="engineer_paid" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="I-prefer-not-to-answer-paid" name="engineer_paid" value="0">
+                            </div>
+                        </div>
                     </form>
 
                     <!Parents want you to be engineer>
                     <form id = "parents_want" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "Parents-want-you-to-be-engineer-prompt">My parent(s) want me to be an engineer?</p>
-                        <input type="radio" id="Not-A-Reason-pwant" name="parents_want" value="1">
-                        <label for="Not-A-Reason-pwant">Not a Reason</label><br>
-                        <input type="radio" id="Minimal-Reason-pwant" name="parents_want" value="2">
-                        <label for="Minimal-Reason-pwant">Minimal Reason</label><br>
-                        <input type="radio" id="Moderate-Reason-pwant" name="parents_want" value="3">
-                        <label for="Moderate-Reason-pwant">Moderate Reason</label><br>
-                        <input type="radio" id="Major-Reason-pwant" name="parents_want" value="4">
-                        <label for="Major-Reason-pwant">Major Reason</label><br>
-                        <input type="radio" id="I-prefer-not-to-answer-pwant" name="parents_want" value="0">
-                        <label for="I-prefer-not-to-answer-pwant">I prefer not to answer</label><br>
+                        <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                                <br><p1 id = "Parents-want-you-to-be-engineer-prompt">My parent(s) want me to be an engineer?</p1>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Not-A-Reason-pwant" name="parents_want" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Minimal-Reason-pwant" name="parents_want" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Moderate-Reason-pwant" name="parents_want" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Major-Reason-pwant" name="parents_want" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="I-prefer-not-to-answer-pwant" name="parents_want" value="0">
+                            </div>
+                        </div>
                     </form>
 
                     <!Engineering degree will guarantee job>
                     <form id = "job_guarantee" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "Engineering-degree-will-guarantee-job-prompt">An engineering degree will guarantee me a job when I graduate?</p>
-                        <input type="radio" id="Not-A-Reason-job" name="job_guarantee" value="1">
-                        <label for="Not-A-Reason-job">Not a Reason</label><br>
-                        <input type="radio" id="Minimal-Reason-job" name="job_guarantee" value="2">
-                        <label for="Minimal-Reason-job">Minimal Reason</label><br>
-                        <input type="radio" id="Moderate-Reason-job" name="job_guarantee" value="3">
-                        <label for="Moderate-Reason-job">Moderate Reason</label><br>
-                        <input type="radio" id="Major-Reason-job" name="job_guarantee" value="4">
-                        <label for="Major-Reason-job">Major Reason</label><br>
-                        <input type="radio" id="I-prefer-not-to-answer-job" name="job_guarantee" value="0">
-                        <label for="I-prefer-not-to-answer-job">I prefer not to answer</label><br>
+                        <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                                <br><p1 id = "Engineering-degree-will-guarantee-job-prompt">An engineering degree will guarantee me a job when I graduate?</p1>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Not-A-Reason-job" name="job_guarantee" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Minimal-Reason-job" name="job_guarantee" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Moderate-Reason-job" name="job_guarantee" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="Major-Reason-job" name="job_guarantee" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="I-prefer-not-to-answer-job" name="job_guarantee" value="0">
+                            </div>
+                        </div>
                     </form>
 
                     <!Faculty member has encouraged me>
                     <form id = "faculty_encor" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "Faculty-member-has-encouraged-me-prompt">A faculty member, academic advisor, teaching assistant or other university affiliated member has encouraged and/or inspired me to study engineering?</p>
-                        <input type="radio" id="Not-A-Reason-faculty" name="faculty_encor" value="1">
-                        <label for="Not-A-Reason-faculty">Not a Reason</label><br>
-                        <input type="radio" id="Minimal-Reason-faculty" name="faculty_encor" value="2">
-                        <label for="Minimal-Reason-faculty">Minimal Reason</label><br>
-                        <input type="radio" id="Moderate-Reason-faculty" name="faculty_encor" value="3">
-                        <label for="Moderate-Reason-faculty">Moderate Reason</label><br>
-                        <input type="radio" id="Major-Reason-faculty" name="faculty_encor" value="4">
-                        <label for="Major-Reason-faculty">Major Reason</label><br>
-                        <input type="radio" id="I-prefer-not-to-answer-faculty" name="faculty_encor" value="0">
-                        <label for="I-prefer-not-to-answer-faculty">I prefer not to answer</label><br>
+                        <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                                <br><p1 id = "Faculty-member-has-encouraged-me-prompt">A faculty member, academic advisor, teaching assistant or other university affiliated member has encouraged and/or inspired me to study engineering?</p1>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Not-A-Reason-faculty" name="faculty_encor" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Minimal-Reason-faculty" name="faculty_encor" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Moderate-Reason-faculty" name="faculty_encor" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Major-Reason-faculty" name="faculty_encor" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="I-prefer-not-to-answer-faculty" name="faculty_encor" value="0">
+                            </div>
+                        </div>
                     </form>
 
                     <!Non-university mentor has encouraged me>
