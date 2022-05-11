@@ -530,7 +530,11 @@
 
                 <!section two: impressions of engineering>
                 <div class="section two">
+
+                    <!section header>
                     <h2> <br> Impressions of engineering <br> </h2>
+
+                    <!creating the rop row with the column headers>
                     <div class="row row-cols-md-6 mb-6 text-center">
                         <div class="col themed-grid-col">
 
@@ -551,18 +555,25 @@
                             Very Certain
                         </div>
                     </div>
+
                     <!how certain you would finish degree>
                     <form id = "finish-degree" action="{% url 'survey_result_api' %}" method="post">
+
+                        <!creating row with question and answer radio buttons>
                         <div class="row row-cols-md-6 mb-6 text-center">
                             <div class="col themed-grid-col">
                                 <p1>When You began your engineering degree, how certain were you that you would complete it?</p1>
                             </div>
                             <div class="col themed-grid-col">
+
+                                <!want to eventually replace the radio buttons with pictures>
                                 <!div class="image-radio">
                                     <!input type="radio" id="Very-Uncertain-finish" name="finish-degree" value="1" style="display: none;"/>
                                     <!img src="http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/thumbs-up.png" /></label>
-                                <input type="radio" id="Very-Uncertain-finish" name="finish-degree" value="1">
                                 <!/div>
+
+                                <input type="radio" id="Very-Uncertain-finish" name="finish-degree" value="1">
+
                             </div>
                             <div class="col themed-grid-col">
                                 <input type="radio" id="Uncertain-finish" name="finish-degree" value="2">
@@ -582,6 +593,8 @@
 
                     <!how certain you would complete engineering degree at this institution>
                     <form id = "finish-degree-here" action="{% url 'survey_result_api' %}" method="post">
+
+                        <!creating row with question and answer radio buttons>
                         <div class="row row-cols-md-6 text-center">
                             <div class="col themed-grid-col">
                                 <br><p1 id = "how-certain-you-would-complete-engineering-degree-at-this-institution-prompt">At the present time, how certain are you that you will complete an engineering degree at this institution?</p1>
@@ -605,6 +618,7 @@
                     </form>
                      <br>
 
+                    <!new set of answers row, column headers>
                     <div class="row row-cols-md-6 mb-6 text-center">
                         <div class="col themed-grid-col">
 
@@ -628,9 +642,11 @@
 
                     <!Technology plays an important role in solving society's problems>
                     <form id = "technology-importance" action="{% url 'survey_result_api' %}" method="post">
+
+                        <!creating row with question and answer radio buttons>
                         <div class="row row-cols-md-6 text-center">
                             <div class="col themed-grid-col">
-                                <br><p1 id = "Technology-plays-an-important-role-in-solving-society's-problems-prompt">Technology plays an important role in solving society's problems?</p1>
+                                <br><p id = "Technology-plays-an-important-role-in-solving-society's-problems-prompt">Technology plays an important role in solving society's problems?</p>
                             </div>
                             <div class="col themed-grid-col">
                                 <input type="radio" id="Not-A-Reason-tech" name="technology-importance" value="1">
@@ -652,9 +668,11 @@
 
                     <!Parents would disapprove different major>
                     <form id = "parents-disprove-difft" action="{% url 'survey_result_api' %}" method="post">
+
+                        <!creating row with question and answer radio buttons>
                         <div class="row row-cols-md-6 text-center">
                             <div class="col themed-grid-col">
-                                <br><p1>My parent(s) would disapprove if I choose a major other than engineering?</p1>
+                                <br><p>My parent(s) would disapprove if I choose a major other than engineering?</p>
                             </div>
                             <div class="col themed-grid-col">
                                 <input type="radio" id="Not-A-Reason-parents" name="parents-disprove-difft" value="1">
@@ -676,9 +694,11 @@
 
                     <!Engineers have contributed to fixing world problems>
                     <form id = "engineer-fix-world" action="{% url 'survey_result_api' %}" method="post">
+
+                         <!creating row with question and answer radio buttons>
                          <div class="row row-cols-md-6 text-center">
                             <div class="col themed-grid-col">
-                                <br><p1 id = "Engineers-have-contributed-to-fixing-world-problems-prompt">Engineers have contributed greatly to fixing problems in the world?</p1>
+                                <br><p id = "Engineers-have-contributed-to-fixing-world-problems-prompt">Engineers have contributed greatly to fixing problems in the world?</p>
                             </div>
                             <div class="col themed-grid-col">
                                 <input type="radio" id="Not-A-Reason-fix" name="engineer-fix-world" value="1">
@@ -700,9 +720,11 @@
 
                     <!Engineers are well payed>
                     <form id = "engineer_paid" action="{% url 'survey_result_api' %}" method="post">
+
+                        <!creating row with question and answer radio buttons>
                         <div class="row row-cols-md-6 text-center">
                             <div class="col themed-grid-col">
-                                <br><p1 id = "Engineers-are-well-paid-prompt">Engineers are well paid?</p1>
+                                <br><p id = "Engineers-are-well-paid-prompt">Engineers are well paid?</p>
                             </div>
                             <div class="col themed-grid-col">
                                 <input type="radio" id="Not-A-Reason-paid" name="engineer_paid" value="1">
@@ -724,9 +746,11 @@
 
                     <!Parents want you to be engineer>
                     <form id = "parents_want" action="{% url 'survey_result_api' %}" method="post">
+
+                        <!creating row with question and answer radio buttons>
                         <div class="row row-cols-md-6 text-center">
                             <div class="col themed-grid-col">
-                                <br><p1 id = "Parents-want-you-to-be-engineer-prompt">My parent(s) want me to be an engineer?</p1>
+                                <br><p id = "Parents-want-you-to-be-engineer-prompt">My parent(s) want me to be an engineer?</p>
                             </div>
                             <div class="col themed-grid-col">
                                 <input type="radio" id="Not-A-Reason-pwant" name="parents_want" value="1">
@@ -748,9 +772,11 @@
 
                     <!Engineering degree will guarantee job>
                     <form id = "job_guarantee" action="{% url 'survey_result_api' %}" method="post">
+
+                        <!creating row with question and answer radio buttons>
                         <div class="row row-cols-md-6 text-center">
                             <div class="col themed-grid-col">
-                                <br><p1 id = "Engineering-degree-will-guarantee-job-prompt">An engineering degree will guarantee me a job when I graduate?</p1>
+                                <br><p id = "Engineering-degree-will-guarantee-job-prompt">An engineering degree will guarantee me a job when I graduate?</p>
                             </div>
                             <div class="col themed-grid-col">
                                 <input type="radio" id="Not-A-Reason-job" name="job_guarantee" value="1">
@@ -772,9 +798,11 @@
 
                     <!Faculty member has encouraged me>
                     <form id = "faculty_encor" action="{% url 'survey_result_api' %}" method="post">
+
+                        <!creating row with question and answer radio buttons>
                         <div class="row row-cols-md-6 text-center">
                             <div class="col themed-grid-col">
-                                <br><p1 id = "Faculty-member-has-encouraged-me-prompt">A faculty member, academic advisor, teaching assistant or other university affiliated member has encouraged and/or inspired me to study engineering?</p1>
+                                <br><p id = "Faculty-member-has-encouraged-me-prompt">A faculty member, academic advisor, teaching assistant or other university affiliated member has encouraged and/or inspired me to study engineering?</p>
                             </div>
                             <div class="col themed-grid-col">
                                 <input type="radio" id="Not-A-Reason-faculty" name="faculty_encor" value="1">
@@ -796,162 +824,262 @@
 
                     <!Non-university mentor has encouraged me>
                     <form id = "mentor_encor" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "Non-university-mentor-has-encouraged-me-prompt">A non-university affiliated mentor has encouraged and/or inspired me to study engineering?</p>
-                        <input type="radio" id="Not-A-Reason-mentor" name="other_encor" value="1">
-                        <label for="Not-A-Reason-mentor">Not a Reason</label><br>
-                        <input type="radio" id="Minimal-Reason-mentor" name="other_encor" value="2">
-                        <label for="Minimal-Reason-mentor">Minimal Reason</label><br>
-                        <input type="radio" id="Moderate-Reason-mentor" name="other_encor" value="3">
-                        <label for="Moderate-Reason-mentor">Moderate Reason</label><br>
-                        <input type="radio" id="Major-Reason-mentor" name="other_encor" value="4">
-                        <label for="Major-Reason-mentor">Major Reason</label><br>
-                        <input type="radio" id="I-prefer-not-to-answer-mentor" name="other_encor" value="0">
-                        <label for="I-prefer-not-to-answer-mentor">I prefer not to answer</label><br>
+
+                        <!creating row with question and answer radio buttons>
+                        <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                                 <br><p id = "Non-university-mentor-has-encouraged-me-prompt">A non-university affiliated mentor has encouraged and/or inspired me to study engineering?</p>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Not-A-Reason-mentor" name="other_encor" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Minimal-Reason-mentor" name="other_encor" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Moderate-Reason-mentor" name="other_encor" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Major-Reason-mentor" name="other_encor" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="I-prefer-not-to-answer-mentor" name="other_encor" value="0">
+                            </div>
+                        </div>
                     </form>
 
                     <!A mentor has introduced me to opportunities>
                     <form id = "intro_opportunity" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "A-mentor-has-introduced-me-to-opportunities-prompt">A mentor has introduced me to people and opportunities in engineering?</p>
-                        <input type="radio" id="Not-A-Reason-oppr" name="intro_opportunity" value="1">
-                        <label for="Not-A-Reason-oppr">Not a Reason</label><br>
-                        <input type="radio" id="Minimal-Reason-oppr" name="intro_opportunity" value="2">
-                        <label for="Minimal-Reason-oppr">Minimal Reason</label><br>
-                        <input type="radio" id="Moderate-Reason-oppr" name="intro_opportunity" value="3">
-                        <label for="Moderate-Reason-oppr">Moderate Reason</label><br>
-                        <input type="radio" id="Major-Reason-oppr" name="intro_opportunity" value="4">
-                        <label for="Major-Reason-oppr">Major Reason</label><br>
-                        <input type="radio" id="I-prefer-not-to-answer-oppr" name="intro_opportunity" value="0">
-                        <label for="I-prefer-not-to-answer-oppr">I prefer not to answer</label><br>
+
+                        <!creating row with question and answer radio buttons>
+                        <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                                 <br><p id = "A-mentor-has-introduced-me-to-opportunities-prompt">A mentor has introduced me to people and opportunities in engineering?</p>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Not-A-Reason-oppr" name="intro_opportunity" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Minimal-Reason-oppr" name="intro_opportunity" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Moderate-Reason-oppr" name="intro_opportunity" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Major-Reason-oppr" name="intro_opportunity" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="I-prefer-not-to-answer-oppr" name="intro_opportunity" value="0">
+                            </div>
+                        </div>
                     </form>
 
                     <!I feel good doing engineering>
                     <form id = "feel_good" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "I-feel-good-doing-engineering-prompt">I feel good when I am doing engineering?</p>
-                        <input type="radio" id="Not-A-Reason-good" name="feel_good" value="1">
-                        <label for="Not-A-Reason-good">Not a Reason</label><br>
-                        <input type="radio" id="Minimal-Reason-good" name="feel_good" value="2">
-                        <label for="Minimal-Reason-good">Minimal Reason</label><br>
-                        <input type="radio" id="Moderate-Reason-good" name="feel_good" value="3">
-                        <label for="Moderate-Reason-good">Moderate Reason</label><br>
-                        <input type="radio" id="Major-Reason-good" name="feel_good" value="4">
-                        <label for="Major-Reason-good">Major Reason</label><br>
-                        <input type="radio" id="I-prefer-not-to-answer-good" name="feel_good" value="0">
-                        <label for="I-prefer-not-to-answer-good">I prefer not to answer</label><br>
+
+                        <!creating row with question and answer radio buttons>
+                        <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                                <br><p id = "I-feel-good-doing-engineering-prompt">I feel good when I am doing engineering?</p>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Not-A-Reason-good" name="feel_good" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Minimal-Reason-good" name="feel_good" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Moderate-Reason-good" name="feel_good" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Major-Reason-good" name="feel_good" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="I-prefer-not-to-answer-good" name="feel_good" value="0">
+                            </div>
+                        </div>
                     </form>
 
                     <!I like to build stuff>
                     <form id = "like-build" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "I-like-to-build-stuff-prompt">I like to build stuff?</p>
-                        <input type="radio" id="Not-A-Reason-build" name="like-build" value="1">
-                        <label for="Not-A-Reason-build">Not a Reason</label><br>
-                        <input type="radio" id="Minimal-Reason-build" name="like-build" value="2">
-                        <label for="Minimal-Reason-build">Minimal Reason</label><br>
-                        <input type="radio" id="Moderate-Reason-build" name="like-build" value="3">
-                        <label for="Moderate-Reason-build">Moderate Reason</label><br>
-                        <input type="radio" id="Major-Reason-build" name="like-build" value="4">
-                        <label for="Major-Reason-build">Major Reason</label><br>
-                        <input type="radio" id="I-prefer-not-to-answer-build" name="like-build" value="0">
-                        <label for="I-prefer-not-to-answer-build">I prefer not to answer</label><br>
+
+                        <!creating row with question and answer radio buttons>
+                        <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                                 <br><p id = "I-like-to-build-stuff-prompt">I like to build stuff?</p>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Not-A-Reason-build" name="like-build" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Minimal-Reason-build" name="like-build" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Moderate-Reason-build" name="like-build" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Major-Reason-build" name="like-build" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="I-prefer-not-to-answer-build" name="like-build" value="0">
+                            </div>
+                        </div>
                     </form>
 
                     <!I think engineering is fun>
-                    <form id = "engineer-fun" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "I-think-engineering-is-fun-prompt">I think engineering is fun?</p>
-                        <input type="radio" id="Not-A-Reason-fun" name="engineer-fun" value="1">
-                        <label for="Not-A-Reason-fun">Not a Reason</label><br>
+                    <form id = "engineer_fun" action="{% url 'survey_result_api' %}" method="post">
 
-                        <input type="radio" id="Minimal-Reason-fun" name="engineer-fun" value="2">
-                        <label for="Minimal-Reason-fun">Minimal Reason</label><br>
-
-                        <input type="radio" id="Moderate-Reason-fun" name="engineer-fun" value="3">
-                        <label for="Moderate-Reason-fun">Moderate Reason</label><br>
-
-                        <input type="radio" id="Major-Reason-fun" name="engineer-fun" value="4">
-                        <label for="Major-Reason-fun">Major Reason</label><br>
-
-                        <input type="radio" id="I-prefer-not-to-answer-fun" name="engineer-fun" value="0">
-                        <label for="I-prefer-not-to-answer-fun">I prefer not to answer</label><br>
+                        <!creating row with question and answer radio buttons>
+                        <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                                <br><p id = "I-think-engineering-is-fun-prompt">I think engineering is fun?</p>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Not-A-Reason-fun" name="engineer_fun" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Minimal-Reason-fun" name="engineer_fun" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Moderate-Reason-fun" name="engineer_fun" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Major-Reason-fun" name="engineer_fun" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="I-prefer-not-to-answer-fun" name="engineer_fun" value="0">
+                            </div>
+                        </div>
                     </form>
 
                     <!Engineering skills can be used for society>
-                    <form id = "use-society" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "Engineering-skills-can-be-used-for-society-prompt">Engineering skills can be used for the good of society?</p>
-                        <input type="radio" id="Not-A-Reason-society" name="use-society" value="1">
-                        <label for="Not-A-Reason-society">Not a Reason</label><br>
-                        <input type="radio" id="Minimal-Reason-society" name="use-society" value="2">
-                        <label for="Minimal-Reason-society">Minimal Reason</label><br>
-                        <input type="radio" id="Moderate-Reason-society" name="use-society" value="3">
-                        <label for="Moderate-Reason-society">Moderate Reason</label><br>
-                        <input type="radio" id="Major-Reason-society" name="use-society" value="4">
-                        <label for="Major-Reason-society">Major Reason</label><br>
-                        <input type="radio" id="I-prefer-not-to-answer-society" name="use-society" value="0">
-                        <label for="I-prefer-not-to-answer-society">I prefer not to answer</label><br>
+                    <form id = "use_society" action="{% url 'survey_result_api' %}" method="post">
+
+                        <!creating row with question and answer radio buttons>
+                        <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                              <br><p id = "Engineering-skills-can-be-used-for-society-prompt">Engineering skills can be used for the good of society?</p>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Not-A-Reason-society" name="use_society" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Minimal-Reason-society" name="use_society" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Moderate-Reason-society" name="use_society" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Major-Reason-society" name="use_society" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="I-prefer-not-to-answer-society" name="use_society" value="0">
+                            </div>
+                        </div>
                     </form>
 
                     <!I think engineering is interesting>
-                    <form id = "engineer-interesting" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "I-think-engineering-is-interesting-prompt">I think Engineering is interesting?</p>
-                        <input type="radio" id="Not-A-Reason-inter" name="engineer-interesting" value="1">
-                        <label for="Not-A-Reason-inter">Not a Reason</label><br>
-                        <input type="radio" id="Minimal-Reason-inter" name="engineer-interesting" value="2">
-                        <label for="Minimal-Reason-inter">Minimal Reason</label><br>
-                        <input type="radio" id="Moderate-Reason-inter" name="engineer-interesting" value="3">
-                        <label for="Moderate-Reason-inter">Moderate Reason</label><br>
-                        <input type="radio" id="Major-Reason-inter" name="engineer-interesting" value="4">
-                        <label for="Major-Reason-inter">Major Reason</label><br>
-                        <input type="radio" id="I-prefer-not-to-answer-inter" name="engineer-interesting" value="0">
-                        <label for="I-prefer-not-to-answer-inter">I prefer not to answer</label><br>
+                    <form id = "engineer_inter" action="{% url 'survey_result_api' %}" method="post">
+
+                         <!creating row with question and answer radio buttons>
+                         <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                              <br><p>I think Engineering is interesting?</p>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Not-A-Reason-inter" name="engineer_inter" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Minimal-Reason-inter" name="engineer_inter" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Moderate-Reason-inter" name="engineer_inter" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Major-Reason-inter" name="engineer_inter" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="I-prefer-not-to-answer-inter" name="engineer_inter" value="0">
+                            </div>
+                        </div>
                     </form>
 
                     <!I like to figure out how things work>
-                    <form id = "figure-out-work" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "I-like-to-figure-out-how-things-work-prompt">I like to figure out how things work?</p>
-                        <input type="radio" id="Not-A-Reason-work" name="figure-out-work" value="1">
-                        <label for="Not-A-Reason-work">Not a Reason</label><br>
-                        <input type="radio" id="Minimal-Reason-work" name="figure-out-work" value="2">
-                        <label for="Minimal-Reason-work">Minimal Reason</label><br>
-                        <input type="radio" id="Moderate-Reason-work" name="figure-out-work" value="3">
-                        <label for="Moderate-Reason-work">Moderate Reason</label><br>
-                        <input type="radio" id="Major-Reason-work" name="figure-out-work" value="4">
-                        <label for="Major-Reason-work">Major Reason</label><br>
-                        <input type="radio" id="I-prefer-not-to-answer-work" name="figure-out-work" value="0">
-                        <label for="I-prefer-not-to-answer-work">I prefer not to answer</label><br>
+                    <form id = "figure_out_work" action="{% url 'survey_result_api' %}" method="post">
+
+                        <!creating row with question and answer radio buttons>
+                        <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                               <br><p>I like to figure out how things work?</p>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Not-A-Reason-work" name="figure_out_work" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Minimal-Reason-work" name="figure_out_work" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Moderate-Reason-work" name="figure_out_work" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Major-Reason-work" name="figure_out_work" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="I-prefer-not-to-answer-work" name="figure_out_work" value="0">
+                            </div>
+                        </div>
                     </form>
 
                     <!Mentoring program>
-                    <form id = "mentoring-program" action="{% url 'survey_result_api' %}" method="post">
-                        <br><p id = "Mentoring-program-prompt">Mentoring programs (Meyerhoff or CWIT) have encouraged and/or inspired me to study?</p>
-                        <input type="radio" id="Not-A-Reason-mp" name="mentoring-program" value="1">
-                        <label for="Not-A-Reason-mp">Not a Reason</label><br>
-                        <input type="radio" id="Minimal-Reason-mp" name="mentoring-program" value="2">
-                        <label for="Minimal-Reason-mp">Minimal Reason</label><br>
-                        <input type="radio" id="Moderate-Reason-mp" name="mentoring-program" value="3">
-                        <label for="Moderate-Reason-mp">Moderate Reason</label><br>
-                        <input type="radio" id="Major-Reason-mp" name="mentoring-program" value="4">
-                        <label for="Major-Reason-mp">Major Reason</label><br>
-                        <input type="radio" id="I-prefer-not-to-answer-mp" name="mentoring-program" value="0">
-                        <label for="I-prefer-not-to-answer-mp">I prefer not to answer</label><br>
+                    <form id = "mentoring_program" action="{% url 'survey_result_api' %}" method="post">
+
+                         <!creating row with question and answer radio buttons>
+                         <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                              <br><p id = "Mentoring-program-prompt">Mentoring programs (Meyerhoff or CWIT) have encouraged and/or inspired me to study?</p>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Not-A-Reason-mp" name="mentoring_program" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Minimal-Reason-mp" name="mentoring_program" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Moderate-Reason-mp" name="mentoring_program" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Major-Reason-mp" name="mentoring_program" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="I-prefer-not-to-answer-mp" name="mentoring_program" value="0">
+                            </div>
+                        </div>
                     </form>
 
                   <!Relate to people around me>
                   <form id = "Relate" action="{% url 'survey_result_api' %}" method="post">
-                      <br><p id = "Relate to people around me-prompt">I can relate to the people around me in my classes</p>
-                      <input type="radio" id="Strongly-Disagree-relate" name="Relate" value="1">
-                      <label for="Strongly-Disagree-relate">Strongly Disagree</label><br>
-                      <input type="radio" id="Disagree-relate" name="Relate" value="2">
-                      <label for="Disagree-relate">Disagree</label><br>
-                      <input type="radio" id="Slightly-Disagree-relate" name="Relate" value="3">
-                      <label for="Slightly-Disagree-relate">Slightly Disagree</label><br>
-                      <input type="radio" id="Neither-Disagree-relate" name="Relate" value="4">
-                      <label for="Neither-Disagree-relate">Neither Disagree nor Agree</label><br>
-                      <input type="radio" id="Slightly-Agree-relate" name="Relate" value="5">
-                      <label for="Slightly-Agree-relate">Slightly Agree</label><br>
-                      <input type="radio" id="Agree-relate" name="Relate" value="6">
-                      <label for="Agree-relate">Agree</label><br>
-                      <input type="radio" id="Strongly-Agree-relate" name="Relate" value="7">
-                      <label for="Strongly-Agree-relate">Strongly Agree</label><br>
-                      <input type="radio" id="dk-relate" name="Relate" value="0">
-                      <label for="dk-relate">Don't Know</label><br>
+
+                      <!creating row with question and answer radio buttons>
+                      <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                                <br><p>I can relate to the people around me in my classes</p>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Not-A-Reason-relate" name="Relate" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Minimal-Reason-relate" name="Relate" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Moderate-Reason-relate" name="Relate" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Major-Reason-relate" name="Relate" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="I-prefer-not-to-answer-relate" name="Relate" value="0">
+                            </div>
+                        </div>
                   </form>
 
                   <!Lot in common with other students in class>
@@ -1562,8 +1690,8 @@
                 </div>
 
                 <!section three: Faculty/Staff Support>
-                <div class = "section three">
-                    Faculty/Staff Support
+                <div class="section three">
+                    <h2> <br> Faculty/Staff Support <br> </h2>
                 </div>
 
                 <!bootstrap to help webpage look nice>
