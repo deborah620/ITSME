@@ -3,6 +3,7 @@ from django.urls import reverse
 from itsmeapp.views import Survey
 # from itsmeapp.views import SurveyResultsAPI
 import json
+from selenium import webdriver
 from django.test import TestCase
 import os
 
@@ -216,3 +217,15 @@ class Tests(TestCase):
         csv_filepath = base_dir + "/" + csv_filename
         path = open(csv_filepath, 'r')
         self.assertTrue("gpa" in path.read())  # assert that the csv has been populated
+
+    def test_html(self):
+        # import webdriver
+
+        # create webdriver object
+        driver = webdriver.Firefox()
+
+        # get geeksforgeeks.org
+        driver.get("http://127.0.0.1:8000/")
+
+        # get title
+        print(driver.title)

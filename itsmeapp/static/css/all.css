@@ -116,3 +116,7 @@ p{
     font-style: times-new-roman;
     font-size: 15px;
 }
+p2{
+    position:relative;
+    style="right: 100px;"
+}
