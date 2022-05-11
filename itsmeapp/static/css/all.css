@@ -9,28 +9,43 @@ h2 {
 }
 #Very-Uncertain-finish{
     position:relative;
-    left:290px;
-    bottom:60px;
+    top:25px;
 }
 #Uncertain-finish{
     position:relative;
-    left:490px;
-    bottom:77px;
+    top:25px;
 }
 #Neutral-finish{
     position:relative;
-    left:675px;
-    bottom:95px;
+    top:25px;
 }
 #Certain-finish{
     position:relative;
-    left:870px;
-    bottom:109px;
+    top:25px;
 }
 #Very-Certain-finish{
     position:relative;
-    left:1055px;
-    bottom:110px;
+    top:25px;
+}
+#Very-Uncertain-fhere{
+    position:relative;
+    top:25px;
+}
+#Uncertain-fhere{
+    position:relative;
+    top:25px;
+}
+#Neutral-fhere{
+    position:relative;
+    top:25px;
+}
+#Certain-fhere{
+    position:relative;
+    top:25px;
+}
+#Very-Certain-fhere{
+    position:relative;
+    top:25px;
 }
 p {
   font-family: verdana;
