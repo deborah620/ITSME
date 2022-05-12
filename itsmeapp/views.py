@@ -4,18 +4,16 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.http import HttpResponse
 from .models import Survey
-<<<<<<< HEAD
 from django.http import JsonResponse
-=======
 import os
 import mimetypes
 import sqlite3
 import csv
->>>>>>> develop
 
 
 def index(request):
     return render(request, 'itsmeapp/index.html', context={})
+
 
 def populate_results_csv(db_filepath, csv_filepath):
     connect = sqlite3.connect(db_filepath)
@@ -66,7 +64,7 @@ def download_file(request):
 class SurveyResultsAPI(APIView):
 
     # get api for survey results
-    self = None
+    # self = None
 
     def get(self, request):
         survey_data = list(Survey.objects.values())
@@ -110,7 +108,42 @@ class SurveyResultsAPI(APIView):
             use_society=req_data.get('use-society'),
             engineer_interesting=req_data.get('engineer-interesting'),
             figure_out_work=req_data.get('figure-out-work'),
-            mentoring_program=req_data.get('mentoring-program')
+            mentoring_program=req_data.get('mentoring-program'),
+            Relate=req_data.get('Relate'),
+            lot_common=req_data.get('lot-common'),
+            others_share=req_data.get('other-share'),
+            relate_extra=req_data.get('relate-extra'),
+            succeed=req_data.get('succeed'),
+            well_paying=req_data.get('well-paying'),
+            expect=req_data.get('expect'),
+            lifestyle=req_data.get('lifestyle'),
+            part_group=req_data.get('part-group'),
+            job=req_data.get('job'),
+            like_job=req_data.get('like-job'),
+            bad_test=req_data.get('bad-test'),
+            friends=req_data.get('friends'),
+            cope=req_data.get('cope'),
+            only_one=req_data.get('only-one'),
+            approach=req_data.get('approach'),
+            new_env=req_data.get('new-env'),
+            self_confidence=req_data.get('self-confidence'),
+            leadership=req_data.get('leadership'),
+            public=req_data.get('public'),
+            math=req_data.get('math'),
+            science=req_data.get('science'),
+            communication=req_data.get('communication'),
+            apply=req_data.get('apply'),
+            business=req_data.get('business'),
+            teams=req_data.get('teams'),
+            reward=req_data.get('reward'),
+            study=req_data.get('study'),
+            advantage=req_data.get('advantage'),
+            no_care=req_data.get('no-care'),
+            benefit=req_data.get('benefit'),
+            other=req_data.get('other'),
+            no_change=req_data.get('no-change'),
+            effort=req_data.get('effort'),
+            boring=req_data.get('boring')
         )
         survey_data.save()
         return HttpResponse(req_data, status=status.HTTP_200_OK)

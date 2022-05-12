@@ -11,4 +11,5 @@ python manage.py runserver
 
 Currently, this opens a website browser and displays the beginnings of a survery assessment. It also contains a database and a post endpoint to store users responses and a get endpoint to get all previous responses. 
 
-the test suit can be run by typing: python manage.py test
+to run the test suite one must have firefox downloaded (can use this link to do so: https://www.mozilla.org/en-US/firefox/new/), the firefox web driver is included in this repository. Additionally, the Selenium package must be installed, which can be done by typing pip install selenium in the terminal
+to run the tests type: python manage.py test
