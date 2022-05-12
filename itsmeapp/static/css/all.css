@@ -2,6 +2,17 @@ body {
   background-color: lightblue;
 }
 
+#umbc{
+    width: 500px;
+    height: 150px;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 h2 {
   color: black;
   text-align: left;
@@ -686,4 +697,15 @@ p{
     position:relative;
     right: -600px;
     bottom: 110px;
+}
+
+/*bottom button colors*/
+#mail-link{
+    background-color: black;
+    color: white;
+}
+
+#submit-but{
+    background-color: black;
+    color: white;
 }

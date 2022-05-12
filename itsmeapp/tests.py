@@ -262,15 +262,17 @@ class TestHTML(StaticLiveServerTestCase):
         header = self.driver.find_element(By.TAG_NAME, 'h2').text
         self.assertEquals(header, 'General background information')
 
+        # gender button has correct text
         gen_but = self.driver.find_element(By.ID, 'gender-button').text
         self.assertEquals(gen_but, 'Gender:')
 
         # able to type in textbox
         self.driver.find_element(By.ID, 'other-gender-textbox').send_keys('genderless')
 
-        # female label is there
+        # female label is there and can click gender button
         female = self.driver.find_element(By.ID, 'female-lab').text
         self.assertEquals(female, 'Female')
+        self.driver.find_element(By.ID, 'gender-button').click()
 
         # can click on ethnicity button and make sure a label is there
         self.driver.find_element(By.ID, 'ethnicity-prompt').click()
@@ -308,11 +310,18 @@ class TestHTML(StaticLiveServerTestCase):
         self.assertEquals(finish_deg, 'At the present time, how certain are you that you will complete an engineering '
                                       'degree at this institution?')
 
-        eng_contribute = self.driver.find_element(By.ID, 'Engineers-have-contributed-to-fixing-world-problems-prompt').text
+        eng_contribute = self.driver.find_element(By.ID,
+                                                  'Engineers-have-contributed-to-fixing-world-problems-prompt').text
         self.assertEquals(eng_contribute, 'Engineers have contributed greatly to fixing problems in the world')
 
         advantage = self.driver.find_element(By.ID, 'The-advantages-of-studying-engineering-outweigh-the'
                                                     '-disadvantages-prompt').text
         self.assertEquals(advantage, 'The advantages of studying engineering outweigh the disadvantages')
 
+    def test_email(self):
+        self.driver.get(self.live_server_url)
+
+        # email button correct label
+        mail = self.driver.find_element(By.ID, 'mail-link').text
+        self.assertEquals(mail, 'Email Results')
 
