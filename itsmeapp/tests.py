@@ -1,11 +1,17 @@
 from django.test import TestCase
 from django.urls import reverse
 from itsmeapp.views import Survey
-# from itsmeapp.views import SurveyResultsAPI
+from itsmeapp.views import SurveyResultsAPI
 import json
 from selenium import webdriver
 from django.test import TestCase
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
+from selenium.webdriver.common.by import By
 import os
+
+# so pop-up browser doesn't keep popping up
+options = webdriver.ChromeOptions()
+options.headless = True
 
 """
 couldn't get this to work properly
@@ -219,17 +225,54 @@ class Tests(TestCase):
 """
 
 
-class TestHTML(TestCase):
-    def test_html(self):
-        # import webdriver
+class TestHTML(StaticLiveServerTestCase):
 
+    def setUp(self):
         # create webdriver object
-        driver = webdriver.Firefox(executable_path=r'C:\Users\ismil\PycharmProjects\ITSME\geckodriver-v0.31.0'
-                                                   r'-linux32.tar.gz')
-        # driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome(executable_path=r'chromedriver.exe', options=options)
 
-        # get geeksforgeeks.org
-        driver.get("http://127.0.0.1:8000/")
+    def tearDown(self):
+        self.driver.close()
 
-        # get title
-        print(driver.title)
+    def test_title(self):
+        # get the website
+        self.driver.get(self.live_server_url)
+
+        # get title and see if correct
+        self.assertEquals(self.driver.title, 'ITSME SURVEY ASSESSMENT')
+
+    def test_header(self):
+        # get the website
+        self.driver.get(self.live_server_url)
+
+        # get header and see if correct
+        header = self.driver.find_element(By.TAG_NAME, 'h1').text
+        self.assertEquals(header, 'My Engineer State of Mind: A Self-Assessing Tool')
+
+    def test_section1(self):
+        # get the website
+        self.driver.get(self.live_server_url)
+
+        # get header and see if correct
+        header = self.driver.find_element(By.TAG_NAME, 'h2').text
+        self.assertEquals(header, 'General background information')
+
+        gen_but = self.driver.find_element(By.ID, 'gender-button').text
+        self.assertEquals(gen_but, 'Gender:')
+
+        # able to type in textbox
+        self.driver.find_element(By.ID, 'other-gender-textbox').send_keys('genderless')
+
+        # female label is there
+        female = self.driver.find_element(By.ID, 'female-lab').text
+        self.assertEquals(female, 'Female')
+
+        # first need to click on ethnicity button, then check a random radio button label is there
+        self.driver.find_element(By.ID, 'ethnicity-but').click()
+        asian = self.driver.find_element(By.ID, 'asian-box').text
+        self.assertEquals(asian, 'Asian & Pacific American')
+
+
+
+
+

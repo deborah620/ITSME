@@ -120,3 +120,24 @@ p2{
     position:relative;
     style="right: 100px;"
 }
+
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-top: 4px solid\9;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
+.expand_caret {
+    transform: scale(1.6);
+    margin-left: 8px;
+    margin-top: -4px;
+}
+a[aria-expanded='false'] > .expand_caret {
+    transform: scale(1.6) rotate(-90deg);
+}
