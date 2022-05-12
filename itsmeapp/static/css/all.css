@@ -121,13 +121,9 @@ p2{
     style="right: 100px;"
 }
 
+#par{
+    align-items: center;
+    justify-content: center;
+}
 
 
-.expand_caret {
-    transform: scale(1.6);
-    margin-left: 8px;
-    margin-top: -4px;
-}
-a[aria-expanded="true"] > .expand_caret {
-    transform: scale(1.6) rotate(-90deg);
-}

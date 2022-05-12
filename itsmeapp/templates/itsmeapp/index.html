@@ -36,15 +36,6 @@
             </div>
             <div class="left-align">
 
-                <!trying to get carrot>
-                <!a data-toggle="collapse" data-target="#collapseExampleArea" href="#collapseExampleArea" aria-expanded="false">
-
-                    <!div class="expand_caret caret"><!/div>
-                <!/a>
-                <!div id="collapseExampleArea" class="collapse">
-
-                <!/div>
-
                 <!section one: background info>
                 <div class = "section1">
                     <h2> General background information <br></h2>
@@ -57,8 +48,15 @@
                             <button id="gender-button" class="btn d-inline-flex align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#gender-collapse" aria-expanded="true" aria-current="true">
                                 Gender:
 
-                                <!trying to get caret to point down when clicked and right when not>
-                                <div class="expand_caret caret"></div>
+                                <!trying to add caret then have it point down when clicked and right when not>
+                                <!a data-toggle="collapse" data-target="#collapseExampleArea" href="#collapseExampleArea" aria-expanded="false">
+
+                                    <!div class="expand_caret caret"><!/div>
+                                <!/a>
+                                <!div id="collapseExampleArea" class="collapse">
+
+                                <!/div>
+                                <!div class="expand_caret caret"><!/div>
                             </button>
 
 
@@ -89,7 +87,7 @@
 
                           <!ethnicity>
                           <li class="mb-1">
-                            <button id="ethnicity-but" class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#ethnicity-collapse" aria-expanded="false" id="ethnicity-prompt">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#ethnicity-collapse" aria-expanded="false" id="ethnicity-prompt">
                               Ethnicity/Citizenship (check two max):
 
                             </button>
@@ -107,7 +105,7 @@
                                     </li>
                                     <li>
                                         <input type="checkbox" id="Asian" name="ethnicity" value="3">
-                                        <label for="Asian" id="asian-box">Asian & Pacific American</label><br>
+                                        <label for="Asian" id="asian-lab">Asian & Pacific American</label><br>
                                     </li>
                                     <li>
                                         <input type="checkbox" id="Latina" name="ethnicity" value="4">
@@ -213,7 +211,7 @@
 
                           <!discussion>
                           <li class="mb-1">
-                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#discussion-collapse" aria-expanded="false">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#discussion-collapse" aria-expanded="false" id="discussion-sect">
                               What ENES 101 Discussion Section are you in:
                             </button>
 
@@ -387,7 +385,7 @@
 
                           <!before college>
                           <li class="mb-1">
-                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#b4-collapse" aria-expanded="false">
+                            <button id="before" class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#b4-collapse" aria-expanded="false">
                                Where were you immediately before starting at this institution?
                             </button>
 
@@ -430,7 +428,7 @@
 
                          <!internship experience>
                          <li class="mb-1">
-                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#intern-collapse" aria-expanded="false">
+                            <button id="intern-ex" class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#intern-collapse" aria-expanded="false">
                                Have you previously had an internship or co-op in engineering or an engineering-related field?
                             </button>
 
@@ -452,7 +450,7 @@
 
                          <!research experience>
                          <li class="mb-1">
-                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#research-collapse" aria-expanded="false">
+                            <button id="re" class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#research-collapse" aria-expanded="false">
                                  Have you done on-campus research?
                             </button>
 
@@ -474,7 +472,7 @@
 
                          <!parent engineer>
                          <li class="mb-1">
-                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#parent-collapse" aria-expanded="false">
+                            <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#parent-collapse" aria-expanded="false" id="par">
                                  Do you have a parent/guardian who is an Engineer?
                             </button>
 

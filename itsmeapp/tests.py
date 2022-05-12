@@ -10,6 +10,7 @@ from selenium.webdriver.common.by import By
 import os
 
 # so pop-up browser doesn't keep popping up
+# options = webdriver.FirefoxOptions()
 options = webdriver.ChromeOptions()
 options.headless = True
 
@@ -229,7 +230,9 @@ class TestHTML(StaticLiveServerTestCase):
 
     def setUp(self):
         # create webdriver object
+        # self.driver = webdriver.Firefox(executable_path=r'geckodriver.exe', options=options)
         self.driver = webdriver.Chrome(executable_path=r'chromedriver.exe', options=options)
+        self.driver.maximize_window()
 
     def tearDown(self):
         self.driver.close()
@@ -267,10 +270,15 @@ class TestHTML(StaticLiveServerTestCase):
         female = self.driver.find_element(By.ID, 'female-lab').text
         self.assertEquals(female, 'Female')
 
-        # first need to click on ethnicity button, then check a random radio button label is there
-        self.driver.find_element(By.ID, 'ethnicity-but').click()
-        asian = self.driver.find_element(By.ID, 'asian-box').text
-        self.assertEquals(asian, 'Asian & Pacific American')
+        # can click on ethnicity button
+        self.driver.find_element(By.ID, 'ethnicity-prompt').click()
+        self.driver.find_element(By.ID, 'ethnicity-prompt').click()
+
+        # before college button has correct text
+        before_but = self.driver.find_element(By.ID, 'before').text
+        self.assertEquals(before_but, 'Where were you immediately before starting at this institution?')
+
+
 
 
 
