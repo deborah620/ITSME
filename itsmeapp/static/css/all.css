@@ -8,6 +8,16 @@ h2 {
   font-size: 20px;
 }
 
+/*section 2, not table format*/
+p{
+    font-style: veranda;
+    font-size: 20px;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+
+/*fixing radio button locations for first set of buttons, first row*/
 #Very-Uncertain-finish{
     position:relative;
     top:25px;
@@ -29,6 +39,7 @@ h2 {
     top:25px;
 }
 
+/*fixing radio button locations for first set of buttons, 2nd row*/
 #Very-Uncertain-fhere{
     position:relative;
     top:25px;
@@ -50,6 +61,7 @@ h2 {
     top:25px;
 }
 
+/*fixing radio button locations for second set of buttons, first row*/
 #Not-A-Reason-tech{
     position:relative;
     top:25px;
@@ -71,6 +83,7 @@ h2 {
     top:25px;
 }
 
+/*fixing radio button locations for second set of buttons, second row*/
 #Not-A-Reason-parents{
     position:relative;
     top:25px;
@@ -92,6 +105,7 @@ h2 {
     top:25px;
 }
 
+/*fixing radio button locations for second set of buttons, 3rd row*/
 #Not-A-Reason-fix{
     position:relative;
     top:25px;
@@ -112,18 +126,564 @@ h2 {
     position:relative;
     top:25px;
 }
-p{
-    font-style: times-new-roman;
-    font-size: 15px;
-}
-p2{
+
+/*fixing radio button locations for third set of buttons, first row*/
+#Disagree-lot{
     position:relative;
-    style="right: 100px;"
+    right: 75px;
+}
+#Slightly-Disagree-lot{
+    position:relative;
+    right: 155px;
+}
+#Neither-Disagree-lot{
+    position:relative;
+    right: 240px;
+
+}
+#Slightly-Agree-lot{
+    position:relative;
+    right: 300px;
+
+}
+#Agree-lot{
+    position:relative;
+    right: -760px;
+    bottom: 110px;
+}
+#Strongly-Agree-lot{
+    position:relative;
+    right: -680px;
+    bottom: 110px;
+}
+#dk-lot{
+    position:relative;
+    right: -600px;
+    bottom: 110px;
 }
 
-#par{
-    align-items: center;
-    justify-content: center;
+/*fixing radio button locations for third set of buttons, second row*/
+#Disagree-share{
+    position:relative;
+    right: 75px;
+}
+#Slightly-Disagree-share{
+    position:relative;
+    right: 155px;
+}
+#Neither-Disagree-share{
+    position:relative;
+    right: 240px;
+
+}
+#Slightly-Agree-share{
+    position:relative;
+    right: 300px;
+
+}
+#Agree-share{
+    position:relative;
+    right: -760px;
+    bottom: 110px;
+}
+#Strongly-Agree-share{
+    position:relative;
+    right: -680px;
+    bottom: 110px;
+}
+#dk-share{
+    position:relative;
+    right: -600px;
+    bottom: 110px;
+}
+
+/*fixing radio button locations for third set of buttons, third row*/
+#Disagree-extra{
+    position:relative;
+    right: 75px;
+}
+#Slightly-Disagree-extra{
+    position:relative;
+    right: 155px;
+}
+#Neither-Disagree-extra{
+    position:relative;
+    right: 240px;
+
+}
+#Slightly-Agree-extra{
+    position:relative;
+    right: 300px;
+
+}
+#Agree-extra{
+    position:relative;
+    right: -760px;
+    bottom: 110px;
+}
+#Strongly-Agree-extra{
+    position:relative;
+    right: -680px;
+    bottom: 110px;
+}
+#dk-extra{
+    position:relative;
+    right: -600px;
+    bottom: 110px;
+}
+
+/*fixing radio button locations for third set of buttons, 4th row*/
+#Disagree-succeed{
+    position:relative;
+    right: 75px;
+}
+#Slightly-Disagree-succeed{
+    position:relative;
+    right: 155px;
+}
+#Neither-Disagree-succeed{
+    position:relative;
+    right: 240px;
+
+}
+#Slightly-Agree-succeed{
+    position:relative;
+    right: 300px;
+
+}
+#Agree-succeed{
+    position:relative;
+    right: -760px;
+    bottom: 110px;
+}
+#Strongly-Agree-succeed{
+    position:relative;
+    right: -680px;
+    bottom: 110px;
+}
+#dk-succeed{
+    position:relative;
+    right: -600px;
+    bottom: 110px;
+}
+
+/*fixing radio button locations for third set of buttons, 5th row*/
+#Disagree-money{
+    position:relative;
+    right: 75px;
+}
+#Slightly-Disagree-money{
+    position:relative;
+    right: 155px;
+}
+#Neither-Disagree-money{
+    position:relative;
+    right: 240px;
+
+}
+#Slightly-Agree-money{
+    position:relative;
+    right: 300px;
+
+}
+#Agree-money{
+    position:relative;
+    right: -760px;
+    bottom: 110px;
+}
+#Strongly-Agree-money{
+    position:relative;
+    right: -680px;
+    bottom: 110px;
+}
+#dk-money{
+    position:relative;
+    right: -600px;
+    bottom: 110px;
+}
+
+/*fixing radio button locations for third set of buttons, 6th row*/
+#Disagree-expect{
+    position:relative;
+    right: 75px;
+}
+#Slightly-Disagree-expect{
+    position:relative;
+    right: 155px;
+}
+#Neither-Disagree-expect{
+    position:relative;
+    right: 240px;
+
+}
+#Slightly-Agree-expect{
+    position:relative;
+    right: 300px;
+
+}
+#Agree-expect{
+    position:relative;
+    right: -760px;
+    bottom: 110px;
+}
+#Strongly-Agree-expect{
+    position:relative;
+    right: -680px;
+    bottom: 110px;
+}
+#dk-expect{
+    position:relative;
+    right: -600px;
+    bottom: 110px;
+}
+
+/*fixing radio button locations for third set of buttons, 7th row*/
+#Disagree-lifestyle{
+    position:relative;
+    right: 75px;
+}
+#Slightly-Disagree-lifestyle{
+    position:relative;
+    right: 155px;
+}
+#Neither-Disagree-lifestyle{
+    position:relative;
+    right: 240px;
+
+}
+#Slightly-Agree-lifestyle{
+    position:relative;
+    right: 300px;
+
+}
+#Agree-lifestyle{
+    position:relative;
+    right: -760px;
+    bottom: 110px;
+}
+#Strongly-Agree-lifestyle{
+    position:relative;
+    right: -680px;
+    bottom: 110px;
+}
+#dk-lifestyle{
+    position:relative;
+    right: -600px;
+    bottom: 110px;
+}
+
+/*fixing radio button locations for third set of buttons, 8th row*/
+#Disagree-part{
+    position:relative;
+    right: 75px;
+}
+#Slightly-Disagree-part{
+    position:relative;
+    right: 155px;
+}
+#Neither-Disagree-part{
+    position:relative;
+    right: 240px;
+
+}
+#Slightly-Agree-part{
+    position:relative;
+    right: 300px;
+
+}
+#Agree-part{
+    position:relative;
+    right: -760px;
+    bottom: 110px;
+}
+#Strongly-Agree-part{
+    position:relative;
+    right: -680px;
+    bottom: 110px;
+}
+#dk-part{
+    position:relative;
+    right: -600px;
+    bottom: 110px;
+}
+
+/*fixing radio button locations for third set of buttons, 9th row*/
+#Disagree-job{
+    position:relative;
+    right: 75px;
+}
+#Slightly-Disagree-job{
+    position:relative;
+    right: 155px;
+}
+#Neither-Disagree-job{
+    position:relative;
+    right: 240px;
+
+}
+#Slightly-Agree-job{
+    position:relative;
+    right: 300px;
+
+}
+#Agree-job{
+    position:relative;
+    right: -760px;
+    bottom: 110px;
+}
+#Strongly-Agree-job{
+    position:relative;
+    right: -680px;
+    bottom: 110px;
+}
+#dk-job{
+    position:relative;
+    right: -600px;
+    bottom: 110px;
+}
+
+/*fixing radio button locations for third set of buttons, 10th row*/
+#Disagree-like-job{
+    position:relative;
+    right: 75px;
+}
+#Slightly-Disagree-like-job{
+    position:relative;
+    right: 155px;
+}
+#Neither-Disagree-like-job{
+    position:relative;
+    right: 240px;
+
+}
+#Slightly-Agree-like-job{
+    position:relative;
+    right: 300px;
+
+}
+#Agree-like-job{
+    position:relative;
+    right: -760px;
+    bottom: 110px;
+}
+#Strongly-Agree-like-job{
+    position:relative;
+    right: -680px;
+    bottom: 110px;
+}
+#dk-like-job{
+    position:relative;
+    right: -600px;
+    bottom: 110px;
 }
 
 
+/*fixing radio button locations for third set of buttons, 11th row*/
+#Disagree-bad-test{
+    position:relative;
+    right: 75px;
+}
+#Slightly-Disagree-bad-test{
+    position:relative;
+    right: 155px;
+}
+#Neither-Disagree-bad-test{
+    position:relative;
+    right: 240px;
+
+}
+#Slightly-Agree-bad-test{
+    position:relative;
+    right: 300px;
+
+}
+#Agree-bad-test{
+    position:relative;
+    right: -760px;
+    bottom: 110px;
+}
+#Strongly-Agree-bad-test{
+    position:relative;
+    right: -680px;
+    bottom: 110px;
+}
+#dk-bad-test{
+    position:relative;
+    right: -600px;
+    bottom: 110px;
+}
+
+/*fixing radio button locations for third set of buttons, 12th row*/
+#Disagree-friends{
+    position:relative;
+    right: 75px;
+}
+#Slightly-Disagree-friends{
+    position:relative;
+    right: 155px;
+}
+#Neither-Disagree-friends{
+    position:relative;
+    right: 240px;
+
+}
+#Slightly-Agree-friends{
+    position:relative;
+    right: 300px;
+
+}
+#Agree-friends{
+    position:relative;
+    right: -760px;
+    bottom: 110px;
+}
+#Strongly-Agree-friends{
+    position:relative;
+    right: -680px;
+    bottom: 110px;
+}
+#dk-friends{
+    position:relative;
+    right: -600px;
+    bottom: 110px;
+}
+
+/*fixing radio button locations for third set of buttons, 13th row*/
+#Disagree-cope{
+    position:relative;
+    right: 75px;
+}
+#Slightly-Disagree-cope{
+    position:relative;
+    right: 155px;
+}
+#Neither-Disagree-cope{
+    position:relative;
+    right: 240px;
+
+}
+#Slightly-Agree-cope{
+    position:relative;
+    right: 300px;
+
+}
+#Agree-cope{
+    position:relative;
+    right: -760px;
+    bottom: 110px;
+}
+#Strongly-Agree-cope{
+    position:relative;
+    right: -680px;
+    bottom: 110px;
+}
+#dk-cope{
+    position:relative;
+    right: -600px;
+    bottom: 110px;
+}
+
+/*fixing radio button locations for third set of buttons, 14th row*/
+#Disagree-only{
+    position:relative;
+    right: 75px;
+}
+#Slightly-Disagree-only{
+    position:relative;
+    right: 155px;
+}
+#Neither-Disagree-only{
+    position:relative;
+    right: 240px;
+
+}
+#Slightly-Agree-only{
+    position:relative;
+    right: 300px;
+
+}
+#Agree-only{
+    position:relative;
+    right: -760px;
+    bottom: 110px;
+}
+#Strongly-Agree-only{
+    position:relative;
+    right: -680px;
+    bottom: 110px;
+}
+#dk-only{
+    position:relative;
+    right: -600px;
+    bottom: 110px;
+}
+
+/*fixing radio button locations for third set of buttons, 15th row*/
+#Disagree-approach{
+    position:relative;
+    right: 75px;
+}
+#Slightly-Disagree-approach{
+    position:relative;
+    right: 155px;
+}
+#Neither-Disagree-approach{
+    position:relative;
+    right: 240px;
+
+}
+#Slightly-Agree-approach{
+    position:relative;
+    right: 300px;
+
+}
+#Agree-approach{
+    position:relative;
+    right: -760px;
+    bottom: 110px;
+}
+#Strongly-Agree-approach{
+    position:relative;
+    right: -680px;
+    bottom: 110px;
+}
+#dk-approach{
+    position:relative;
+    right: -600px;
+    bottom: 110px;
+}
+
+/*fixing radio button locations for third set of buttons, 16th row*/
+#Disagree-new{
+    position:relative;
+    right: 75px;
+}
+#Slightly-Disagree-new{
+    position:relative;
+    right: 155px;
+}
+#Neither-Disagree-new{
+    position:relative;
+    right: 240px;
+
+}
+#Slightly-Agree-new{
+    position:relative;
+    right: 300px;
+
+}
+#Agree-new{
+    position:relative;
+    right: -760px;
+    bottom: 110px;
+}
+#Strongly-Agree-new{
+    position:relative;
+    right: -680px;
+    bottom: 110px;
+}
+#dk-new{
+    position:relative;
+    right: -600px;
+    bottom: 110px;
+}
