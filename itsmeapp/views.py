@@ -74,7 +74,6 @@ class SurveyResultsAPI(APIView):
     # request object has info about request, ie POST, data, etc
     def post(self, request):
         req_data = request.data
-
         survey_data = Survey(
             gender=req_data.get('gender'),
             ethnicity=req_data.get('ethnicity'),
@@ -106,12 +105,12 @@ class SurveyResultsAPI(APIView):
             like_build=req_data.get('like-build'),
             engineer_fun=req_data.get('engineer-fun'),
             use_society=req_data.get('use-society'),
-            engineer_interesting=req_data.get('engineer-interesting'),
+            engineer_interesting=req_data.get('engineer-inter'),
             figure_out_work=req_data.get('figure-out-work'),
             mentoring_program=req_data.get('mentoring-program'),
             Relate=req_data.get('Relate'),
             lot_common=req_data.get('lot-common'),
-            others_share=req_data.get('other-share'),
+            others_share=req_data.get('others-share'),
             relate_extra=req_data.get('relate-extra'),
             succeed=req_data.get('succeed'),
             well_paying=req_data.get('well-paying'),
