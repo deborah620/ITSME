@@ -1347,192 +1347,300 @@
                   </form>
 
                   <!I expect to feel "part of the group" on my job if I enter Engineering>
-                  <form id = "part-group" action="{% url 'survey_result_api' %}" method="post">
-                      <br><p id = "I expect to feel 'part of the group' on my job if I enter Engineering-prompt">I expect to feel "part of the group" on my job if I enter engineering</p>
-                      <input type="radio" id="Strongly-Disagree-part" name="part-group" value="1">
-                      <label for="Strongly-Disagree-part">Strongly Disagree</label><br>
-                      <input type="radio" id="Disagree-part" name="part-group" value="2">
-                      <label for="Disagree-part">Disagree</label><br>
-                      <input type="radio" id="Slightly-Disagree-part" name="part-group" value="3">
-                      <label for="Slightly-Disagree-part">Slightly Disagree</label><br>
-                      <input type="radio" id="Neither-Disagree-part" name="part-group" value="4">
-                      <label for="Neither-Disagree-part">Neither Disagree nor Agree</label><br>
-                      <input type="radio" id="Slightly-Agree-part" name="part-group" value="5">
-                      <label for="Slightly-Agree-part">Slightly Agree</label><br>
-                      <input type="radio" id="Agree-part" name="part-group" value="6">
-                      <label for="Agree-part">Agree</label><br>
-                      <input type="radio" id="Strongly-Agree-part" name="part-group" value="7">
-                      <label for="Strongly-Agree-part">Strongly Agree</label><br>
-                      <input type="radio" id="dk-part" name="part-group" value="0">
-                      <label for="dk-part">Don't Know</label><br>
+                  <form id = "part_group" action="{% url 'survey_result_api' %}" method="post">
+                      <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                              <br><p>I expect to feel "part of the group" on my job if I enter engineering</p>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Strongly-Disagree-part" name="part_group" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Disagree-part" name="part_group" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Slightly-Disagree-part" name="part_group" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="Neither-Disagree-part" name="part_group" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                               <input type="radio" id="Slightly-Agree-part" name="part_group" value="5">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="Agree-part" name="part_group" value="6">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Strongly-Agree-part" name="part_group" value="7">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="dk-part" name="part_group" value="0">
+                            </div>
+                      </div>
                   </form>
 
                   <!A degree in engineering will allow me to get a job where I can use my talents and creativity>
                   <form id = "job" action="{% url 'survey_result_api' %}" method="post">
-                      <br><p id = "A degree in engineering will allow me to get a job where I can use my talents and creativity-prompt">A degree in engineering will allow me to get a job where I can use my talents and creativity</p>
-                      <input type="radio" id="Strongly-Disagree-job" name="job" value="1">
-                      <label for="Strongly-Disagree-job">Strongly Disagree</label><br>
-                      <input type="radio" id="Disagree-job" name="job" value="2">
-                      <label for="Disagree-job">Disagree</label><br>
-                      <input type="radio" id="Slightly-Disagree-job" name="job" value="3">
-                      <label for="Slightly-Disagree-job">Slightly Disagree</label><br>
-                      <input type="radio" id="Neither-Disagree-job" name="job" value="4">
-                      <label for="Neither-Disagree-job">Neither Disagree nor Agree</label><br>
-                      <input type="radio" id="Slightly-Agree-job" name="job" value="5">
-                      <label for="Slightly-Agree-job">Slightly Agree</label><br>
-                      <input type="radio" id="Agree-job" name="job" value="6">
-                      <label for="Agree-job">Agree</label><br>
-                      <input type="radio" id="Strongly-Agree-job" name="job" value="7">
-                      <label for="Strongly-Agree-job">Strongly Agree</label><br>
-                      <input type="radio" id="dk-job" name="job" value="0">
-                      <label for="dk-job">Don't Know</label><br>
+                       <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                                <br><p>A degree in engineering will allow me to get a job where I can use my talents and creativity</p>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Strongly-Disagree-job" name="job" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Disagree-job" name="job" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Slightly-Disagree-job" name="job" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="Neither-Disagree-job" name="job" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                               <input type="radio" id="Slightly-Agree-job" name="job" value="5">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="Agree-job" name="job" value="6">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Strongly-Agree-job" name="job" value="7">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="dk-job" name="job" value="0">
+                            </div>
+                      </div>
                   </form>
 
                   <!A degree in engineering will allow me to obtain a job that I like>
-                  <form id = "like-job" action="{% url 'survey_result_api' %}" method="post">
-                      <br><p id = "A degree in engineering will allow me to obtain a job that I like-prompt">A degree in engineering will allow me to obtain a job that I like</p>
-                      <input type="radio" id="Strongly-Disagree-like-job" name="like-job" value="1">
-                      <label for="Strongly-Disagree-like-job">Strongly Disagree</label><br>
-                      <input type="radio" id="Disagree-like-job" name="like-job" value="2">
-                      <label for="Disagree-like-job">Disagree</label><br>
-                      <input type="radio" id="Slightly-Disagree-like-job" name="like-job" value="3">
-                      <label for="Slightly-Disagree-like-job">Slightly Disagree</label><br>
-                      <input type="radio" id="Neither-Disagree-like-job" name="like-job" value="4">
-                      <label for="Neither-Disagree-like-job">Neither Disagree nor Agree</label><br>
-                      <input type="radio" id="Slightly-Agree-like-job" name="like-job" value="5">
-                      <label for="Slightly-Agree-like-job">Slightly Agree</label><br>
-                      <input type="radio" id="Agree-like-job" name="like-job" value="6">
-                      <label for="Agree-like-job">Agree</label><br>
-                      <input type="radio" id="Strongly-Agree-like-job" name="like-job" value="7">
-                      <label for="Strongly-Agree-like-job">Strongly Agree</label><br>
-                      <input type="radio" id="dk-like-job" name="like-job" value="0">
-                      <label for="dk-like-job">Don't Know</label><br>
+                  <form id = "like_job" action="{% url 'survey_result_api' %}" method="post">
+                       <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                                <br><p>A degree in engineering will allow me to obtain a job that I like</p>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Strongly-Disagree-like-job" name="like_job" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Disagree-like-job" name="like_job" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Slightly-Disagree-like-job" name="like_job" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="Neither-Disagree-like-job" name="like_job" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                               <input type="radio" id="Slightly-Agree-like-job" name="like_job" value="5">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="Agree-like-job" name="like_job" value="6">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Strongly-Agree-like-job" name="like_job" value="7">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="dk-like-job" name="like_job" value="0">
+                            </div>
+                      </div>
                   </form>
 
                   <!I can cope with not doing well on a test>
-                  <form id = "bad-test" action="{% url 'survey_result_api' %}" method="post">
-                      <br><p id = "I can cope with not doing well on a test-prompt">I can cope with not doing well on a test</p>
-                      <input type="radio" id="Strongly-Disagree-bad-test" name="bad-test" value="1">
-                      <label for="Strongly-Disagree-bad-test">Strongly Disagree</label><br>
-                      <input type="radio" id="Disagree-bad-test" name="bad-test" value="2">
-                      <label for="Disagree-bad-test">Disagree</label><br>
-                      <input type="radio" id="Slightly-Disagree-bad-test" name="bad-test" value="3">
-                      <label for="Slightly-Disagree-bad-test">Slightly Disagree</label><br>
-                      <input type="radio" id="Neither-Disagree-bad-test" name="bad-test" value="4">
-                      <label for="Neither-Disagree-bad-test">Neither Disagree nor Agree</label><br>
-                      <input type="radio" id="Slightly-Agree-bad-test" name="bad-test" value="5">
-                      <label for="Slightly-Agree-bad-test">Slightly Agree</label><br>
-                      <input type="radio" id="Agree-bad-test" name="bad-test" value="6">
-                      <label for="Agree-bad-test">Agree</label><br>
-                      <input type="radio" id="Strongly-Agree-bad-test" name="bad-test" value="7">
-                      <label for="Strongly-Agree-bad-test">Strongly Agree</label><br>
-                      <input type="radio" id="dk-bad-test" name="bad-test" value="0">
-                      <label for="dk-bad-test">Don't Know</label><br>
+                  <form id = "bad_test" action="{% url 'survey_result_api' %}" method="post">
+                      <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                                <br><p>I can cope with not doing well on a test</p>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Strongly-Disagree-bad-test" name="bad_test" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Disagree-bad-test" name="bad_test" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Slightly-Disagree-bad-test" name="bad_test" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="Neither-Disagree-bad-test" name="bad_test" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                               <input type="radio" id="Slightly-Agree-bad-test" name="bad_test" value="5">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="Agree-bad-test" name="bad_test" value="6">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Strongly-Agree-bad-test" name="bad_test" value="7">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="dk-bad-test" name="bad_test" value="0">
+                            </div>
+                      </div>
                   </form>
 
                   <!I can make friends with people from different background/or values>
                   <form id = "friends" action="{% url 'survey_result_api' %}" method="post">
-                      <br><p id = "I can make friends with people from different background/or values-prompt">I can make friends with people from different background/or values</p>
-                      <input type="radio" id="Strongly-Disagree-friends" name="friends" value="1">
-                      <label for="Strongly-Disagree-friends">Strongly Disagree</label><br>
-                      <input type="radio" id="Disagree-friends" name="friends" value="2">
-                      <label for="Disagree-friends">Disagree</label><br>
-                      <input type="radio" id="Slightly-Disagree-friends" name="friends" value="3">
-                      <label for="Slightly-Disagree-friends">Slightly Disagree</label><br>
-                      <input type="radio" id="Neither-Disagree-friends" name="friends" value="4">
-                      <label for="Neither-Disagree-friends">Neither Disagree nor Agree</label><br>
-                      <input type="radio" id="Slightly-Agree-friends" name="friends" value="5">
-                      <label for="Slightly-Agree-part">Slightly Agree</label><br>
-                      <input type="radio" id="Agree-friends" name="friends" value="6">
-                      <label for="Agree-friends">Agree</label><br>
-                      <input type="radio" id="Strongly-Agree-friends" name="friends" value="7">
-                      <label for="Strongly-Agree-friends">Strongly Agree</label><br>
-                      <input type="radio" id="dk-friends" name="friends" value="0">
-                      <label for="dk-friends">Don't Know</label><br>
+                      <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                               <br><p>I can make friends with people from different background/or values</p>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Strongly-Disagree-friends" name="friends" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Disagree-friends" name="friends" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Slightly-Disagree-friends" name="friends" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="Neither-Disagree-friends" name="friends" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                               <input type="radio" id="Slightly-Agree-friends" name="friends" value="5">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="Agree-friends" name="friends" value="6">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Strongly-Agree-friends" name="friends" value="7">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="dk-friends" name="friends" value="0">
+                            </div>
+                      </div>
                   </form>
 
                   <!I can cope with friend's disapproval of my chosen major>
                   <form id = "cope" action="{% url 'survey_result_api' %}" method="post">
-                      <br><p id = "I can cope with friend's disapproval of my chosen major-prompt">I can cope with friend's disapproval of my chosen major</p>
-                      <input type="radio" id="Strongly-Disagree-cope" name="cope" value="1">
-                      <label for="Strongly-Disagree-cope">Strongly Disagree</label><br>
-                      <input type="radio" id="Disagree-cope" name="cope" value="2">
-                      <label for="Disagree-cope">Disagree</label><br>
-                      <input type="radio" id="Slightly-Disagree-cope" name="cope" value="3">
-                      <label for="Slightly-Disagree-cope">Slightly Disagree</label><br>
-                      <input type="radio" id="Neither-Disagree-cope" name="cope" value="4">
-                      <label for="Neither-Disagree-cope">Neither Disagree nor Agree</label><br>
-                      <input type="radio" id="Slightly-Agree-cope" name="cope" value="5">
-                      <label for="Slightly-Agree-cope">Slightly Agree</label><br>
-                      <input type="radio" id="Agree-cope" name="cope" value="6">
-                      <label for="Agree-cope">Agree</label><br>
-                      <input type="radio" id="Strongly-Agree-cope" name="cope" value="7">
-                      <label for="Strongly-Agree-cope">Strongly Agree</label><br>
-                      <input type="radio" id="dk-cope" name="cope" value="0">
-                      <label for="dk-cope">Don't Know</label><br>
+                      <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                               <br><p>I can cope with friend's disapproval of my chosen major</p>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Strongly-Disagree-cope" name="cope" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Disagree-cope" name="cope" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Slightly-Disagree-cope" name="cope" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="Neither-Disagree-cope" name="cope" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                               <input type="radio" id="Slightly-Agree-cope" name="cope" value="5">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="Agree-cope" name="cope" value="6">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Strongly-Agree-cope" name="cope" value="7">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="dk-cope" name="cope" value="0">
+                            </div>
+                      </div>
                   </form>
 
                   <!I can cope with being the the only person of my race / ethnicity in my class>
-                  <form id = "only-one" action="{% url 'survey_result_api' %}" method="post">
-                      <br><p id = "I can cope with being the the only person of my race / ethnicity in my class-prompt">I can cope with being the the only person of my race / ethnicity in my class</p>
-                      <input type="radio" id="Strongly-Disagree-only" name="only-one" value="1">
-                      <label for="Strongly-Disagree-only">Strongly Disagree</label><br>
-                      <input type="radio" id="Disagree-only" name="only-one" value="2">
-                      <label for="Disagree-only">Disagree</label><br>
-                      <input type="radio" id="Slightly-Disagree-only" name="only-one" value="3">
-                      <label for="Slightly-Disagree-only">Slightly Disagree</label><br>
-                      <input type="radio" id="Neither-Disagree-only" name="only-one" value="4">
-                      <label for="Neither-Disagree-only">Neither Disagree nor Agree</label><br>
-                      <input type="radio" id="Slightly-Agree-only" name="only-one" value="5">
-                      <label for="Slightly-Agree-only">Slightly Agree</label><br>
-                      <input type="radio" id="Agree-only" name="only-one" value="6">
-                      <label for="Agree-only">Agree</label><br>
-                      <input type="radio" id="Strongly-Agree-only" name="only-one" value="7">
-                      <label for="Strongly-Agree-only">Strongly Agree</label><br>
-                      <input type="radio" id="dk-only" name="only-one" value="0">
-                      <label for="dk-only">Don't Know</label><br>
+                  <form id = "only_one" action="{% url 'survey_result_api' %}" method="post">
+                      <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                               <br><p>I can cope with being the the only person of my race / ethnicity in my class</p>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Strongly-Disagree-only" name="only_one" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Disagree-only" name="only_one" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Slightly-Disagree-only" name="only_one" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="Neither-Disagree-only" name="only_one" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                               <input type="radio" id="Slightly-Agree-only" name="only_one" value="5">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="Agree-only" name="only_one" value="6">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Strongly-Agree-only" name="only_one" value="7">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="dk-only" name="only_one" value="0">
+                            </div>
+                      </div>
                   </form>
 
                   <!I can approach a faculty or staff member to get assistance>
                   <form id = "approach" action="{% url 'survey_result_api' %}" method="post">
-                      <br><p id = "I can approach a faculty or staff member to get assistance-prompt">I can cope with being the the only person of my race / ethnicity in my class</p>
-                      <input type="radio" id="Strongly-Disagree-approach" name="approach" value="1">
-                      <label for="Strongly-Disagree-approach">Strongly Disagree</label><br>
-                      <input type="radio" id="Disagree-approach" name="approach" value="2">
-                      <label for="Disagree-approach">Disagree</label><br>
-                      <input type="radio" id="Slightly-Disagree-approach" name="approach" value="3">
-                      <label for="Slightly-Disagree-approach">Slightly Disagree</label><br>
-                      <input type="radio" id="Neither-Disagree-approach" name="approach" value="4">
-                      <label for="Neither-Disagree-approach">Neither Disagree nor Agree</label><br>
-                      <input type="radio" id="Slightly-Agree-approach" name="approach" value="5">
-                      <label for="Slightly-Agree-approach">Slightly Agree</label><br>
-                      <input type="radio" id="Agree-approach" name="approach" value="6">
-                      <label for="Agree-approach">Agree</label><br>
-                      <input type="radio" id="Strongly-Agree-approach" name="" value="7">
-                      <label for="Strongly-Agree-approach">Strongly Agree</label><br>
-                      <input type="radio" id="dk-approach" name="approach" value="0">
-                      <label for="dk-approach">Don't Know</label><br>
+                      <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                                <br><p>I can cope with being the the only person of my race / ethnicity in my class</p>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Strongly-Disagree-approach" name="approach" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Disagree-approach" name="approach" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Slightly-Disagree-approach" name="approach" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="Neither-Disagree-approach" name="approach" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                               <input type="radio" id="Slightly-Agree-approach" name="approach" value="5">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="Agree-approach" name="approach" value="6">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Strongly-Agree-approach" name="approach" value="7">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="dk-approach" name="approach" value="0">
+                            </div>
+                      </div>
                   </form>
 
                   <!I can adjust to a new campus environment>
-                  <form id = "new-env" action="{% url 'survey_result_api' %}" method="post">
-                      <br><p id = "I can adjust to a new campus environment-prompt">I can adjust to a new campus environment</p>
-                      <input type="radio" id="Strongly-Disagree-new" name="new-env" value="1">
-                      <label for="Strongly-Disagree-new">Strongly Disagree</label><br>
-                      <input type="radio" id="Disagree-new" name="new-env" value="2">
-                      <label for="Disagree-new">Disagree</label><br>
-                      <input type="radio" id="Slightly-Disagree-new" name="new-env" value="3">
-                      <label for="Slightly-Disagree-new">Slightly Disagree</label><br>
-                      <input type="radio" id="Neither-Disagree-new" name="new-env" value="4">
-                      <label for="Neither-Disagree-new">Neither Disagree nor Agree</label><br>
-                      <input type="radio" id="Slightly-Agree-new" name="new-env" value="5">
-                      <label for="Slightly-Agree-new">Slightly Agree</label><br>
-                      <input type="radio" id="Agree-new" name="new-env" value="6">
-                      <label for="Agree-new">Agree</label><br>
-                      <input type="radio" id="Strongly-Agree-new" name="new-env" value="7">
-                      <label for="Strongly-Agree-new">Strongly Agree</label><br>
-                      <input type="radio" id="dk-new" name="new-env" value="0">
-                      <label for="dk-new">Don't Know</label><br>
+                  <form id = "new_env" action="{% url 'survey_result_api' %}" method="post">
+                      <div class="row row-cols-md-6 text-center">
+                            <div class="col themed-grid-col">
+                                <br><p>I can adjust to a new campus environment</p>
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Strongly-Disagree-new" name="new_env" value="1">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Disagree-new" name="new_env" value="2">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Slightly-Disagree-new" name="new_env" value="3">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="Neither-Disagree-new" name="new_env" value="4">
+                            </div>
+                            <div class="col themed-grid-col">
+                               <input type="radio" id="Slightly-Agree-new" name="new_env" value="5">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="Agree-new" name="new_env" value="6">
+                            </div>
+                            <div class="col themed-grid-col">
+                                <input type="radio" id="Strongly-Agree-new" name="new_env" value="7">
+                            </div>
+                            <div class="col themed-grid-col">
+                                 <input type="radio" id="dk-new" name="new_env" value="0">
+                            </div>
+                      </div>
                   </form>
 
                   <!Self confidence (social)>

@@ -144,7 +144,6 @@ class SurveyResultsAPI(APIView):
             no_change=req_data.get('no-change'),
             effort=req_data.get('effort'),
             boring=req_data.get('boring')
-
         )
         survey_data.save()
         return HttpResponse(req_data, status=status.HTTP_200_OK)

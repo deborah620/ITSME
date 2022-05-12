@@ -7,7 +7,6 @@ from selenium import webdriver
 from django.test import TestCase
 import os
 
-
 """
 couldn't get this to work properly
 # testing JSON format
@@ -42,7 +41,7 @@ class JSONViewTestCase(TestCase):
         )
         json_string = response.content
         response_data = json.loads(json_string)
-"""
+
 
 
 # testing the survey model, gender and ethnicity only
@@ -217,12 +216,17 @@ class Tests(TestCase):
         csv_filepath = base_dir + "/" + csv_filename
         path = open(csv_filepath, 'r')
         self.assertTrue("gpa" in path.read())  # assert that the csv has been populated
+"""
 
+
+class TestHTML(TestCase):
     def test_html(self):
         # import webdriver
 
         # create webdriver object
-        driver = webdriver.Firefox()
+        driver = webdriver.Firefox(executable_path=r'C:\Users\ismil\PycharmProjects\ITSME\geckodriver-v0.31.0'
+                                                   r'-linux32.tar.gz')
+        # driver = webdriver.Firefox()
 
         # get geeksforgeeks.org
         driver.get("http://127.0.0.1:8000/")
