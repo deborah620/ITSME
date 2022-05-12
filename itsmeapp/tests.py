@@ -252,7 +252,7 @@ class TestHTML(StaticLiveServerTestCase):
 
         # get header and see if correct
         header = self.driver.find_element(By.TAG_NAME, 'h1').text
-        self.assertEquals(header, 'My Engineer State of Mind: A Self-Assessing Tool')
+        self.assertEquals(header, 'My Engineer State of Mind:\nA Self-Assessing Tool')
 
     def test_section1(self):
         # get the website
@@ -269,9 +269,10 @@ class TestHTML(StaticLiveServerTestCase):
         # able to type in textbox
         self.driver.find_element(By.ID, 'other-gender-textbox').send_keys('genderless')
 
-        # female label is there and can click gender button
+        # female label is there and can click the female radio and gender button
         female = self.driver.find_element(By.ID, 'female-lab').text
         self.assertEquals(female, 'Female')
+        self.driver.find_element(By.ID, 'female').click()
         self.driver.find_element(By.ID, 'gender-button').click()
 
         # can click on ethnicity button and make sure a label is there
