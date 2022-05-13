@@ -290,7 +290,7 @@ class TestHTML(StaticLiveServerTestCase):
         self.driver.get(self.live_server_url)
 
         # check header
-        header = self.driver.find_element(By.ID, 'section_two').text
+        header = self.driver.find_element(By.ID, 'section-two').text
         self.assertEquals(header, 'Impressions of engineering')
 
         # check if certain label is there
@@ -325,4 +325,9 @@ class TestHTML(StaticLiveServerTestCase):
         # email button correct label
         mail = self.driver.find_element(By.ID, 'mail-link').text
         self.assertEquals(mail, 'Email Results')
+
+    def test_submit(self):
+        self.driver.get(self.live_server_url)
+        self.driver.find_element(By.ID, 'male').click()
+        self.driver.find_element(By.ID, 'submit-but').submit()
 
