@@ -1,11 +1,20 @@
 from django.test import TestCase
 from django.urls import reverse
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from itsmeapp.views import Survey
-# from itsmeapp.views import SurveyResultsAPI
+from itsmeapp.views import SurveyResultsAPI
 import json
+from selenium import webdriver
 from django.test import TestCase
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
+from selenium.webdriver.common.by import By
 import os
 
+# so pop-up browser doesn't keep popping up
+options = webdriver.FirefoxOptions()
+# options = webdriver.ChromeOptions()
+options.headless = True
 
 """
 couldn't get this to work properly
@@ -41,7 +50,7 @@ class JSONViewTestCase(TestCase):
         )
         json_string = response.content
         response_data = json.loads(json_string)
-"""
+
 
 
 # testing the survey model, gender and ethnicity only
@@ -216,3 +225,109 @@ class Tests(TestCase):
         csv_filepath = base_dir + "/" + csv_filename
         path = open(csv_filepath, 'r')
         self.assertTrue("gpa" in path.read())  # assert that the csv has been populated
+"""
+
+
+class TestHTML(StaticLiveServerTestCase):
+
+    def setUp(self):
+        # create webdriver object
+        self.driver = webdriver.Firefox(executable_path=r'geckodriver.exe', options=options)
+        # self.driver = webdriver.Chrome(executable_path=r'chromedriver.exe', options=options)
+        self.driver.maximize_window()
+
+    def tearDown(self):
+        self.driver.close()
+
+    def test_title(self):
+        # get the website
+        self.driver.get(self.live_server_url)
+
+        # get title and see if correct
+        self.assertEquals(self.driver.title, 'ITSME SURVEY ASSESSMENT')
+
+    def test_header(self):
+        # get the website
+        self.driver.get(self.live_server_url)
+
+        # get header and see if correct
+        header = self.driver.find_element(By.TAG_NAME, 'h1').text
+        self.assertEquals(header, 'My Engineer State of Mind:\nA Self-Assessing Tool')
+
+    def test_section1(self):
+        # get the website
+        self.driver.get(self.live_server_url)
+
+        # get header and see if correct
+        header = self.driver.find_element(By.TAG_NAME, 'h2').text
+        self.assertEquals(header, 'General background information')
+
+        # gender button has correct text
+        gen_but = self.driver.find_element(By.ID, 'gender-button').text
+        self.assertEquals(gen_but, 'Gender:')
+
+        # able to type in textbox
+        self.driver.find_element(By.ID, 'other-gender-textbox').send_keys('genderless')
+
+        # female label is there and can click the female radio and gender button
+        female = self.driver.find_element(By.ID, 'female-lab').text
+        self.assertEquals(female, 'Female')
+        self.driver.find_element(By.ID, 'female').click()
+        self.driver.find_element(By.ID, 'gender-button').click()
+
+        # can click on ethnicity button and make sure a label is there
+        self.driver.find_element(By.ID, 'ethnicity-prompt').click()
+        asian = self.driver.find_element(By.ID, 'asian-lab').text
+        self.assertEquals(asian, 'Asian & Pacific American')
+        self.driver.find_element(By.ID, 'ethnicity-prompt').click()
+
+        # before college button has correct text
+        before_but = self.driver.find_element(By.ID, 'before').text
+        self.assertEquals(before_but, 'Where were you immediately before starting at this institution?')
+
+    def test_section_two(self):
+        # get the website
+        self.driver.get(self.live_server_url)
+
+        # check header
+        header = self.driver.find_element(By.ID, 'section-two').text
+        self.assertEquals(header, 'Impressions of engineering')
+
+        # check if certain label is there
+        certain = self.driver.find_element(By.ID, 'certain').text
+        self.assertEquals(certain, 'Certain')
+
+        # check if moderate-reason label is there
+        moderate = self.driver.find_element(By.ID, 'Moderate-Reason').text
+        self.assertEquals(moderate, 'Moderate Reason')
+
+        # check if disagree label is there
+        disagree = self.driver.find_element(By.ID, 'Disagree').text
+        self.assertEquals(disagree, 'Disagree')
+
+        # check if a few questions are there
+        finish_deg = self.driver.find_element(By.ID, 'how-certain-you-would-complete-engineering-degree-at-this'
+                                                     '-institution-prompt').text
+        self.assertEquals(finish_deg, 'At the present time, how certain are you that you will complete an engineering '
+                                      'degree at this institution?')
+
+        eng_contribute = self.driver.find_element(By.ID,
+                                                  'Engineers-have-contributed-to-fixing-world-problems-prompt').text
+        self.assertEquals(eng_contribute, 'Engineers have contributed greatly to fixing problems in the world')
+
+        advantage = self.driver.find_element(By.ID, 'The-advantages-of-studying-engineering-outweigh-the'
+                                                    '-disadvantages-prompt').text
+        self.assertEquals(advantage, 'The advantages of studying engineering outweigh the disadvantages')
+
+    def test_email(self):
+        self.driver.get(self.live_server_url)
+
+        # email button correct label
+        mail = self.driver.find_element(By.ID, 'mail-link').text
+        self.assertEquals(mail, 'Email Results')
+
+    def test_submit(self):
+        self.driver.get(self.live_server_url)
+        self.driver.find_element(By.ID, 'male').click()
+        self.driver.find_element(By.ID, 'submit-but').submit()
+

@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'itsmeapp',
     'rest_framework',
+    'selenium',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
