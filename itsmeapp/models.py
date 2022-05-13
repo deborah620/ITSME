@@ -1,10 +1,12 @@
+from curses.ascii import SUB
+from re import S
 from django.db import models
 
 # Create your models here.
 
 
 class Survey(models.Model):
-    # models for the html front end survey results
+    # models for the html front end survey inputs
     objects = models.Manager()
     gender = models.TextField()
     ethnicity = models.TextField()
@@ -74,3 +76,23 @@ class Survey(models.Model):
     no_change = models.TextField()
     effort = models.TextField()
     boring = models.TextField()
+
+class Results(models.Model):
+    # models for the html front end survey results
+    score_1 = (Survey.engineer_paid + Survey.well_paying + Survey.job_guarantee) / (3*4)
+    score_2 = (Survey.parents_disprove_difft + Survey.parents_want) / (2*4)
+    score_3 = (Survey.technology_importance + Survey.engineer_fix_world + Survey.use_society) / (3*4)
+    score_4 = (Survey.faculty_encor + Survey.mentor_encor + Survey.mentoring_program) / (3*4)
+    score_5 = (Survey.feel_good + Survey.engineer_fun + Survey.engineer_interesting) / (3*4)
+    score_6 = (Survey.like_build + Survey.figure_out_work) / (2*4)
+    score_7 = (Survey.self_confidence + Survey.leadership + Survey.public + Survey.communication + Survey.business + Survey.teams) / (6*4)
+    score_8 = (Survey.math + Survey.science + Survey.apply) / (3*4)
+    score_9 = (Survey.succeed + Survey.job + Survey.intro_opportunity + Survey.lifestyle + Survey.part_group + Survey.like_job) / (6*4)
+    score_10 = (Survey.relate_extra + Survey.friends + Survey.engineer_interesting) / (3*4)
+    score_11 = (Survey.cope + Survey.friends + Survey.new_env + Survey.discussion) / (4*4)
+    score_12 = (Survey.reward + Survey.study + Survey.advantage + Survey.boring) / (4*4)
+    score_13 = (Survey.technology_importance + Survey.self_confidence + Survey.lot_common) / (3*4)
+    score_14 = (Survey.mentor_encor) / (1*4)
+    eps_total = (score_1 + score_2 + score_3) / 3
+    spve = (score_4 + score_5 + score_6 + score_7 + score_8 + score_9 + score_10) / 7
+    me = (score_11 + score_12 + score_13 + score_14) / 4
